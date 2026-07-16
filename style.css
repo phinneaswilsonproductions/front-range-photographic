@@ -3970,3 +3970,649 @@ footer {
 
 
 }
+
+/* =====================================================
+   FRONT RANGE PHOTOGRAPHIC
+   RESPONSIVE MOBILE OPTIMIZATION
+===================================================== */
+
+
+/* Prevent horizontal scrolling */
+
+html,
+body {
+
+    max-width:100%;
+    overflow-x:hidden;
+
+}
+
+
+
+
+/* Large tablets and small laptops */
+
+@media (max-width:1200px){
+
+
+.hero-container {
+
+    padding:0 6%;
+
+}
+
+
+.hero-text h1 {
+
+    font-size:75px;
+
+}
+
+
+.hero-description {
+
+    max-width:600px;
+
+}
+
+
+.info-box {
+
+    padding:25px;
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* Tablets */
+
+@media (max-width:900px){
+
+
+
+.navbar {
+
+    padding:25px 5%;
+
+}
+
+
+
+.nav-menu {
+
+    position:fixed;
+
+    top:0;
+
+    right:-100%;
+
+    width:80%;
+
+    height:100vh;
+
+    background:#171512;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:40px;
+
+    transition:.5s;
+
+    z-index:999;
+
+
+}
+
+
+
+.nav-menu.active {
+
+    right:0;
+
+}
+
+
+
+
+
+.nav-menu a {
+
+    font-size:22px;
+
+}
+
+
+
+
+
+.mobile-menu {
+
+    display:flex;
+
+}
+
+
+
+.nav-call {
+
+    display:none;
+
+}
+
+
+
+
+
+.hero {
+
+    min-height:900px;
+
+}
+
+
+
+
+
+.hero-container {
+
+    flex-direction:column;
+
+    text-align:center;
+
+    justify-content:center;
+
+}
+
+
+
+
+
+.hero-text {
+
+    width:100%;
+
+}
+
+
+
+.location-label {
+
+    font-size:12px;
+
+    letter-spacing:3px;
+
+}
+
+
+
+
+.hero h1,
+.hero-title {
+
+
+    font-size:60px;
+
+    line-height:1;
+
+
+}
+
+
+
+
+
+.hero-description {
+
+    font-size:17px;
+
+    margin:auto;
+
+}
+
+
+
+
+.hero-actions {
+
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:20px;
+
+
+}
+
+
+
+
+
+.gold-button,
+.outline-button {
+
+
+    width:90%;
+
+    max-width:350px;
+
+    text-align:center;
+
+}
+
+
+
+
+
+.hero-info-panel {
+
+
+    margin-top:50px;
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+
+}
+
+
+
+.info-box h3 {
+
+
+    font-size:35px;
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+/* Phones */
+
+@media (max-width:600px){
+
+
+
+
+
+.loading-screen h1 {
+
+    font-size:35px;
+
+}
+
+
+
+.loading-screen p {
+
+    font-size:12px;
+
+    letter-spacing:5px;
+
+}
+
+
+
+
+
+.logo h2 {
+
+    font-size:22px;
+
+}
+
+
+
+.logo span {
+
+    font-size:8px;
+
+    letter-spacing:4px;
+
+}
+
+
+
+
+
+
+.hero {
+
+    min-height:100vh;
+
+    padding-top:100px;
+
+
+}
+
+
+
+
+
+.hero h1,
+.hero-title {
+
+
+    font-size:42px;
+
+    line-height:1.1;
+
+
+}
+
+
+
+
+
+.hero-title span {
+
+    display:block;
+
+
+}
+
+
+
+
+.hero-description {
+
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    padding:0 15px;
+
+
+}
+
+
+
+
+
+.hero-info-panel {
+
+
+    grid-template-columns:1fr;
+
+    gap:15px;
+
+
+}
+
+
+
+
+
+.info-box {
+
+
+    width:100%;
+
+    padding:20px;
+
+
+}
+
+
+
+
+
+.section-heading h2 {
+
+
+    font-size:42px;
+
+    line-height:1.15;
+
+
+}
+
+
+
+
+.section-heading p {
+
+
+    font-size:11px;
+
+    letter-spacing:4px;
+
+
+}
+
+
+
+
+
+.introduction,
+.services,
+.portfolio,
+.pricing,
+.contact {
+
+
+    padding:80px 6%;
+
+
+}
+
+
+
+
+
+
+
+.gold-button,
+.outline-button {
+
+
+    padding:16px 30px;
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+
+}
+
+
+
+
+
+}
+
+
+
+
+
+/* Small phones */
+
+@media (max-width:380px){
+
+
+
+.hero h1,
+.hero-title {
+
+
+    font-size:36px;
+
+
+}
+
+
+
+.hero-description {
+
+
+    font-size:14px;
+
+
+}
+
+
+
+.logo h2 {
+
+
+    font-size:19px;
+
+
+}
+
+
+
+.section-heading h2 {
+
+
+    font-size:36px;
+
+
+}
+
+
+
+}
+
+
+
+
+/* Landscape phones */
+
+@media (max-height:500px) and (orientation:landscape){
+
+
+
+.hero {
+
+
+    min-height:700px;
+
+
+}
+
+
+
+.hero h1 {
+
+
+    font-size:45px;
+
+
+}
+
+
+
+}
+
+
+
+
+
+/* High resolution phones */
+
+@media (-webkit-min-device-pixel-ratio:2){
+
+
+
+img {
+
+
+    image-rendering:auto;
+
+
+}
+
+
+
+}
+
+
+
+
+
+/* Touch improvements */
+
+
+@media (hover:none){
+
+
+
+.gold-button:hover,
+.outline-button:hover {
+
+
+    transform:none;
+
+
+}
+
+
+
+a,
+button {
+
+
+    min-height:44px;
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+/* Accessibility */
+
+@media (prefers-reduced-motion:reduce){
+
+
+
+* {
+
+
+    animation-duration:.01ms !important;
+
+    transition-duration:.01ms !important;
+
+
+}
+
+
+
+}
