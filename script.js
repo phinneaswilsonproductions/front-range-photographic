@@ -1236,3 +1236,588 @@ console.log(
 
 
 });
+
+/* =====================================================
+   FRONT RANGE PHOTOGRAPHIC
+   CINEMATIC EXPERIENCE ENGINE
+   ADVANCED VERSION
+
+   ADD BELOW EXISTING SCRIPT.JS
+===================================================== */
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+
+
+/* =====================================================
+   ELEMENT CONNECTIONS
+===================================================== */
+
+
+const intro =
+document.querySelector("#intro-screen");
+
+
+const title =
+document.querySelector("#typewriter");
+
+
+const subtitle =
+document.querySelector("#subtitle");
+
+
+const hero =
+document.querySelector(".hero");
+
+
+const heroContent =
+document.querySelector(".hero-content");
+
+
+const navbar =
+document.querySelector(".navbar");
+
+
+const cursor =
+document.querySelector(".cursor");
+
+
+const skip =
+document.querySelector("#skipIntro");
+
+
+
+
+
+
+/* =====================================================
+   BRAND TEXT
+===================================================== */
+
+
+const brandName =
+"FRONT RANGE PHOTOGRAPHIC";
+
+
+const brandSubtitle =
+"CAPTURING COLORADO STORIES THROUGH TIMELESS IMAGERY";
+
+
+
+
+
+/* =====================================================
+   HUMAN TYPEWRITER EFFECT
+===================================================== */
+
+
+function humanType(element,text,speed,done){
+
+
+    if(!element) return;
+
+
+    element.innerHTML="";
+
+
+    let letter=0;
+
+
+
+    function write(){
+
+
+        if(letter < text.length){
+
+
+
+            element.innerHTML +=
+            text.charAt(letter);
+
+
+
+            letter++;
+
+
+
+            let randomSpeed =
+            speed +
+            Math.random()*70;
+
+
+
+            setTimeout(
+                write,
+                randomSpeed
+            );
+
+
+
+        }
+
+        else{
+
+
+            if(done){
+
+                done();
+
+            }
+
+
+        }
+
+
+    }
+
+
+    write();
+
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+   INTRO SEQUENCE
+===================================================== */
+
+
+function beginExperience(){
+
+
+    humanType(
+
+        title,
+
+        brandName,
+
+        75,
+
+        ()=>{
+
+
+            setTimeout(()=>{
+
+
+                humanType(
+
+                    subtitle,
+
+                    brandSubtitle,
+
+                    45,
+
+                    ()=>{
+
+
+                        setTimeout(()=>{
+
+
+                            revealWebsite();
+
+
+                        },1200);
+
+
+                    }
+
+                );
+
+
+            },700);
+
+
+
+        }
+
+    );
+
+}
+
+
+
+beginExperience();
+
+
+
+
+
+
+
+/* =====================================================
+   REVEAL MAIN WEBSITE
+===================================================== */
+
+
+function revealWebsite(){
+
+
+    if(!intro)
+    return;
+
+
+
+    intro.style.transition =
+    "all 1.8s cubic-bezier(.77,0,.18,1)";
+
+
+    intro.style.opacity="0";
+
+
+    intro.style.transform=
+    "scale(1.08)";
+
+
+
+    setTimeout(()=>{
+
+
+        intro.style.display="none";
+
+
+        if(hero){
+
+            hero.style.opacity="1";
+
+        }
+
+
+        if(heroContent){
+
+
+            heroContent.style.animation =
+            "heroReveal 2s ease forwards";
+
+
+        }
+
+
+
+    },1800);
+
+
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+   SKIP INTRO
+===================================================== */
+
+
+if(skip){
+
+
+    skip.addEventListener(
+        "click",
+        ()=>{
+
+
+            revealWebsite();
+
+
+        }
+
+    );
+
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+   NAVBAR PREMIUM EFFECT
+===================================================== */
+
+
+window.addEventListener(
+"scroll",
+()=>{
+
+
+    if(!navbar)
+    return;
+
+
+
+    if(window.scrollY > 100){
+
+
+        navbar.style.background =
+        "rgba(18,13,8,.92)";
+
+
+        navbar.style.border =
+        "1px solid rgba(214,155,61,.35)";
+
+
+        navbar.style.boxShadow =
+        "0 20px 60px rgba(0,0,0,.35)";
+
+
+
+    }
+
+    else{
+
+
+        navbar.style.background =
+        "rgba(255,255,255,.08)";
+
+
+        navbar.style.boxShadow =
+        "none";
+
+
+    }
+
+
+
+});
+
+
+
+
+
+
+
+
+/* =====================================================
+   MOUSE PARALLAX HERO
+===================================================== */
+
+
+document.addEventListener(
+"mousemove",
+(e)=>{
+
+
+    const x =
+    (e.clientX /
+    window.innerWidth -
+    .5);
+
+
+
+    const y =
+    (e.clientY /
+    window.innerHeight -
+    .5);
+
+
+
+    if(hero){
+
+
+        hero.style.backgroundPosition =
+        `${50+x*3}% ${50+y*3}%`;
+
+
+    }
+
+
+
+});
+
+
+
+
+
+
+
+
+/* =====================================================
+   IMAGE FADE IN
+===================================================== */
+
+
+const images =
+document.querySelectorAll("img");
+
+
+
+images.forEach(img=>{
+
+
+    img.addEventListener(
+    "load",
+    ()=>{
+
+
+        img.style.opacity="1";
+
+
+        img.style.transform=
+        "scale(1)";
+
+
+
+    });
+
+
+
+    img.style.opacity="0";
+
+
+    img.style.transform=
+    "scale(1.05)";
+
+
+    img.style.transition=
+    "all 1.2s ease";
+
+
+
+});
+
+
+
+
+
+
+
+/* =====================================================
+   PORTFOLIO HOVER DEPTH
+===================================================== */
+
+
+const cards =
+document.querySelectorAll(".photo-card");
+
+
+
+cards.forEach(card=>{
+
+
+    card.addEventListener(
+    "mousemove",
+    (e)=>{
+
+
+        let rect =
+        card.getBoundingClientRect();
+
+
+
+        let x =
+        e.clientX -
+        rect.left;
+
+
+
+        let y =
+        e.clientY -
+        rect.top;
+
+
+
+        let rotateX =
+        (y -
+        rect.height/2)
+        /20;
+
+
+
+        let rotateY =
+        (rect.width/2 -
+        x)
+        /20;
+
+
+
+        card.style.transform =
+        `
+        perspective(800px)
+        rotateX(${rotateX}deg)
+        rotateY(${rotateY}deg)
+        scale(1.03)
+        `;
+
+
+
+    });
+
+
+
+    card.addEventListener(
+    "mouseleave",
+    ()=>{
+
+
+        card.style.transform=
+        "rotateX(0) rotateY(0) scale(1)";
+
+
+    });
+
+
+
+});
+
+
+
+
+
+
+
+/* =====================================================
+   SMOOTH BUTTON INTERACTION
+===================================================== */
+
+
+const buttons =
+document.querySelectorAll(
+".primary-button, .secondary-button, .cta-button"
+);
+
+
+
+buttons.forEach(button=>{
+
+
+    button.addEventListener(
+    "mouseenter",
+    ()=>{
+
+
+        button.style.letterSpacing =
+        "5px";
+
+
+    });
+
+
+
+    button.addEventListener(
+    "mouseleave",
+    ()=>{
+
+
+        button.style.letterSpacing =
+        "4px";
+
+
+    });
+
+
+
+});
+
+
+
+});
