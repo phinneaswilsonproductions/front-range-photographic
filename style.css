@@ -1,14 +1,15 @@
 /* =====================================================
    FRONT RANGE PHOTOGRAPHIC
-   CLASSIC FILM STYLE WEBSITE
-   STYLE.CSS PART 1
+   LUXURY CINEMATIC STYLE
+   AMBER SUNRISE EDITION
+
+   PART 1
 ===================================================== */
 
 
 /* ==========================
    RESET
 ========================== */
-
 
 * {
 
@@ -28,9 +29,9 @@ html {
 
 body {
 
-    background:#f5f1e8;
+    background:#16110d;
 
-    color:#171512;
+    color:#2b2118;
 
     font-family:"Montserrat", sans-serif;
 
@@ -59,34 +60,740 @@ a {
 
 
 
+/* ==========================
+   FONTS
+========================== */
+
+
+@import url(
+'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap'
+);
+
+
+
 
 
 /* ==========================
-   VARIABLES
+   COLOR SYSTEM
 ========================== */
 
 
 :root {
 
 
-    --cream:#f5f1e8;
+    --black:
+    #16110d;
 
-    --dark:#171512;
 
-    --brown:#8b6b4a;
+    --dark:
+    #211812;
 
-    --white:#ffffff;
 
-    --gray:#6c665e;
+    --espresso:
+    #3a291b;
+
+
+    --cream:
+    #faf5eb;
+
+
+    --gold:
+    #d69b3d;
+
+
+    --amber:
+    #f0b45c;
+
+
+    --sun:
+    #ffd98a;
+
+
+    --brown:
+    #8c5b27;
+
+
+    --gray:
+    #786c60;
+
+
+    --white:
+    #ffffff;
 
 
     --shadow:
-    0 25px 60px rgba(0,0,0,.15);
+    0 30px 80px rgba(0,0,0,.35);
+
+
+    --gold-glow:
+    0 0 35px rgba(214,155,61,.45);
 
 
 }
 
 
+
+
+
+
+/* =====================================================
+   CINEMATIC INTRO SCREEN
+===================================================== */
+
+
+#intro-screen {
+
+
+    position:fixed;
+
+
+    inset:0;
+
+
+    background:
+
+    radial-gradient(
+
+    circle at center,
+
+    #3b2512,
+
+    #080604
+
+    );
+
+
+    z-index:9999;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    overflow:hidden;
+
+
+    animation:
+
+    introFade 1s ease forwards;
+
+
+}
+
+
+
+
+@keyframes introFade {
+
+
+    from {
+
+        opacity:1;
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+    }
+
+
+}
+
+
+
+
+
+
+/* ==========================
+   FILM GRAIN
+========================== */
+
+
+.film-grain {
+
+
+    position:absolute;
+
+
+    inset:-50%;
+
+
+    opacity:.12;
+
+
+    background-image:
+
+    url("imaging/grain.png");
+
+
+    animation:
+
+    grainMove .25s infinite;
+
+
+}
+
+
+
+@keyframes grainMove {
+
+
+    0% {
+
+        transform:translate(0,0);
+
+    }
+
+
+    25% {
+
+        transform:translate(-3%,3%);
+
+    }
+
+
+    50% {
+
+        transform:translate(3%,-3%);
+
+    }
+
+
+    75% {
+
+        transform:translate(2%,2%);
+
+    }
+
+
+    100% {
+
+        transform:translate(0,0);
+
+    }
+
+
+}
+
+
+
+
+
+
+
+/* ==========================
+   SUNRISE LIGHT EFFECTS
+========================== */
+
+
+.intro-glow {
+
+
+    position:absolute;
+
+
+    width:700px;
+
+
+    height:700px;
+
+
+    background:
+
+    radial-gradient(
+
+    circle,
+
+    rgba(240,180,92,.35),
+
+    transparent 70%
+
+    );
+
+
+    animation:
+
+    pulseGlow 5s infinite;
+
+
+}
+
+
+
+@keyframes pulseGlow {
+
+
+    50% {
+
+        transform:scale(1.2);
+
+        opacity:.6;
+
+    }
+
+
+}
+
+
+
+
+
+
+
+.light-left {
+
+
+    position:absolute;
+
+
+    left:-200px;
+
+
+    top:0;
+
+
+    width:500px;
+
+
+    height:100%;
+
+
+    background:
+
+    linear-gradient(
+
+    90deg,
+
+    rgba(255,190,80,.18),
+
+    transparent
+
+    );
+
+
+}
+
+
+
+
+.light-right {
+
+
+    position:absolute;
+
+
+    right:-200px;
+
+
+    top:0;
+
+
+    width:500px;
+
+
+    height:100%;
+
+
+    background:
+
+    linear-gradient(
+
+    -90deg,
+
+    rgba(255,190,80,.18),
+
+    transparent
+
+    );
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+   INTRO CONTENT
+========================== */
+
+
+.intro-content {
+
+
+    position:relative;
+
+
+    text-align:center;
+
+
+    color:white;
+
+
+    z-index:5;
+
+
+}
+
+
+
+
+
+.intro-small {
+
+
+    font-size:12px;
+
+
+    letter-spacing:12px;
+
+
+    color:var(--amber);
+
+
+    margin-bottom:40px;
+
+
+    text-transform:uppercase;
+
+
+}
+
+
+
+
+#typewriter {
+
+
+    font-family:
+
+    "Cormorant Garamond",
+    serif;
+
+
+    font-size:90px;
+
+
+    font-weight:500;
+
+
+    letter-spacing:5px;
+
+
+    color:white;
+
+
+}
+
+
+
+
+
+
+#subtitle {
+
+
+    margin-top:30px;
+
+
+    font-size:18px;
+
+
+    letter-spacing:4px;
+
+
+    color:#ddd;
+
+
+}
+
+
+
+
+
+
+.cursor {
+
+
+    display:inline-block;
+
+
+    width:3px;
+
+
+    height:70px;
+
+
+    background:var(--gold);
+
+
+    margin-left:10px;
+
+
+    animation:
+
+    blink 1s infinite;
+
+
+}
+
+
+
+
+@keyframes blink {
+
+
+    50% {
+
+        opacity:0;
+
+    }
+
+
+}
+
+
+
+
+
+
+.gold-line {
+
+
+    width:120px;
+
+
+    height:2px;
+
+
+    background:
+
+    linear-gradient(
+
+    90deg,
+
+    transparent,
+
+    var(--gold),
+
+    transparent
+
+    );
+
+
+    margin:45px auto;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+   HERO FOUNDATION
+========================== */
+
+
+.hero {
+
+
+    height:100vh;
+
+
+    min-height:800px;
+
+
+    position:relative;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    overflow:hidden;
+
+
+    color:white;
+
+
+}
+
+
+
+
+
+.hero-image {
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    background-image:
+
+    url("imaging/hero.jpg");
+
+
+    background-size:cover;
+
+
+    background-position:center;
+
+
+    animation:
+
+    heroZoom 25s infinite alternate;
+
+
+}
+
+
+
+
+
+@keyframes heroZoom {
+
+
+    from {
+
+        transform:scale(1);
+
+    }
+
+
+    to {
+
+        transform:scale(1.15);
+
+    }
+
+
+}
+
+/* =====================================================
+   PART 2
+   NAVIGATION + HERO CONTENT
+===================================================== */
+
+
+/* ==========================
+   HERO OVERLAY
+========================== */
+
+
+.hero-overlay {
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    background:
+
+
+    linear-gradient(
+
+    180deg,
+
+    rgba(0,0,0,.35),
+
+    rgba(0,0,0,.75)
+
+    ),
+
+
+    radial-gradient(
+
+    circle at center,
+
+    transparent,
+
+    rgba(0,0,0,.55)
+
+    );
+
+
+    z-index:1;
+
+
+}
+
+
+
+
+
+.hero-content {
+
+
+    position:relative;
+
+
+    z-index:3;
+
+
+    max-width:1100px;
+
+
+    text-align:center;
+
+
+    animation:
+
+    heroReveal 2s ease;
+
+
+}
+
+
+
+
+
+@keyframes heroReveal {
+
+
+    from {
+
+        opacity:0;
+
+        transform:translateY(60px);
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+
+}
 
 
 
@@ -101,16 +808,24 @@ a {
 header {
 
 
-    position:absolute;
+    position:fixed;
+
 
     top:0;
 
+
     width:100%;
 
-    z-index:100;
+
+    z-index:1000;
+
+
+    padding:35px 8%;
 
 
 }
+
+
 
 
 
@@ -119,19 +834,61 @@ header {
 
     display:flex;
 
+
     justify-content:space-between;
+
 
     align-items:center;
 
-    padding:
 
-    35px 8%;
+    padding:20px 35px;
 
 
-    color:white;
+    border:
+
+
+    1px solid rgba(255,255,255,.15);
+
+
+    background:
+
+
+    rgba(255,255,255,.08);
+
+
+    backdrop-filter:
+
+    blur(15px);
+
+
+    border-radius:50px;
+
+
+    transition:.5s;
 
 
 }
+
+
+
+
+
+.navbar:hover {
+
+
+    border-color:
+
+    rgba(240,180,92,.5);
+
+
+    box-shadow:
+
+    var(--gold-glow);
+
+
+}
+
+
 
 
 
@@ -140,22 +897,26 @@ header {
 .logo {
 
 
+    color:white;
+
+
     font-family:
 
     "Cormorant Garamond",
     serif;
 
 
-    font-size:38px;
-
-
-    letter-spacing:3px;
+    font-size:40px;
 
 
     line-height:.8;
 
 
+    letter-spacing:3px;
+
+
 }
+
 
 
 
@@ -166,22 +927,29 @@ header {
     display:block;
 
 
+    margin-top:12px;
+
+
     font-family:
 
     "Montserrat",
     sans-serif;
 
 
-    font-size:11px;
+    font-size:10px;
 
 
     letter-spacing:8px;
 
 
-    margin-top:12px;
+    color:
+
+    var(--amber);
 
 
 }
+
+
 
 
 
@@ -192,7 +960,7 @@ header {
     display:flex;
 
 
-    gap:45px;
+    gap:40px;
 
 
     list-style:none;
@@ -202,25 +970,43 @@ header {
 
 
 
+
+
 .nav-links a {
 
 
     color:white;
 
 
-    font-size:14px;
-
-
-    letter-spacing:2px;
+    font-size:13px;
 
 
     text-transform:uppercase;
 
 
+    letter-spacing:3px;
+
+
     position:relative;
 
 
+    transition:.4s;
+
+
 }
+
+
+
+
+.nav-links a:hover {
+
+
+    color:var(--sun);
+
+
+}
+
+
 
 
 
@@ -233,25 +1019,28 @@ header {
     position:absolute;
 
 
-    bottom:-10px;
-
-
     left:0;
+
+
+    bottom:-10px;
 
 
     width:0;
 
 
-    height:1px;
+    height:2px;
 
 
-    background:white;
+    background:
+
+    var(--gold);
 
 
     transition:.4s;
 
 
 }
+
 
 
 
@@ -272,198 +1061,35 @@ header {
 
 
 /* ==========================
-   HERO SECTION
+   HERO TEXT
 ========================== */
 
 
+.hero-location {
 
-.hero {
 
+    color:
 
-    height:100vh;
-
-
-    min-height:700px;
-
-
-    position:relative;
-
-
-    display:flex;
-
-
-    align-items:center;
-
-
-    justify-content:center;
-
-
-    text-align:center;
-
-
-    color:white;
-
-
-    overflow:hidden;
-
-
-}
-
-
-
-
-
-.hero-image {
-
-
-    position:absolute;
-
-
-    inset:0;
-
-
-    background-image:
-
-    url("images/hero.jpg");
-
-
-    background-size:cover;
-
-
-    background-position:center;
-
-
-    animation:
-
-    slowZoom 20s infinite alternate;
-
-
-}
-
-
-
-
-@keyframes slowZoom {
-
-
-    from {
-
-        transform:scale(1);
-
-    }
-
-
-    to {
-
-        transform:scale(1.12);
-
-    }
-
-
-}
-
-
-
-
-
-.film-overlay {
-
-
-    position:absolute;
-
-
-    inset:0;
-
-
-    background:
-
-
-    linear-gradient(
-
-    rgba(0,0,0,.35),
-
-    rgba(0,0,0,.65)
-
-    );
-
-
-    z-index:1;
-
-
-}
-
-
-
-
-
-/* Film grain effect */
-
-
-.hero::after {
-
-
-    content:"";
-
-
-    position:absolute;
-
-
-    inset:0;
-
-
-    opacity:.08;
-
-
-    background-image:
-
-    url("images/grain.png");
-
-
-    pointer-events:none;
-
-
-}
-
-
-
-
-
-
-
-.hero-content {
-
-
-    position:relative;
-
-
-    z-index:2;
-
-
-    max-width:1000px;
-
-
-    animation:
-
-    fadeIn 1.8s ease;
-
-
-}
-
-
-
-.eyebrow {
-
-
-    letter-spacing:8px;
+    var(--amber);
 
 
     font-size:13px;
 
 
-    margin-bottom:30px;
+    letter-spacing:10px;
+
+
+    margin-bottom:40px;
+
+
+    animation:
+
+    fadeUp 1s ease;
 
 
 }
+
+
 
 
 
@@ -476,35 +1102,66 @@ header {
     serif;
 
 
-    font-size:110px;
-
-
     font-weight:500;
 
 
-    line-height:.9;
+    font-size:120px;
 
 
-    margin-bottom:35px;
+    line-height:.85;
+
+
+    letter-spacing:4px;
+
+
+    text-transform:uppercase;
 
 
 }
 
 
 
-.tagline {
 
 
-    font-size:22px;
+.hero h1 span {
 
 
-    max-width:700px;
+    display:block;
 
 
-    margin:auto;
+    color:
+
+    var(--gold);
 
 
-    line-height:1.7;
+    text-shadow:
+
+    var(--gold-glow);
+
+
+}
+
+
+
+
+
+
+.hero-description {
+
+
+    max-width:750px;
+
+
+    margin:45px auto;
+
+
+    font-size:20px;
+
+
+    line-height:2;
+
+
+    color:#eee;
 
 
     font-weight:300;
@@ -514,6 +1171,13 @@ header {
 
 
 
+
+
+
+
+/* ==========================
+   BUTTONS
+========================== */
 
 
 .hero-buttons {
@@ -536,57 +1200,118 @@ header {
 
 
 
+.primary-button,
 
-.button {
+
+.secondary-button {
 
 
     padding:
 
-    18px 45px;
+    20px 55px;
 
 
-    border:
-
-    1px solid white;
-
-
-    color:white;
+    letter-spacing:4px;
 
 
     text-transform:uppercase;
 
 
-    letter-spacing:3px;
-
-
     font-size:13px;
 
 
-    transition:.4s;
+    transition:.5s;
+
+
+    position:relative;
+
+
+    overflow:hidden;
 
 
 }
 
 
 
-.button:hover {
+
+
+.primary-button {
+
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    var(--gold),
+
+    var(--amber)
+
+    );
+
+
+    color:#17100a;
+
+
+    box-shadow:
+
+    var(--gold-glow);
+
+
+}
+
+
+
+
+
+.secondary-button {
+
+
+    border:
+
+    1px solid rgba(255,255,255,.7);
+
+
+    color:white;
+
+
+}
+
+
+
+
+
+
+
+.primary-button:hover,
+
+
+.secondary-button:hover {
+
+
+    transform:
+
+    translateY(-8px);
+
+
+}
+
+
+
+
+
+
+
+.secondary-button:hover {
 
 
     background:white;
 
 
-    color:#171512;
+    color:
 
-
-}
-
-
-
-
-.button.outline {
-
-
-    background:transparent;
+    var(--dark);
 
 
 }
@@ -596,8 +1321,72 @@ header {
 
 
 
+.primary-button::before {
 
-.scroll {
+
+    content:"";
+
+
+    position:absolute;
+
+
+    top:0;
+
+
+    left:-100%;
+
+
+    width:100%;
+
+
+    height:100%;
+
+
+    background:
+
+    linear-gradient(
+
+    120deg,
+
+    transparent,
+
+    rgba(255,255,255,.5),
+
+    transparent
+
+    );
+
+
+    transition:.7s;
+
+
+}
+
+
+
+
+
+.primary-button:hover::before {
+
+
+    left:100%;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+   SCROLL INDICATOR
+========================== */
+
+
+.scroll-indicator {
 
 
     position:absolute;
@@ -606,18 +1395,21 @@ header {
     bottom:40px;
 
 
-    z-index:2;
+    left:50%;
 
 
-    font-size:12px;
+    transform:
+
+    translateX(-50%);
 
 
-    letter-spacing:5px;
+    z-index:5;
 
 
-    animation:
+    color:white;
 
-    floating 2s infinite;
+
+    text-align:center;
 
 
 }
@@ -625,12 +1417,68 @@ header {
 
 
 
-@keyframes floating {
+.scroll-indicator span {
+
+
+    display:block;
+
+
+    width:2px;
+
+
+    height:70px;
+
+
+    background:
+
+    linear-gradient(
+
+    white,
+
+    transparent
+
+    );
+
+
+    margin:auto;
+
+
+    animation:
+
+    scrollMove 2s infinite;
+
+
+}
+
+
+
+.scroll-indicator p {
+
+
+    margin-top:20px;
+
+
+    font-size:11px;
+
+
+    letter-spacing:8px;
+
+
+}
+
+
+
+
+@keyframes scrollMove {
 
 
     50% {
 
-        transform:translateY(15px);
+
+        transform:
+
+        translateY(20px);
+
 
     }
 
@@ -643,121 +1491,29 @@ header {
 
 
 
+
 /* ==========================
-   INTRO SECTION
+   GENERAL SECTIONS
 ========================== */
 
 
-.intro {
+.section {
 
 
     padding:
 
-    140px 10%;
+    150px 8%;
+
+
+}
+
+
+
+.section-title {
 
 
     text-align:center;
 
-
-}
-
-
-
-.small-title {
-
-
-    color:#8b6b4a;
-
-
-    font-size:12px;
-
-
-    letter-spacing:6px;
-
-
-    margin-bottom:25px;
-
-
-}
-
-
-
-.intro h2 {
-
-
-    font-family:
-
-    "Cormorant Garamond",
-    serif;
-
-
-    font-size:70px;
-
-
-    font-weight:500;
-
-
-    max-width:900px;
-
-
-    margin:auto;
-
-
-    line-height:1.1;
-
-
-}
-
-
-
-
-.intro p {
-
-
-    max-width:700px;
-
-
-    margin:35px auto;
-
-
-    color:#6c665e;
-
-
-    font-size:18px;
-
-
-    line-height:2;
-
-
-}
-
-/* =====================================================
-   FRONT RANGE PHOTOGRAPHIC
-   STYLE.CSS PART 2
-   CLASSIC FILM DESIGN
-===================================================== */
-
-
-
-/* ==========================
-   PORTFOLIO SECTION
-========================== */
-
-
-.portfolio {
-
-
-    padding:140px 8%;
-
-
-}
-
-
-
-.section-heading {
-
-
-    text-align:center;
 
     margin-bottom:80px;
 
@@ -766,205 +1522,51 @@ header {
 
 
 
-.section-heading p {
+.section-title small {
 
 
-    color:var(--brown);
+    color:
 
-    letter-spacing:6px;
+    var(--gold);
 
-    font-size:12px;
+
+    letter-spacing:8px;
+
+
+    text-transform:uppercase;
 
 
 }
 
 
 
-.section-heading h2 {
+
+.section-title h2 {
 
 
     font-family:
+
     "Cormorant Garamond",
     serif;
 
 
     font-size:75px;
 
-    font-weight:500;
-
-
-}
-
-
-
-
-
-
-.gallery {
-
-
-    display:grid;
-
-
-    grid-template-columns:
-
-    repeat(2,1fr);
-
-
-    gap:40px;
-
-
-}
-
-
-
-
-.photo {
-
-
-    position:relative;
-
-
-    overflow:hidden;
-
-
-    height:550px;
-
-
-    background:#111;
-
-
-}
-
-
-
-
-.photo.large {
-
-
-    height:700px;
-
-
-}
-
-
-
-
-
-.photo img {
-
-
-    height:100%;
-
-
-    object-fit:cover;
-
-
-    transition:1s;
-
-
-}
-
-
-
-
-.photo:hover img {
-
-
-    transform:scale(1.08);
-
-
-}
-
-
-
-
-.photo::after {
-
-
-    content:"";
-
-
-    position:absolute;
-
-
-    inset:0;
-
-
-    background:
-
-    linear-gradient(
-
-    transparent,
-
-    rgba(0,0,0,.75)
-
-    );
-
-
-}
-
-
-
-
-
-.photo-text {
-
-
-    position:absolute;
-
-
-    bottom:45px;
-
-
-    left:45px;
-
-
-    color:white;
-
-
-    z-index:2;
-
-
-}
-
-
-
-.photo-text h3 {
-
-
-    font-family:
-
-    "Cormorant Garamond",
-    serif;
-
-
-    font-size:45px;
-
 
     font-weight:500;
 
 
-}
+    color:
 
-
-
-.photo-text p {
-
-
-    letter-spacing:2px;
-
-
-    font-size:13px;
+    var(--dark);
 
 
 }
 
-
-
-
-
-
+/* =====================================================
+   PART 3
+   ABOUT + PORTFOLIO SECTIONS
+===================================================== */
 
 
 /* ==========================
@@ -972,14 +1574,17 @@ header {
 ========================== */
 
 
-
 .about {
 
 
-    padding:140px 8%;
+    background:
+
+    var(--cream);
 
 
-    background:white;
+    padding:
+
+    160px 8%;
 
 
 }
@@ -998,7 +1603,7 @@ header {
     1fr 1fr;
 
 
-    gap:90px;
+    gap:100px;
 
 
     align-items:center;
@@ -1010,7 +1615,25 @@ header {
 
 
 
+.about-image {
+
+
+    position:relative;
+
+
+}
+
+
+
+
+
 .about-image img {
+
+
+    height:700px;
+
+
+    object-fit:cover;
 
 
     box-shadow:
@@ -1024,7 +1647,96 @@ header {
 
 
 
+.about-image::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:100%;
+
+
+    height:100%;
+
+
+    border:
+
+
+    2px solid var(--gold);
+
+
+    top:25px;
+
+
+    left:25px;
+
+
+    z-index:0;
+
+
+}
+
+
+
+
+
+.about-image img {
+
+
+    position:relative;
+
+
+    z-index:2;
+
+
+}
+
+
+
+
+
+.about-text {
+
+
+    position:relative;
+
+
+}
+
+
+
+
+
+.about-label {
+
+
+    color:
+
+    var(--gold);
+
+
+    letter-spacing:8px;
+
+
+    font-size:12px;
+
+
+    text-transform:uppercase;
+
+
+}
+
+
+
+
+
 .about-text h2 {
+
+
+    margin-top:30px;
 
 
     font-family:
@@ -1033,16 +1745,18 @@ header {
     serif;
 
 
-    font-size:70px;
+    font-size:80px;
+
+
+    line-height:.95;
 
 
     font-weight:500;
 
 
-    line-height:1;
+    color:
 
-
-    margin-bottom:30px;
+    var(--dark);
 
 
 }
@@ -1054,13 +1768,18 @@ header {
 .about-text p {
 
 
-    color:var(--gray);
+    margin-top:35px;
+
+
+    color:
+
+    var(--gray);
 
 
     line-height:2;
 
 
-    margin-bottom:25px;
+    font-size:18px;
 
 
 }
@@ -1069,30 +1788,60 @@ header {
 
 
 
-
-.text-button {
+.about-button {
 
 
     display:inline-block;
 
 
-    margin-top:20px;
+    margin-top:40px;
 
 
-    border-bottom:
+    padding:
+
+    18px 45px;
+
+
+    border:
 
     1px solid var(--dark);
 
 
-    padding-bottom:10px;
+    letter-spacing:3px;
 
 
-    letter-spacing:2px;
+    text-transform:uppercase;
+
+
+    font-size:12px;
+
+
+    transition:.5s;
 
 
 }
 
 
+
+
+
+.about-button:hover {
+
+
+    background:
+
+    var(--dark);
+
+
+    color:white;
+
+
+    transform:
+
+    translateY(-5px);
+
+
+}
 
 
 
@@ -1101,15 +1850,21 @@ header {
 
 
 /* ==========================
-   SERVICES
+   PORTFOLIO
 ========================== */
 
 
+.portfolio {
 
-.services {
+
+    background:
+
+    #16110d;
 
 
-    padding:140px 8%;
+    padding:
+
+    160px 8%;
 
 
 }
@@ -1118,7 +1873,34 @@ header {
 
 
 
-.service-grid {
+.portfolio .section-title h2 {
+
+
+    color:white;
+
+
+}
+
+
+
+
+
+.portfolio .section-title small {
+
+
+    color:
+
+    var(--amber);
+
+
+}
+
+
+
+
+
+
+.gallery {
 
 
     display:grid;
@@ -1126,13 +1908,375 @@ header {
 
     grid-template-columns:
 
-    repeat(4,1fr);
+    repeat(3,1fr);
 
 
-    gap:30px;
+    gap:35px;
 
 
 }
+
+
+
+
+
+.photo-card {
+
+
+    height:550px;
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
+
+    cursor:pointer;
+
+
+    background:#000;
+
+
+}
+
+
+
+
+
+.photo-card img {
+
+
+    height:100%;
+
+
+    object-fit:cover;
+
+
+    transition:
+
+    1.2s;
+
+
+}
+
+
+
+
+
+.photo-card:hover img {
+
+
+    transform:
+
+    scale(1.12);
+
+
+}
+
+
+
+
+
+.photo-card::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    background:
+
+
+    linear-gradient(
+
+    transparent,
+
+    rgba(0,0,0,.85)
+
+    );
+
+
+    z-index:1;
+
+
+}
+
+
+
+
+
+.photo-card::after {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:20px;
+
+
+    border:
+
+    1px solid transparent;
+
+
+    transition:.5s;
+
+
+    z-index:2;
+
+
+}
+
+
+
+
+
+.photo-card:hover::after {
+
+
+    border-color:
+
+    var(--gold);
+
+
+}
+
+
+
+
+
+
+
+.photo-info {
+
+
+    position:absolute;
+
+
+    bottom:45px;
+
+
+    left:40px;
+
+
+    z-index:3;
+
+
+    color:white;
+
+
+}
+
+
+
+
+
+.photo-info h3 {
+
+
+    font-family:
+
+    "Cormorant Garamond",
+    serif;
+
+
+    font-size:45px;
+
+
+    font-weight:500;
+
+
+}
+
+
+
+
+
+.photo-info p {
+
+
+    margin-top:10px;
+
+
+    color:
+
+    var(--amber);
+
+
+    letter-spacing:4px;
+
+
+    font-size:12px;
+
+
+    text-transform:uppercase;
+
+
+}
+
+
+
+
+
+
+
+/* Large featured photo */
+
+
+.photo-card.featured {
+
+
+    grid-column:
+
+    span 2;
+
+
+    height:650px;
+
+
+}
+
+
+
+
+
+
+
+/* ==========================
+   IMAGE REVEAL ANIMATION
+========================== */
+
+
+.reveal {
+
+
+    opacity:0;
+
+
+    transform:
+
+    translateY(60px);
+
+
+    transition:
+
+    1s;
+
+
+}
+
+
+
+.reveal.active {
+
+
+    opacity:1;
+
+
+    transform:
+
+    translateY(0);
+
+
+}
+
+
+
+
+
+
+
+/* ==========================
+   GOLD DIVIDERS
+========================== */
+
+
+.gold-divider {
+
+
+    width:160px;
+
+
+    height:2px;
+
+
+    background:
+
+    linear-gradient(
+
+    90deg,
+
+    transparent,
+
+    var(--gold),
+
+    transparent
+
+    );
+
+
+    margin:
+
+    50px auto;
+
+
+}
+
+/* =====================================================
+   PART 4
+   SERVICES + PACKAGES + TESTIMONIALS
+===================================================== */
+
+
+/* ==========================
+   SERVICES SECTION
+========================== */
+
+
+.services {
+
+
+    background:
+
+    var(--cream);
+
+
+    padding:
+
+    150px 8%;
+
+
+}
+
+
+
+
+.services-grid {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+
+    gap:35px;
+
+
+}
+
+
 
 
 
@@ -1143,21 +2287,74 @@ header {
     background:white;
 
 
-    padding:45px 35px;
+    padding:
+
+    55px 40px;
 
 
-    min-height:320px;
+    position:relative;
+
+
+    overflow:hidden;
 
 
     border:
 
-    1px solid #ddd;
+    1px solid rgba(214,155,61,.2);
+
+
+    transition:.6s;
+
+
+}
+
+
+
+
+
+.service-card::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    top:0;
+
+
+    left:0;
+
+
+    width:0;
+
+
+    height:4px;
+
+
+    background:
+
+    var(--gold);
 
 
     transition:.5s;
 
 
 }
+
+
+
+
+
+.service-card:hover::before {
+
+
+    width:100%;
+
+
+}
+
 
 
 
@@ -1181,94 +2378,8 @@ header {
 
 
 
-.service-card h3 {
 
-
-    font-family:
-
-    "Cormorant Garamond",
-    serif;
-
-
-    font-size:35px;
-
-
-    margin-bottom:25px;
-
-
-}
-
-
-
-.service-card p {
-
-
-    color:var(--gray);
-
-
-    line-height:1.8;
-
-
-}
-
-
-
-
-
-
-
-
-
-/* ==========================
-   QUOTE SECTION
-========================== */
-
-
-.quote-section {
-
-
-    height:500px;
-
-
-    display:flex;
-
-
-    align-items:center;
-
-
-    justify-content:center;
-
-
-    text-align:center;
-
-
-    background:
-
-    linear-gradient(
-
-    rgba(0,0,0,.5),
-
-    rgba(0,0,0,.7)
-
-    ),
-
-    url("images/quote.jpg");
-
-
-    background-size:cover;
-
-
-    background-position:center;
-
-
-    color:white;
-
-
-}
-
-
-
-.quote-content h2 {
+.service-number {
 
 
     font-family:
@@ -1280,7 +2391,87 @@ header {
     font-size:70px;
 
 
-    max-width:900px;
+    color:
+
+    rgba(214,155,61,.25);
+
+
+}
+
+
+
+
+
+.service-card h3 {
+
+
+    margin-top:25px;
+
+
+    font-family:
+
+    "Cormorant Garamond",
+    serif;
+
+
+    font-size:42px;
+
+
+    font-weight:500;
+
+
+    color:
+
+    var(--dark);
+
+
+}
+
+
+
+
+
+.service-card p {
+
+
+    margin-top:25px;
+
+
+    line-height:2;
+
+
+    color:
+
+    var(--gray);
+
+
+}
+
+
+
+
+
+.service-link {
+
+
+    display:inline-block;
+
+
+    margin-top:35px;
+
+
+    color:
+
+    var(--brown);
+
+
+    letter-spacing:3px;
+
+
+    text-transform:uppercase;
+
+
+    font-size:12px;
 
 
 }
@@ -1290,31 +2481,32 @@ header {
 
 
 
+
 /* ==========================
-   BOOKING PAGE
+   PACKAGES
 ========================== */
 
 
-
-.booking-hero {
-
-
-    height:80vh;
+.packages {
 
 
-    position:relative;
+    padding:
+
+    160px 8%;
 
 
-    display:flex;
+    background:
+
+    #16110d;
 
 
-    justify-content:center;
+}
 
 
-    align-items:center;
 
 
-    text-align:center;
+
+.packages .section-title h2 {
 
 
     color:white;
@@ -1326,18 +2518,460 @@ header {
 
 
 
-.booking-background {
+.package-grid {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+
+    gap:40px;
+
+
+}
+
+
+
+
+
+.package {
+
+
+    background:
+
+    #211812;
+
+
+    color:white;
+
+
+    padding:
+
+    55px 40px;
+
+
+    border:
+
+    1px solid rgba(240,180,92,.2);
+
+
+    transition:.5s;
+
+
+    position:relative;
+
+
+}
+
+
+
+
+
+.package:hover {
+
+
+    transform:
+
+    translateY(-20px);
+
+
+    border-color:
+
+    var(--gold);
+
+
+    box-shadow:
+
+    var(--gold-glow);
+
+
+}
+
+
+
+
+
+
+.package.popular {
+
+
+    border:
+
+    2px solid var(--gold);
+
+
+}
+
+
+
+
+
+.package.popular::before {
+
+
+    content:"MOST POPULAR";
 
 
     position:absolute;
 
 
-    inset:0;
+    top:20px;
+
+
+    right:20px;
+
+
+    font-size:10px;
+
+
+    letter-spacing:3px;
+
+
+    color:
+
+    var(--amber);
+
+
+}
+
+
+
+
+
+
+.package h3 {
+
+
+    font-family:
+
+    "Cormorant Garamond",
+    serif;
+
+
+    font-size:45px;
+
+
+    font-weight:500;
+
+
+}
+
+
+
+
+
+.package-price {
+
+
+    margin:
+
+    30px 0;
+
+
+    font-size:45px;
+
+
+    color:
+
+    var(--gold);
+
+
+}
+
+
+
+
+
+.package ul {
+
+
+    list-style:none;
+
+
+}
+
+
+
+
+
+.package li {
+
+
+    padding:15px 0;
+
+
+    border-bottom:
+
+    1px solid rgba(255,255,255,.1);
+
+
+    color:#ccc;
+
+
+}
+
+
+
+
+
+.package-button {
+
+
+    display:block;
+
+
+    margin-top:40px;
+
+
+    padding:
+
+    18px;
+
+
+    text-align:center;
+
+
+    border:
+
+    1px solid var(--gold);
+
+
+    color:
+
+    var(--gold);
+
+
+    letter-spacing:3px;
+
+
+    text-transform:uppercase;
+
+
+    transition:.5s;
+
+
+}
+
+
+
+
+
+.package-button:hover {
 
 
     background:
 
-    url("images/booking.jpg");
+    var(--gold);
+
+
+    color:
+
+    var(--dark);
+
+
+}
+
+
+
+
+
+
+
+/* ==========================
+   TESTIMONIALS
+========================== */
+
+
+.testimonials {
+
+
+    padding:
+
+    150px 8%;
+
+
+    background:
+
+    var(--cream);
+
+
+}
+
+
+
+
+.testimonial-grid {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+
+    gap:35px;
+
+
+}
+
+
+
+
+
+.testimonial {
+
+
+    background:white;
+
+
+    padding:
+
+    45px;
+
+
+    box-shadow:
+
+    0 20px 50px rgba(0,0,0,.08);
+
+
+    position:relative;
+
+
+}
+
+
+
+
+
+.testimonial::before {
+
+
+    content:"“";
+
+
+    position:absolute;
+
+
+    top:10px;
+
+
+    left:25px;
+
+
+    font-family:
+
+    "Cormorant Garamond",
+    serif;
+
+
+    font-size:100px;
+
+
+    color:
+
+    var(--gold);
+
+
+    opacity:.35;
+
+
+}
+
+
+
+
+
+.testimonial p {
+
+
+    margin-top:40px;
+
+
+    line-height:2;
+
+
+    color:
+
+    var(--gray);
+
+
+    font-style:italic;
+
+
+}
+
+
+
+
+
+.testimonial h4 {
+
+
+    margin-top:30px;
+
+
+    letter-spacing:2px;
+
+
+    text-transform:uppercase;
+
+
+    font-size:12px;
+
+
+}
+
+
+
+
+
+/* ==========================
+   BOOKING CTA
+========================== */
+
+
+.booking-cta {
+
+
+    min-height:600px;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    text-align:center;
+
+
+    position:relative;
+
+
+    color:white;
+
+
+    background:
+
+
+    linear-gradient(
+
+    rgba(0,0,0,.65),
+
+    rgba(0,0,0,.75)
+
+    ),
+
+    url("imaging/booking.jpg");
 
 
     background-size:cover;
@@ -1352,42 +2986,7 @@ header {
 
 
 
-.booking-overlay {
-
-
-    position:absolute;
-
-
-    inset:0;
-
-
-    background:
-
-    rgba(0,0,0,.55);
-
-
-}
-
-
-
-
-
-.booking-hero-content {
-
-
-    position:relative;
-
-
-    z-index:2;
-
-
-}
-
-
-
-
-
-.booking-hero h1 {
+.booking-cta h2 {
 
 
     font-family:
@@ -1396,7 +2995,328 @@ header {
     serif;
 
 
-    font-size:90px;
+    font-size:85px;
+
+
+    font-weight:500;
+
+
+}
+
+
+
+
+
+.booking-cta p {
+
+
+    margin:
+
+    30px auto;
+
+
+    max-width:700px;
+
+
+    line-height:2;
+
+
+    font-size:18px;
+
+
+}
+
+
+
+
+
+.cta-button {
+
+
+    display:inline-block;
+
+
+    margin-top:30px;
+
+
+    padding:
+
+    20px 60px;
+
+
+    background:
+
+    var(--gold);
+
+
+    color:
+
+    var(--dark);
+
+
+    letter-spacing:4px;
+
+
+    text-transform:uppercase;
+
+
+    transition:.5s;
+
+
+}
+
+
+
+
+
+.cta-button:hover {
+
+
+    transform:
+
+    translateY(-8px);
+
+
+    box-shadow:
+
+    var(--gold-glow);
+
+
+}
+
+/* =====================================================
+   PART 5
+   CONTACT + BOOKING + FOOTER + RESPONSIVE
+===================================================== */
+
+
+/* ==========================
+   CONTACT SECTION
+========================== */
+
+
+.contact {
+
+
+    padding:
+
+    140px 8%;
+
+
+    background:
+
+    var(--cream);
+
+
+}
+
+
+
+.contact-container {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    1fr 1fr;
+
+
+    gap:80px;
+
+
+    align-items:center;
+
+
+}
+
+
+
+
+.contact-title {
+
+
+    font-family:
+
+    "Cormorant Garamond",
+    serif;
+
+
+    font-size:75px;
+
+
+    font-weight:500;
+
+
+}
+
+
+
+
+
+.contact-text {
+
+
+    color:
+
+    var(--gray);
+
+
+    line-height:2;
+
+
+    font-size:18px;
+
+
+}
+
+
+
+
+.contact-info {
+
+
+    margin-top:40px;
+
+
+}
+
+
+
+
+
+.contact-item {
+
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+
+.contact-item h4 {
+
+
+    color:
+
+    var(--gold);
+
+
+    letter-spacing:4px;
+
+
+    text-transform:uppercase;
+
+
+    font-size:12px;
+
+
+}
+
+
+
+
+
+.contact-item p {
+
+
+    margin-top:8px;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+   BOOKING PAGE
+========================== */
+
+
+.booking-page {
+
+
+    background:
+
+    var(--cream);
+
+
+    min-height:100vh;
+
+
+}
+
+
+
+
+
+.booking-header {
+
+
+    height:70vh;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    text-align:center;
+
+
+    color:white;
+
+
+    position:relative;
+
+
+    background:
+
+
+    linear-gradient(
+
+    rgba(0,0,0,.55),
+
+    rgba(0,0,0,.7)
+
+    ),
+
+    url("imaging/booking.jpg");
+
+
+    background-size:cover;
+
+
+    background-position:center;
+
+
+}
+
+
+
+
+
+.booking-header h1 {
+
+
+    font-family:
+
+    "Cormorant Garamond",
+    serif;
+
+
+    font-size:100px;
 
 
     font-weight:500;
@@ -1410,188 +3330,34 @@ header {
 
 
 
-
-.booking-intro {
-
-
-    padding:
-
-    120px 20%;
-
-
-    text-align:center;
-
-
-}
-
-
-
-.booking-intro h2 {
-
-
-    font-family:
-
-    "Cormorant Garamond",
-    serif;
-
-
-    font-size:70px;
-
-
-}
-
-
-
-
-
-
-.booking-intro p {
-
-
-    color:var(--gray);
-
-
-    line-height:2;
-
-
-    margin-top:25px;
-
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-   FORM
-========================== */
-
-
-
-.booking-form-section {
-
-
-    padding:
-
-    100px 8%;
-
-
-}
-
-
-
-
-
-.form-container {
+.booking-form {
 
 
     max-width:900px;
 
 
-    margin:auto;
+    margin:
+
+    -100px auto 100px;
 
 
     background:white;
 
 
-    padding:60px;
+    padding:
+
+    70px;
+
+
+    position:relative;
+
+
+    z-index:2;
 
 
     box-shadow:
 
     var(--shadow);
-
-
-}
-
-
-
-
-
-.professional-form {
-
-
-    display:flex;
-
-
-    flex-direction:column;
-
-
-    gap:25px;
-
-
-}
-
-
-
-.form-group {
-
-
-    display:flex;
-
-
-    flex-direction:column;
-
-
-    gap:10px;
-
-
-}
-
-
-
-.form-group label {
-
-
-    letter-spacing:2px;
-
-
-    font-size:13px;
-
-
-}
-
-
-
-
-.form-group input,
-
-.form-group select,
-
-.form-group textarea {
-
-
-    padding:18px;
-
-
-    border:
-
-    1px solid #ddd;
-
-
-    font-family:inherit;
-
-
-    font-size:16px;
-
-
-    background:#fafafa;
-
-
-}
-
-
-
-
-
-.form-group textarea {
-
-
-    height:180px;
 
 
 }
@@ -1620,46 +3386,154 @@ header {
 
 
 
-.professional-form button {
+.form-group {
 
 
-    padding:20px;
+    margin-bottom:25px;
 
 
-    background:
-
-    var(--dark);
+}
 
 
-    color:white;
 
 
-    border:none;
+
+.form-group label {
+
+
+    display:block;
+
+
+    margin-bottom:10px;
+
+
+    font-size:12px;
 
 
     letter-spacing:3px;
 
 
-    cursor:pointer;
-
-
-    transition:.4s;
+    text-transform:uppercase;
 
 
 }
 
 
 
-.professional-form button:hover {
+
+
+.form-group input,
+
+
+.form-group textarea,
+
+
+.form-group select {
+
+
+    width:100%;
+
+
+    padding:18px;
+
+
+    border:
+
+
+    1px solid #ddd;
+
+
+    background:#fafafa;
+
+
+    font-family:
+
+    "Montserrat",
+    sans-serif;
+
+
+}
+
+
+
+
+
+.form-group textarea {
+
+
+    height:180px;
+
+
+    resize:none;
+
+
+}
+
+
+
+
+
+.submit-button {
+
+
+    width:100%;
+
+
+    padding:22px;
+
+
+    border:none;
+
+
+    cursor:pointer;
 
 
     background:
 
-    var(--brown);
+
+    linear-gradient(
+
+    135deg,
+
+    var(--gold),
+
+    var(--amber)
+
+    );
+
+
+    font-size:13px;
+
+
+    letter-spacing:5px;
+
+
+    text-transform:uppercase;
+
+
+    transition:.5s;
 
 
 }
 
+
+
+
+
+.submit-button:hover {
+
+
+    transform:
+
+    translateY(-5px);
+
+
+    box-shadow:
+
+    var(--gold-glow);
+
+
+}
 
 
 
@@ -1669,31 +3543,87 @@ header {
 
 
 /* ==========================
- PROCESS SECTION
+   FOOTER
 ========================== */
 
 
-.process {
+footer {
+
+
+    background:
+
+    #100c09;
+
+
+    color:white;
 
 
     padding:
 
-    120px 8%;
+    100px 8%;
+
+
+    text-align:center;
 
 
 }
 
 
 
-.process-grid {
+
+.footer-logo {
 
 
-    display:grid;
+    font-family:
+
+    "Cormorant Garamond",
+    serif;
 
 
-    grid-template-columns:
+    font-size:70px;
 
-    repeat(3,1fr);
+
+}
+
+
+
+.footer-tagline {
+
+
+    margin-top:20px;
+
+
+    color:
+
+    var(--amber);
+
+
+    letter-spacing:5px;
+
+
+    text-transform:uppercase;
+
+
+    font-size:12px;
+
+
+}
+
+
+
+
+.footer-links {
+
+
+    margin:
+
+    45px 0;
+
+
+    display:flex;
+
+
+    justify-content:center;
 
 
     gap:40px;
@@ -1704,138 +3634,47 @@ header {
 
 
 
-
-.process-card {
-
-
-    text-align:center;
-
-
-}
-
-
-
-.process-card h3 {
-
-
-    font-size:60px;
-
-
-    font-family:
-
-    "Cormorant Garamond",
-    serif;
-
-
-    color:var(--brown);
-
-
-}
-
-
-
-
-
-.process-card h4 {
-
-
-    font-size:25px;
-
-
-    margin:20px;
-
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-FOOTER
-========================== */
-
-
-footer {
-
-
-    background:
-
-    #171512;
-
-
-    color:white;
-
-
-    padding:
-
-    80px 8%;
-
-
-    text-align:center;
-
-
-}
-
-
-
-.footer-brand h2 {
-
-
-    font-family:
-
-    "Cormorant Garamond",
-    serif;
-
-
-    font-size:50px;
-
-
-}
-
-
-
-.footer-links {
-
-
-    margin:30px;
-
-
-    display:flex;
-
-
-    justify-content:center;
-
-
-    gap:30px;
-
-
-}
-
-
-
-
-
 .footer-links a {
 
 
     color:#ccc;
 
 
+    transition:.4s;
+
+
 }
 
 
 
-.copyright {
 
 
-    margin-top:40px;
+.footer-links a:hover {
 
 
-    color:#999;
+    color:
+
+    var(--gold);
+
+
+}
+
+
+
+
+
+.footer-bottom {
+
+
+    padding-top:40px;
+
+
+    border-top:
+
+    1px solid rgba(255,255,255,.1);
+
+
+    color:#777;
 
 
 }
@@ -1848,28 +3687,154 @@ footer {
 
 
 /* ==========================
-MOBILE DESIGN
+   EXTRA ANIMATIONS
 ========================== */
 
 
-@media(max-width:900px){
+.fade-in {
 
 
+    animation:
 
-.hero h1 {
-
-
-font-size:65px;
+    fadeIn 1.5s ease;
 
 
 }
 
 
 
+
+@keyframes fadeIn {
+
+
+    from {
+
+
+        opacity:0;
+
+
+        transform:
+
+        translateY(40px);
+
+
+    }
+
+
+    to {
+
+
+        opacity:1;
+
+
+        transform:
+
+        translateY(0);
+
+
+    }
+
+
+}
+
+
+
+
+
+
+.glow {
+
+
+    animation:
+
+    glowPulse 3s infinite;
+
+
+}
+
+
+
+
+
+@keyframes glowPulse {
+
+
+    50% {
+
+
+        box-shadow:
+
+        var(--gold-glow);
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+   MOBILE DESIGN
+========================== */
+
+
+@media(max-width:1000px){
+
+
+
 .nav-links {
 
 
-display:none;
+    display:none;
+
+
+}
+
+
+
+
+.navbar {
+
+
+    padding:
+
+    18px 25px;
+
+
+}
+
+
+
+.hero h1 {
+
+
+    font-size:65px;
+
+
+}
+
+
+
+.hero-description {
+
+
+    font-size:16px;
+
+
+}
+
+
+
+.hero-buttons {
+
+
+    flex-direction:column;
 
 
 }
@@ -1879,89 +3844,125 @@ display:none;
 .gallery {
 
 
-grid-template-columns:1fr;
+    grid-template-columns:
+
+    1fr;
 
 
 }
 
 
 
-.photo,
 
-.photo.large {
-
-
-height:500px;
+.photo-card.featured {
 
 
-}
+    grid-column:
 
-
-
-.about-container {
-
-
-grid-template-columns:1fr;
+    span 1;
 
 
 }
 
 
 
-.service-grid {
 
 
-grid-template-columns:1fr;
+.about-container,
+
+
+.contact-container {
+
+
+    grid-template-columns:
+
+    1fr;
 
 
 }
+
+
+
+
+
+.about-text h2,
+
+
+.contact-title {
+
+
+    font-size:55px;
+
+
+}
+
+
+
+
+.services-grid,
+
+
+.package-grid,
+
+
+.testimonial-grid {
+
+
+    grid-template-columns:
+
+    1fr;
+
+
+}
+
+
+
+
+.booking-header h1 {
+
+
+    font-size:60px;
+
+
+}
+
+
+
+
+.booking-form {
+
+
+    margin:
+
+    -50px 20px 70px;
+
+
+    padding:
+
+    35px;
+
+
+}
+
 
 
 
 .form-row {
 
 
-grid-template-columns:1fr;
+    grid-template-columns:
+
+    1fr;
 
 
 }
 
 
 
-.booking-hero h1 {
+.footer-logo {
 
 
-font-size:60px;
-
-
-}
-
-
-
-.booking-intro {
-
-
-padding:80px 8%;
-
-
-}
-
-
-
-.booking-intro h2 {
-
-
-font-size:50px;
-
-
-}
-
-
-
-.process-grid {
-
-
-grid-template-columns:1fr;
+    font-size:50px;
 
 
 }
