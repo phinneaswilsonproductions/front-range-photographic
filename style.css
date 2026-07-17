@@ -4790,3 +4790,30 @@ button {
     color:#d4a24c;
 
 }
+
+/* CONTACT DARK TEXT FIX */
+
+.contact {
+    color:#211812;
+}
+
+.contact h1,
+.contact h2,
+.contact h3,
+.contact p,
+.contact a {
+    color:#211812;
+}
+
+.contact .gold-label {
+    color:#a66b20;
+}
+
+.contact .gold-button {
+    color:#171512;
+}
+
+.contact .outline-button {
+    color:#211812;
+    border-color:#211812;
+}
