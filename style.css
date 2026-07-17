@@ -4998,3 +4998,16 @@ a:hover {
 .contact p {
     color:#4a3825 !important;
 }
+
+/* ==========================
+   CONTACT LIGHT TEXT FIX
+========================== */
+
+.contact h2,
+.contact p {
+    color:#fff1d0 !important;
+}
+
+.contact .gold-label {
+    color:#d4a24c !important;
+}
