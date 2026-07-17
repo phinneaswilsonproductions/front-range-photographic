@@ -4943,3 +4943,58 @@ a:hover {
 .service-card .service-icon {
     color:#d4a24c !important;
 }
+
+/* ==========================
+   LIGHT SECTION TEXT FIX
+   KEEP LIGHT BACKGROUNDS
+========================== */
+
+.services,
+.about,
+.introduction,
+.testimonials,
+.contact,
+.pricing {
+    color:#211812;
+}
+
+
+.services h1,
+.services h2,
+.services h3,
+.services p,
+.services li,
+.about h1,
+.about h2,
+.about h3,
+.about p,
+.introduction h1,
+.introduction h2,
+.introduction h3,
+.introduction p,
+.testimonials h1,
+.testimonials h2,
+.testimonials h3,
+.testimonials p,
+.contact h1,
+.contact h2,
+.contact h3,
+.contact p,
+.pricing h1,
+.pricing h2,
+.pricing h3,
+.pricing p {
+    color:#211812 !important;
+}
+
+
+/* Smaller description text */
+
+.services li,
+.services p,
+.about p,
+.introduction p,
+.testimonials p,
+.contact p {
+    color:#4a3825 !important;
+}
