@@ -5011,3 +5011,11 @@ a:hover {
 .contact .gold-label {
     color:#d4a24c !important;
 }
+
+.contact a {
+    color:#fff1d0 !important;
+}
+
+.contact a:hover {
+    color:#f0c36b !important;
+}
