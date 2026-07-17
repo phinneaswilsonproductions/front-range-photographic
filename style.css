@@ -4817,3 +4817,100 @@ button {
     color:#211812;
     border-color:#211812;
 }
+
+
+/* ==========================
+   DARK MODE COLOR OVERRIDE
+   BLACK BACKGROUNDS + CREAM TEXT
+========================== */
+
+body,
+section,
+.about,
+.services,
+.contact,
+.testimonials,
+.introduction,
+.pricing,
+.packages,
+.comparison,
+.faq,
+.booking-page {
+    background:#0d0a07 !important;
+    color:#fff1d0 !important;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+td,
+th,
+span {
+    color:#fff1d0;
+}
+
+
+.section-title h2,
+.section-heading h2,
+.about-text h2,
+.contact-title,
+.hero h1 {
+    color:#fff1d0 !important;
+}
+
+
+.hero-description,
+.contact-text,
+.about-text p,
+.service-card p,
+.testimonial p,
+.package li {
+    color:#f3dfb5 !important;
+}
+
+
+.service-card,
+.package,
+.testimonial,
+.booking-form {
+    background:#17110c !important;
+    color:#fff1d0;
+}
+
+
+input,
+textarea,
+select {
+    background:#211812 !important;
+    color:#fff1d0 !important;
+    border-color:#d4a24c !important;
+}
+
+
+table,
+td,
+th {
+    color:#fff1d0 !important;
+}
+
+
+footer {
+    background:#050403 !important;
+    color:#fff1d0 !important;
+}
+
+
+a {
+    color:#ffe8b0;
+}
+
+
+a:hover {
+    color:#f0c36b;
+}
