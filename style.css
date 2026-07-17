@@ -4914,3 +4914,32 @@ a {
 a:hover {
     color:#f0c36b;
 }
+
+/* ==========================
+   LIGHT BACKGROUND TEXT FIX
+   SECTIONS 1-3 SERVICE CARDS
+========================== */
+
+.service-card,
+.services .service-card {
+    background:#fff8e8 !important;
+    color:#211812 !important;
+}
+
+
+.service-card h3,
+.service-card p,
+.service-card li {
+    color:#211812 !important;
+}
+
+
+.service-card ul li {
+    color:#4a3825 !important;
+}
+
+
+.service-card .service-number,
+.service-card .service-icon {
+    color:#d4a24c !important;
+}
