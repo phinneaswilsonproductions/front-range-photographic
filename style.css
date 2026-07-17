@@ -5027,3 +5027,117 @@ a:hover {
 .contact a:hover {
     color:#f0c36b !important;
 }
+
+/* ==========================================
+   TIMES NEW ROMAN + DARK SECTION TEXT FIX
+========================================== */
+
+/* Entire website uses Times New Roman */
+
+*{
+    font-family:"Times New Roman", Times, serif !important;
+}
+
+
+/* Dark sections */
+
+.hero,
+.portfolio,
+.packages,
+.booking-cta,
+footer,
+#intro-screen,
+.statistics,
+.technology,
+.inspection-process,
+.insurance,
+.comparison,
+.faq,
+.service-area{
+    color:#fff3dc !important;
+}
+
+
+/* All text inside dark sections */
+
+.hero h1,
+.hero h2,
+.hero h3,
+.hero p,
+.hero li,
+.hero span,
+
+.portfolio h1,
+.portfolio h2,
+.portfolio h3,
+.portfolio p,
+.portfolio li,
+
+.packages h1,
+.packages h2,
+.packages h3,
+.packages p,
+.packages li,
+
+.statistics h1,
+.statistics h2,
+.statistics h3,
+.statistics p,
+.statistics span,
+
+.technology h1,
+.technology h2,
+.technology h3,
+.technology p,
+.technology li,
+
+.inspection-process h1,
+.inspection-process h2,
+.inspection-process h3,
+.inspection-process p,
+
+.insurance h1,
+.insurance h2,
+.insurance h3,
+.insurance p,
+
+.comparison h1,
+.comparison h2,
+.comparison h3,
+.comparison p,
+.comparison td,
+.comparison th,
+
+.faq h1,
+.faq h2,
+.faq h3,
+.faq p,
+
+.service-area h1,
+.service-area h2,
+.service-area h3,
+.service-area p,
+.service-area span,
+
+footer h1,
+footer h2,
+footer h3,
+footer p,
+footer a,
+footer span{
+    color:#fff3dc !important;
+}
+
+
+/* Gold labels remain gold */
+
+.gold-label,
+.section-heading p,
+.location-label,
+.hero h1 span,
+.stat-number,
+.process-number,
+.service-icon,
+.popular-tag{
+    color:#d4a24c !important;
+}
