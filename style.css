@@ -4616,3 +4616,177 @@ button {
 
 
 }
+
+/* ==========================================
+   FRONT RANGE PHOTOGRAPHIC
+   GOLD TEXT COLORS
+========================================== */
+
+
+/* Logo subtitle */
+
+.logo span {
+
+    color:#d4a24c;
+
+}
+
+
+
+/* Navigation links */
+
+.nav-menu a {
+
+    color:#f5d58a;
+
+}
+
+
+
+.nav-menu a:hover {
+
+    color:#d4a24c;
+
+}
+
+
+
+
+
+/* Call button */
+
+.nav-call {
+
+    color:#171512;
+
+    background:#d4a24c;
+
+}
+
+
+
+.nav-call:hover {
+
+    background:#f0c36b;
+
+}
+
+
+
+
+
+
+/* Location label */
+
+.location-label {
+
+    color:#d4a24c;
+
+}
+
+
+
+
+
+
+/* Small section headings */
+
+.section-heading p,
+.gold-label {
+
+    color:#d4a24c;
+
+}
+
+
+
+
+
+
+/* Hero highlighted text */
+
+.hero h1 span {
+
+    color:#d4a24c;
+
+}
+
+
+
+
+
+
+/* Service numbers */
+
+.service-icon,
+.process-number {
+
+    color:#d4a24c;
+
+}
+
+
+
+
+
+
+/* Gold buttons */
+
+.gold-button {
+
+    background:#d4a24c;
+
+    color:#171512;
+
+}
+
+
+
+.gold-button:hover {
+
+    background:#f0c36b;
+
+}
+
+
+
+
+
+
+
+/* Pricing featured tag */
+
+.popular-tag {
+
+    background:#d4a24c;
+
+    color:#171512;
+
+}
+
+
+
+
+
+
+
+/* Stats numbers */
+
+.stat-number {
+
+    color:#d4a24c;
+
+}
+
+
+
+
+
+
+/* Footer brand */
+
+.footer-logo span {
+
+    color:#d4a24c;
+
+}
