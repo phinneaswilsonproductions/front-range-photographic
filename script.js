@@ -1826,3 +1826,9 @@ document.body.innerHTML = document.body.innerHTML
 
 
 });
+
+// Fix duplicated roof photography text
+
+document.body.innerHTML = document.body.innerHTML
+.replace(/Roof roof photography/gi, "Roof Photography")
+.replace(/Professional Roof roof photography/gi, "Professional Roof Photography");
