@@ -1832,3 +1832,22 @@ document.body.innerHTML = document.body.innerHTML
 document.body.innerHTML = document.body.innerHTML
 .replace(/Roof roof photography/gi, "Roof Photography")
 .replace(/Professional Roof roof photography/gi, "Professional Roof Photography");
+
+// Hide header banner when scrolling
+
+let lastScroll = 0;
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+
+    let currentScroll = window.scrollY;
+
+    if (currentScroll > lastScroll && currentScroll > 100) {
+        header.style.transform = "translateY(-120%)";
+    } else {
+        header.style.transform = "translateY(0)";
+    }
+
+    lastScroll = currentScroll;
+
+});
