@@ -1831,7 +1831,7 @@ document.body.innerHTML = document.body.innerHTML
 
 document.body.innerHTML = document.body.innerHTML
 .replace(/Roof roof photography/gi, "Roof Photography")
-.replace(/Professional Roof roof photography/gi, "Professional Roof Photography");
+.replace(/Professional Roof photography/gi, "Professional Roof Photography");
 
 // Hide header banner when scrolling
 
@@ -1851,3 +1851,9 @@ window.addEventListener("scroll", () => {
     lastScroll = currentScroll;
 
 });
+
+// Fix duplicated roof photography words
+
+document.body.innerHTML = document.body.innerHTML
+.replace(/Roof roof photography/gi, "Roof Photography")
+.replace(/Professional Roof roof photography/gi, "Professional Roof Photography");
