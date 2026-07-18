@@ -5169,3 +5169,48 @@ footer span{
 .services .section-heading h2 {
     color:#fff3dc !important;
 }
+
+
+/* Smaller header logo and navigation */
+
+.logo {
+    font-size:28px !important;
+    line-height:1 !important;
+}
+
+.logo span {
+    font-size:8px !important;
+    letter-spacing:5px !important;
+    margin-top:8px !important;
+}
+
+
+.nav-links,
+.nav-menu {
+    gap:25px !important;
+}
+
+
+.nav-links a,
+.nav-menu a {
+    font-size:12px !important;
+    letter-spacing:2px !important;
+}
+
+
+.nav-call {
+    padding:12px 25px !important;
+    font-size:12px !important;
+}
+
+
+/* Reduce header height */
+
+header {
+    padding:20px 5% !important;
+}
+
+
+.navbar {
+    padding:15px 25px !important;
+}
