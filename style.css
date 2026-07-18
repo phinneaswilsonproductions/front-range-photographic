@@ -5214,3 +5214,61 @@ header {
 .navbar {
     padding:15px 25px !important;
 }
+
+/* ==========================
+   MOBILE SERVICES FIX
+========================== */
+
+@media (max-width:600px){
+
+    .services {
+        display:block !important;
+        visibility:visible !important;
+        opacity:1 !important;
+        height:auto !important;
+        min-height:auto !important;
+        padding:80px 6% !important;
+        overflow:visible !important;
+    }
+
+
+    .services .section-heading {
+        display:block !important;
+        margin-bottom:40px !important;
+    }
+
+
+    .services .section-heading h2,
+    .services .section-heading p,
+    .services .section-heading span {
+        display:block !important;
+        visibility:visible !important;
+    }
+
+
+    .services-grid,
+    .service-container {
+        display:grid !important;
+        grid-template-columns:1fr !important;
+        gap:25px !important;
+    }
+
+
+    .service-card {
+        display:block !important;
+        opacity:1 !important;
+        transform:none !important;
+        visibility:visible !important;
+        height:auto !important;
+        padding:35px 25px !important;
+    }
+
+
+    .service-card h3,
+    .service-card p,
+    .service-card li {
+        display:block !important;
+        visibility:visible !important;
+    }
+
+}
