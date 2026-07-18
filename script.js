@@ -1818,6 +1818,11 @@ buttons.forEach(button=>{
 
 });
 
+   // Replace inspection wording with roof photographer wording
+
+document.body.innerHTML = document.body.innerHTML
+.replace(/inspections/gi, "roof photography")
+.replace(/inspection/gi, "roof photography");
 
 
 });
