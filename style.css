@@ -5141,3 +5141,31 @@ footer span{
 .popular-tag{
     color:#d4a24c !important;
 }
+
+/* Make introduction text section light */
+
+.introduction,
+.introduction p,
+.introduction h2 {
+    background:#faf5eb !important;
+    color:#2b2118 !important;
+}
+
+
+/* Keep the heading readable */
+
+.introduction .section-heading p {
+    color:#d4a24c !important;
+}
+
+
+.introduction .section-heading h2 {
+    color:#2b2118 !important;
+}
+
+/* Make services heading lighter */
+
+.services .section-heading p,
+.services .section-heading h2 {
+    color:#fff3dc !important;
+}
