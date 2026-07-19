@@ -3428,3 +3428,180 @@ if (enterButton && introScreen) {
     });
 
 }
+
+/* =====================================================
+   FRONT RANGE PHOTOGRAPHIC
+   INTRO SCREEN + ENTER BUTTON SYSTEM
+===================================================== */
+
+
+document.addEventListener("DOMContentLoaded", function(){
+
+
+/* FIND INTRO SCREEN */
+
+const introScreen = 
+document.getElementById("intro-screen") 
+||
+document.querySelector(".intro-screen")
+||
+document.querySelector(".loading-screen");
+
+
+
+
+
+/* FIND ENTER BUTTON */
+
+const enterButtons = document.querySelectorAll(
+".enter-site, .enter-button, .enter-btn, button, a"
+);
+
+
+
+
+
+/* FUNCTION TO REMOVE INTRO */
+
+function removeIntro(){
+
+
+    if(!introScreen){
+
+        console.log("No intro screen found");
+
+        return;
+
+    }
+
+
+
+    introScreen.style.transition =
+    "opacity 1.2s ease, visibility 1.2s ease";
+
+
+
+    introScreen.style.opacity = "0";
+
+
+    introScreen.style.visibility =
+    "hidden";
+
+
+
+    introScreen.style.pointerEvents =
+    "none";
+
+
+
+    setTimeout(function(){
+
+
+        introScreen.style.display =
+        "none";
+
+
+    },1200);
+
+
+
+}
+
+
+
+
+
+
+
+/* ADD BUTTON CLICK */
+
+enterButtons.forEach(function(button){
+
+
+    let text =
+    button.innerText.toLowerCase();
+
+
+
+    if(
+        text.includes("enter") ||
+        text.includes("start") ||
+        text.includes("view")
+    ){
+
+
+        button.addEventListener(
+        "click",
+        function(event){
+
+
+            event.preventDefault();
+
+
+            removeIntro();
+
+
+
+        });
+
+
+    }
+
+
+});
+
+
+
+
+
+
+
+
+
+/* ESCAPE KEY SUPPORT */
+
+document.addEventListener(
+"keydown",
+function(event){
+
+
+    if(event.key === "Escape"){
+
+
+        removeIntro();
+
+
+    }
+
+
+});
+
+
+
+
+
+
+
+
+
+/* AUTOMATIC FALLBACK */
+
+window.addEventListener(
+"load",
+function(){
+
+
+    if(!introScreen){
+
+        console.log(
+        "Front Range intro screen not detected"
+        );
+
+    }
+
+
+});
+
+
+
+});
