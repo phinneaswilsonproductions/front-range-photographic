@@ -2242,5 +2242,89 @@ intro.style.display="none";
 </body>
 
 </html>
-     
+
+/* ===== Premium Animated Stats ===== */
+
+.premium-stats{
+    background:linear-gradient(180deg,#050505,#111,#050505);
+    padding:120px 20px;
+    text-align:center;
+}
+
+.premium-stats-overlay{
+    max-width:1200px;
+    margin:auto;
+}
+
+.premium-stats h2{
+    color:#f8f1df;
+    font-family:"Times New Roman",serif;
+    font-size:3.2rem;
+    margin-bottom:15px;
+    letter-spacing:2px;
+}
+
+.premium-subtitle{
+    color:#d2c8b4;
+    font-size:1.15rem;
+    max-width:700px;
+    margin:0 auto 70px;
+    line-height:1.8;
+}
+
+.premium-stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+}
+
+.premium-stat{
+    padding:45px 25px;
+    border:1px solid rgba(212,175,55,.3);
+    border-radius:20px;
+    background:rgba(255,255,255,.03);
+    backdrop-filter:blur(12px);
+    transition:.35s ease;
+}
+
+.premium-stat:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 30px rgba(212,175,55,.25);
+    border-color:#d4af37;
+}
+
+.premium-stat h3{
+    color:#d4af37;
+    font-family:"Times New Roman",serif;
+    font-size:4rem;
+    margin:0;
+}
+
+.premium-stat h3::after{
+    content:"+";
+    font-size:.6em;
+}
+
+.premium-stat p{
+    margin-top:18px;
+    color:#f5f2ea;
+    font-size:1.1rem;
+    letter-spacing:1px;
+}
+
+@media (max-width:768px){
+
+.premium-stats{
+    padding:90px 20px;
+}
+
+.premium-stats h2{
+    font-size:2.3rem;
+}
+
+.premium-stat h3{
+    font-size:3rem;
+}
+
+}
      
