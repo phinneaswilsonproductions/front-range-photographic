@@ -1,9 +1,9 @@
 /* =====================================================
    FRONT RANGE PHOTOGRAPHIC
-   LUXURY CINEMATIC STYLE
-   AMBER SUNRISE EDITION
+   CINEMATIC LUXURY STYLE
+   STYLE.CSS PART 1 / 10
 
-   PART 1
+   Foundation + Colors + Animations
 ===================================================== */
 
 
@@ -11,13 +11,17 @@
    RESET
 ========================== */
 
+
 * {
 
     margin:0;
+
     padding:0;
+
     box-sizing:border-box;
 
 }
+
 
 
 html {
@@ -27,17 +31,21 @@ html {
 }
 
 
+
 body {
 
-    background:#16110d;
+    background:#0f0c09;
 
-    color:#f5e6c8;
+    color:#f8f1e6;
 
-    font-family:"Montserrat", sans-serif;
+    font-family:
+    "Times New Roman",
+    serif;
 
     overflow-x:hidden;
 
 }
+
 
 
 img {
@@ -49,6 +57,7 @@ img {
 }
 
 
+
 a {
 
     text-decoration:none;
@@ -57,17 +66,6 @@ a {
 
 }
 
-
-
-
-/* ==========================
-   FONTS
-========================== */
-
-
-@import url(
-'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap'
-);
 
 
 
@@ -82,51 +80,68 @@ a {
 
 
     --black:
-    #16110d;
+
+    #0f0c09;
+
 
 
     --dark:
-    #211812;
 
+    #17110c;
 
-    --espresso:
-    #3a291b;
-
-
-    --cream:
-    #faf5eb;
-
-
-    --gold:
-    #d69b3d;
-
-
-    --amber:
-    #f0b45c;
-
-
-    --sun:
-    #ffd98a;
 
 
     --brown:
-    #8c5b27;
+
+    #3a2616;
 
 
-    --gray:
-    #786c60;
+
+    --cream:
+
+    #f8f1e6;
+
 
 
     --white:
+
     #ffffff;
 
 
+
+    --gold:
+
+    #d6a34a;
+
+
+
+    --amber:
+
+    #f4c76b;
+
+
+
+    --sun:
+
+    #ffe2a3;
+
+
+
+    --gray:
+
+    #8b8176;
+
+
+
     --shadow:
-    0 30px 80px rgba(0,0,0,.35);
+
+    0 30px 80px rgba(0,0,0,.45);
+
 
 
     --gold-glow:
-    0 0 35px rgba(214,155,61,.45);
+
+    0 0 40px rgba(244,199,107,.45);
 
 
 }
@@ -136,12 +151,146 @@ a {
 
 
 
-/* =====================================================
+/* ==========================
+   GLOBAL TEXT RULES
+========================== */
+
+
+h1,
+h2,
+h3,
+h4 {
+
+
+    font-family:
+
+    "Times New Roman",
+    serif;
+
+
+    font-weight:500;
+
+
+}
+
+
+
+p {
+
+
+    line-height:1.8;
+
+    color:#d8cec1;
+
+
+}
+
+
+
+
+/* Dark backgrounds */
+
+
+.dark-section h1,
+.dark-section h2,
+.dark-section h3,
+.dark-section p {
+
+
+    color:#f8f1e6;
+
+
+}
+
+
+
+
+
+/* Light backgrounds */
+
+
+.light-section h1,
+.light-section h2,
+.light-section h3 {
+
+
+    color:#21160d;
+
+
+}
+
+
+
+.light-section p {
+
+
+    color:#5b4b3c;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+   PAGE FADE IN
+========================== */
+
+
+body {
+
+
+    animation:
+
+    pageReveal 1.8s ease;
+
+
+}
+
+
+
+
+@keyframes pageReveal {
+
+
+    from {
+
+
+        opacity:0;
+
+
+    }
+
+
+
+    to {
+
+
+        opacity:1;
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+/* ==========================
    CINEMATIC INTRO SCREEN
-===================================================== */
+========================== */
 
 
-#intro-screen {
+#intro-screen,
+.loading-screen {
 
 
     position:fixed;
@@ -150,20 +299,27 @@ a {
     inset:0;
 
 
+    width:100%;
+
+
+    height:100vh;
+
+
     background:
+
 
     radial-gradient(
 
     circle at center,
 
-    #3b2512,
+    #4a2d12,
 
     #080604
 
     );
 
 
-    z-index:9999;
+    z-index:99999;
 
 
     display:flex;
@@ -175,34 +331,16 @@ a {
     align-items:center;
 
 
-    overflow:hidden;
+    flex-direction:column;
 
 
     animation:
 
-    introFade 1s ease forwards;
+
+    introExit 1.5s ease forwards;
 
 
-}
-
-
-
-
-@keyframes introFade {
-
-
-    from {
-
-        opacity:1;
-
-    }
-
-
-    to {
-
-        opacity:1;
-
-    }
+    animation-delay:4s;
 
 
 }
@@ -211,759 +349,26 @@ a {
 
 
 
-
-/* ==========================
-   FILM GRAIN
-========================== */
-
-
-.film-grain {
-
-
-    position:absolute;
-
-
-    inset:-50%;
-
-
-    opacity:.12;
-
-
-    background-image:
-
-    url("imaging/grain.png");
-
-
-    animation:
-
-    grainMove .25s infinite;
-
-
-}
-
-
-
-@keyframes grainMove {
-
-
-    0% {
-
-        transform:translate(0,0);
-
-    }
-
-
-    25% {
-
-        transform:translate(-3%,3%);
-
-    }
-
-
-    50% {
-
-        transform:translate(3%,-3%);
-
-    }
-
-
-    75% {
-
-        transform:translate(2%,2%);
-
-    }
-
-
-    100% {
-
-        transform:translate(0,0);
-
-    }
-
-
-}
-
-
-
-
-
-
-
-/* ==========================
-   SUNRISE LIGHT EFFECTS
-========================== */
-
-
-.intro-glow {
-
-
-    position:absolute;
-
-
-    width:700px;
-
-
-    height:700px;
-
-
-    background:
-
-    radial-gradient(
-
-    circle,
-
-    rgba(240,180,92,.35),
-
-    transparent 70%
-
-    );
-
-
-    animation:
-
-    pulseGlow 5s infinite;
-
-
-}
-
-
-
-@keyframes pulseGlow {
-
-
-    50% {
-
-        transform:scale(1.2);
-
-        opacity:.6;
-
-    }
-
-
-}
-
-
-
-
-
-
-
-.light-left {
-
-
-    position:absolute;
-
-
-    left:-200px;
-
-
-    top:0;
-
-
-    width:500px;
-
-
-    height:100%;
-
-
-    background:
-
-    linear-gradient(
-
-    90deg,
-
-    rgba(255,190,80,.18),
-
-    transparent
-
-    );
-
-
-}
-
-
-
-
-.light-right {
-
-
-    position:absolute;
-
-
-    right:-200px;
-
-
-    top:0;
-
-
-    width:500px;
-
-
-    height:100%;
-
-
-    background:
-
-    linear-gradient(
-
-    -90deg,
-
-    rgba(255,190,80,.18),
-
-    transparent
-
-    );
-
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-   INTRO CONTENT
-========================== */
-
-
-.intro-content {
-
-
-    position:relative;
-
-
-    text-align:center;
+#intro-screen h1,
+.loading-screen h1 {
 
 
     color:white;
 
 
-    z-index:5;
-
-
-}
-
-
-
-
-
-.intro-small {
-
-
-    font-size:12px;
-
-
-    letter-spacing:12px;
-
-
-    color:var(--amber);
-
-
-    margin-bottom:40px;
-
-
-    text-transform:uppercase;
-
-
-}
-
-
-
-
-#typewriter {
-
-
-    font-family:
-
-    "Cormorant Garamond",
-    serif;
-
-
-    font-size:90px;
-
-
-    font-weight:500;
-
-
-    letter-spacing:5px;
-
-
-    color:white;
-
-
-}
-
-
-
-
-
-
-#subtitle {
-
-
-    margin-top:30px;
-
-
-    font-size:18px;
-
-
-    letter-spacing:4px;
-
-
-    color:#ddd;
-
-
-}
-
-
-
-
-
-
-.cursor {
-
-
-    display:inline-block;
-
-
-    width:3px;
-
-
-    height:70px;
-
-
-    background:var(--gold);
-
-
-    margin-left:10px;
-
-
-    animation:
-
-    blink 1s infinite;
-
-
-}
-
-
-
-
-@keyframes blink {
-
-
-    50% {
-
-        opacity:0;
-
-    }
-
-
-}
-
-
-
-
-
-
-.gold-line {
-
-
-    width:120px;
-
-
-    height:2px;
-
-
-    background:
-
-    linear-gradient(
-
-    90deg,
-
-    transparent,
-
-    var(--gold),
-
-    transparent
-
-    );
-
-
-    margin:45px auto;
-
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-   HERO FOUNDATION
-========================== */
-
-
-.hero {
-
-
-    height:100vh;
-
-
-    min-height:800px;
-
-
-    position:relative;
-
-
-    display:flex;
-
-
-    justify-content:center;
-
-
-    align-items:center;
-
-
-    overflow:hidden;
-
-
-    color:white;
-
-
-}
-
-
-
-
-
-.hero-image {
-
-
-    position:absolute;
-
-
-    inset:0;
-
-
-    background-image:
-
-    url("imaging/hero.jpg");
-
-
-    background-size:cover;
-
-
-    background-position:center;
-
-
-    animation:
-
-    heroZoom 25s infinite alternate;
-
-
-}
-
-
-
-
-
-@keyframes heroZoom {
-
-
-    from {
-
-        transform:scale(1);
-
-    }
-
-
-    to {
-
-        transform:scale(1.15);
-
-    }
-
-
-}
-
-/* =====================================================
-   PART 2
-   NAVIGATION + HERO CONTENT
-===================================================== */
-
-
-/* ==========================
-   HERO OVERLAY
-========================== */
-
-
-.hero-overlay {
-
-
-    position:absolute;
-
-
-    inset:0;
-
-
-    background:
-
-
-    linear-gradient(
-
-    180deg,
-
-    rgba(0,0,0,.35),
-
-    rgba(0,0,0,.75)
-
-    ),
-
-
-    radial-gradient(
-
-    circle at center,
-
-    transparent,
-
-    rgba(0,0,0,.55)
-
-    );
-
-
-    z-index:1;
-
-
-}
-
-
-
-
-
-.hero-content {
-
-
-    position:relative;
-
-
-    z-index:3;
-
-
-    max-width:1100px;
-
-
-    text-align:center;
-
-
-    animation:
-
-    heroReveal 2s ease;
-
-
-}
-
-
-
-
-
-@keyframes heroReveal {
-
-
-    from {
-
-        opacity:0;
-
-        transform:translateY(60px);
-
-    }
-
-
-    to {
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-
-}
-
-
-
-
-
-
-/* ==========================
-   NAVIGATION
-========================== */
-
-
-header {
-
-
-    position:fixed;
-
-
-    top:0;
-
-
-    width:100%;
-
-
-    z-index:1000;
-
-
-    padding:35px 8%;
-
-
-}
-
-
-
-
-
-.navbar {
-
-
-    display:flex;
-
-
-    justify-content:space-between;
-
-
-    align-items:center;
-
-
-    padding:20px 35px;
-
-
-    border:
-
-
-    1px solid rgba(255,255,255,.15);
-
-
-    background:
-
-
-    rgba(255,255,255,.08);
-
-
-    backdrop-filter:
-
-    blur(15px);
-
-
-    border-radius:50px;
-
-
-    transition:.5s;
-
-
-}
-
-
-
-
-
-.navbar:hover {
-
-
-    border-color:
-
-    rgba(240,180,92,.5);
-
-
-    box-shadow:
-
-    var(--gold-glow);
-
-
-}
-
-
-
-
-
-
-
-.logo {
-
-
-    color:white;
-
-
-    font-family:
-
-    "Cormorant Garamond",
-    serif;
-
-
-    font-size:40px;
-
-
-    line-height:.8;
-
-
-    letter-spacing:3px;
-
-
-}
-
-
-
-
-
-.logo span {
-
-
-    display:block;
-
-
-    margin-top:12px;
-
-
-    font-family:
-
-    "Montserrat",
-    sans-serif;
-
-
-    font-size:10px;
+    font-size:95px;
 
 
     letter-spacing:8px;
 
 
-    color:
-
-    var(--amber);
+    text-align:center;
 
 
-}
+    animation:
 
 
-
-
-
-
-.nav-links {
-
-
-    display:flex;
-
-
-    gap:40px;
-
-
-    list-style:none;
+    titleEntrance 2s ease;
 
 
 }
@@ -972,496 +377,77 @@ header {
 
 
 
-.nav-links a {
+#intro-screen p,
+.loading-screen p {
 
 
-    color:white;
-
-
-    font-size:13px;
-
-
-    text-transform:uppercase;
-
-
-    letter-spacing:3px;
-
-
-    position:relative;
-
-
-    transition:.4s;
-
-
-}
-
-
-
-
-.nav-links a:hover {
+    margin-top:30px;
 
 
     color:var(--sun);
 
 
+    font-size:18px;
+
+
+    letter-spacing:12px;
+
+
+    text-transform:uppercase;
+
+
+    animation:
+
+
+    subtitleEntrance 2.5s ease;
+
+
 }
 
 
 
 
 
-.nav-links a::after {
+
+/* Gold animated line */
+
+
+#intro-screen::after,
+.loading-screen::after {
 
 
     content:"";
 
 
-    position:absolute;
-
-
-    left:0;
-
-
-    bottom:-10px;
-
-
-    width:0;
+    width:220px;
 
 
     height:2px;
 
 
-    background:
-
-    var(--gold);
-
-
-    transition:.4s;
-
-
-}
-
-
-
-
-.nav-links a:hover::after {
-
-
-    width:100%;
-
-
-}
-
-
-
-
-
-
-
-
-
-/* ==========================
-   HERO TEXT
-========================== */
-
-
-.hero-location {
-
-
-    color:
-
-    var(--amber);
-
-
-    font-size:13px;
-
-
-    letter-spacing:10px;
-
-
-    margin-bottom:40px;
-
-
-    animation:
-
-    fadeUp 1s ease;
-
-
-}
-
-
-
-
-
-.hero h1 {
-
-
-    font-family:
-
-    "Cormorant Garamond",
-    serif;
-
-
-    font-weight:500;
-
-
-    font-size:120px;
-
-
-    line-height:.85;
-
-
-    letter-spacing:4px;
-
-
-    text-transform:uppercase;
-
-
-}
-
-
-
-
-
-.hero h1 span {
-
-
-    display:block;
-
-
-    color:
-
-    var(--gold);
-
-
-    text-shadow:
-
-    var(--gold-glow);
-
-
-}
-
-
-
-
-
-
-.hero-description {
-
-
-    max-width:750px;
-
-
-    margin:45px auto;
-
-
-    font-size:20px;
-
-
-    line-height:2;
-
-
-    color:#eee;
-
-
-    font-weight:300;
-
-
-}
-
-
-
-
-
-
-
-/* ==========================
-   BUTTONS
-========================== */
-
-
-.hero-buttons {
-
-
-    display:flex;
-
-
-    justify-content:center;
-
-
-    gap:25px;
-
-
-    margin-top:50px;
-
-
-}
-
-
-
-
-.primary-button,
-
-
-.secondary-button {
-
-
-    padding:
-
-    20px 55px;
-
-
-    letter-spacing:4px;
-
-
-    text-transform:uppercase;
-
-
-    font-size:13px;
-
-
-    transition:.5s;
-
-
-    position:relative;
-
-
-    overflow:hidden;
-
-
-}
-
-
-
-
-
-.primary-button {
+    margin-top:45px;
 
 
     background:
+
 
     linear-gradient(
 
-    135deg,
-
-    var(--gold),
-
-    var(--amber)
-
-    );
-
-
-    color:#17100a;
-
-
-    box-shadow:
-
-    var(--gold-glow);
-
-
-}
-
-
-
-
-
-.secondary-button {
-
-
-    border:
-
-    1px solid rgba(255,255,255,.7);
-
-
-    color:white;
-
-
-}
-
-
-
-
-
-
-
-.primary-button:hover,
-
-
-.secondary-button:hover {
-
-
-    transform:
-
-    translateY(-8px);
-
-
-}
-
-
-
-
-
-
-
-.secondary-button:hover {
-
-
-    background:white;
-
-
-    color:
-
-    var(--dark);
-
-
-}
-
-
-
-
-
-
-.primary-button::before {
-
-
-    content:"";
-
-
-    position:absolute;
-
-
-    top:0;
-
-
-    left:-100%;
-
-
-    width:100%;
-
-
-    height:100%;
-
-
-    background:
-
-    linear-gradient(
-
-    120deg,
+    90deg,
 
     transparent,
 
-    rgba(255,255,255,.5),
+    var(--sun),
 
     transparent
 
     );
-
-
-    transition:.7s;
-
-
-}
-
-
-
-
-
-.primary-button:hover::before {
-
-
-    left:100%;
-
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-   SCROLL INDICATOR
-========================== */
-
-
-.scroll-indicator {
-
-
-    position:absolute;
-
-
-    bottom:40px;
-
-
-    left:50%;
-
-
-    transform:
-
-    translateX(-50%);
-
-
-    z-index:5;
-
-
-    color:white;
-
-
-    text-align:center;
-
-
-}
-
-
-
-
-.scroll-indicator span {
-
-
-    display:block;
-
-
-    width:2px;
-
-
-    height:70px;
-
-
-    background:
-
-    linear-gradient(
-
-    white,
-
-    transparent
-
-    );
-
-
-    margin:auto;
 
 
     animation:
 
-    scrollMove 2s infinite;
 
-
-}
-
-
-
-.scroll-indicator p {
-
-
-    margin-top:20px;
-
-
-    font-size:11px;
-
-
-    letter-spacing:8px;
+    lineGlow 2s infinite;
 
 
 }
@@ -1469,15 +455,127 @@ header {
 
 
 
-@keyframes scrollMove {
+
+
+
+
+@keyframes titleEntrance {
+
+
+    from {
+
+
+        opacity:0;
+
+
+        transform:
+
+        translateY(50px);
+
+
+    }
+
+
+    to {
+
+
+        opacity:1;
+
+
+        transform:
+
+        translateY(0);
+
+
+    }
+
+
+}
+
+
+
+
+
+@keyframes subtitleEntrance {
+
+
+    from {
+
+
+        opacity:0;
+
+        letter-spacing:20px;
+
+
+    }
+
+
+    to {
+
+
+        opacity:1;
+
+        letter-spacing:12px;
+
+
+    }
+
+
+}
+
+
+
+
+
+
+@keyframes lineGlow {
 
 
     50% {
 
 
-        transform:
+        box-shadow:
 
-        translateY(20px);
+        var(--gold-glow);
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+@keyframes introExit {
+
+
+    0% {
+
+
+        opacity:1;
+
+
+        visibility:visible;
+
+
+    }
+
+
+
+    100% {
+
+
+        opacity:0;
+
+
+        visibility:hidden;
+
+
+        pointer-events:none;
 
 
     }
@@ -1493,666 +591,7 @@ header {
 
 
 /* ==========================
-   GENERAL SECTIONS
-========================== */
-
-
-.section {
-
-
-    padding:
-
-    150px 8%;
-
-
-}
-
-
-
-.section-title {
-
-
-    text-align:center;
-
-
-    margin-bottom:80px;
-
-
-}
-
-
-
-.section-title small {
-
-
-    color:
-
-    var(--gold);
-
-
-    letter-spacing:8px;
-
-
-    text-transform:uppercase;
-
-
-}
-
-
-
-
-.section-title h2 {
-
-
-    font-family:
-
-    "Cormorant Garamond",
-    serif;
-
-
-    font-size:75px;
-
-
-    font-weight:500;
-
-
-    color:
-
-    var(--dark);
-
-
-}
-
-/* =====================================================
-   PART 3
-   ABOUT + PORTFOLIO SECTIONS
-===================================================== */
-
-
-/* ==========================
-   ABOUT SECTION
-========================== */
-
-
-.about {
-
-
-    background:
-
-    var(--cream);
-
-
-    padding:
-
-    160px 8%;
-
-
-}
-
-
-
-
-.about-container {
-
-
-    display:grid;
-
-
-    grid-template-columns:
-
-    1fr 1fr;
-
-
-    gap:100px;
-
-
-    align-items:center;
-
-
-}
-
-
-
-
-
-.about-image {
-
-
-    position:relative;
-
-
-}
-
-
-
-
-
-.about-image img {
-
-
-    height:700px;
-
-
-    object-fit:cover;
-
-
-    box-shadow:
-
-    var(--shadow);
-
-
-}
-
-
-
-
-
-.about-image::before {
-
-
-    content:"";
-
-
-    position:absolute;
-
-
-    width:100%;
-
-
-    height:100%;
-
-
-    border:
-
-
-    2px solid var(--gold);
-
-
-    top:25px;
-
-
-    left:25px;
-
-
-    z-index:0;
-
-
-}
-
-
-
-
-
-.about-image img {
-
-
-    position:relative;
-
-
-    z-index:2;
-
-
-}
-
-
-
-
-
-.about-text {
-
-
-    position:relative;
-
-
-}
-
-
-
-
-
-.about-label {
-
-
-    color:
-
-    var(--gold);
-
-
-    letter-spacing:8px;
-
-
-    font-size:12px;
-
-
-    text-transform:uppercase;
-
-
-}
-
-
-
-
-
-.about-text h2 {
-
-
-    margin-top:30px;
-
-
-    font-family:
-
-    "Cormorant Garamond",
-    serif;
-
-
-    font-size:80px;
-
-
-    line-height:.95;
-
-
-    font-weight:500;
-
-
-    color:
-
-    var(--dark);
-
-
-}
-
-
-
-
-
-.about-text p {
-
-
-    margin-top:35px;
-
-
-    color:
-
-    var(--gray);
-
-
-    line-height:2;
-
-
-    font-size:18px;
-
-
-}
-
-
-
-
-
-.about-button {
-
-
-    display:inline-block;
-
-
-    margin-top:40px;
-
-
-    padding:
-
-    18px 45px;
-
-
-    border:
-
-    1px solid var(--dark);
-
-
-    letter-spacing:3px;
-
-
-    text-transform:uppercase;
-
-
-    font-size:12px;
-
-
-    transition:.5s;
-
-
-}
-
-
-
-
-
-.about-button:hover {
-
-
-    background:
-
-    var(--dark);
-
-
-    color:white;
-
-
-    transform:
-
-    translateY(-5px);
-
-
-}
-
-
-
-
-
-
-
-/* ==========================
-   PORTFOLIO
-========================== */
-
-
-.portfolio {
-
-
-    background:
-
-    #16110d;
-
-
-    padding:
-
-    160px 8%;
-
-
-}
-
-
-
-
-
-.portfolio .section-title h2 {
-
-
-    color:white;
-
-
-}
-
-
-
-
-
-.portfolio .section-title small {
-
-
-    color:
-
-    var(--amber);
-
-
-}
-
-
-
-
-
-
-.gallery {
-
-
-    display:grid;
-
-
-    grid-template-columns:
-
-    repeat(3,1fr);
-
-
-    gap:35px;
-
-
-}
-
-
-
-
-
-.photo-card {
-
-
-    height:550px;
-
-
-    position:relative;
-
-
-    overflow:hidden;
-
-
-    cursor:pointer;
-
-
-    background:#000;
-
-
-}
-
-
-
-
-
-.photo-card img {
-
-
-    height:100%;
-
-
-    object-fit:cover;
-
-
-    transition:
-
-    1.2s;
-
-
-}
-
-
-
-
-
-.photo-card:hover img {
-
-
-    transform:
-
-    scale(1.12);
-
-
-}
-
-
-
-
-
-.photo-card::before {
-
-
-    content:"";
-
-
-    position:absolute;
-
-
-    inset:0;
-
-
-    background:
-
-
-    linear-gradient(
-
-    transparent,
-
-    rgba(0,0,0,.85)
-
-    );
-
-
-    z-index:1;
-
-
-}
-
-
-
-
-
-.photo-card::after {
-
-
-    content:"";
-
-
-    position:absolute;
-
-
-    inset:20px;
-
-
-    border:
-
-    1px solid transparent;
-
-
-    transition:.5s;
-
-
-    z-index:2;
-
-
-}
-
-
-
-
-
-.photo-card:hover::after {
-
-
-    border-color:
-
-    var(--gold);
-
-
-}
-
-
-
-
-
-
-
-.photo-info {
-
-
-    position:absolute;
-
-
-    bottom:45px;
-
-
-    left:40px;
-
-
-    z-index:3;
-
-
-    color:white;
-
-
-}
-
-
-
-
-
-.photo-info h3 {
-
-
-    font-family:
-
-    "Cormorant Garamond",
-    serif;
-
-
-    font-size:45px;
-
-
-    font-weight:500;
-
-
-}
-
-
-
-
-
-.photo-info p {
-
-
-    margin-top:10px;
-
-
-    color:
-
-    var(--amber);
-
-
-    letter-spacing:4px;
-
-
-    font-size:12px;
-
-
-    text-transform:uppercase;
-
-
-}
-
-
-
-
-
-
-
-/* Large featured photo */
-
-
-.photo-card.featured {
-
-
-    grid-column:
-
-    span 2;
-
-
-    height:650px;
-
-
-}
-
-
-
-
-
-
-
-/* ==========================
-   IMAGE REVEAL ANIMATION
+   SMOOTH SCROLL EFFECTS
 ========================== */
 
 
@@ -2164,12 +603,12 @@ header {
 
     transform:
 
-    translateY(60px);
+    translateY(50px);
 
 
     transition:
 
-    1s;
+    1s ease;
 
 
 }
@@ -2194,16 +633,324 @@ header {
 
 
 
-
 /* ==========================
-   GOLD DIVIDERS
+   SELECTION COLOR
 ========================== */
 
 
-.gold-divider {
+::selection {
 
 
-    width:160px;
+    background:
+
+    var(--gold);
+
+
+
+    color:
+
+    var(--black);
+
+
+}
+
+
+
+
+
+
+/* ==========================
+   MOBILE FOUNDATION
+========================== */
+
+
+@media(max-width:700px){
+
+
+
+#intro-screen h1,
+.loading-screen h1 {
+
+
+    font-size:45px;
+
+
+}
+
+
+
+
+#intro-screen p,
+.loading-screen p {
+
+
+    font-size:11px;
+
+
+    letter-spacing:5px;
+
+
+}
+
+
+
+
+body {
+
+
+    font-size:16px;
+
+
+}
+
+
+
+}
+
+/* =====================================================
+   FRONT RANGE PHOTOGRAPHIC
+   STYLE.CSS PART 2 / 10
+
+   Navigation + Hero Section
+===================================================== */
+
+
+
+/* ==========================
+   NAVIGATION
+========================== */
+
+
+header {
+
+
+    position:fixed;
+
+
+    top:0;
+
+
+    left:0;
+
+
+    width:100%;
+
+
+    z-index:5000;
+
+
+    padding:30px 7%;
+
+
+}
+
+
+
+
+.navbar {
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    align-items:center;
+
+
+    padding:18px 35px;
+
+
+    border-radius:60px;
+
+
+    background:
+
+
+    rgba(15,12,9,.65);
+
+
+    backdrop-filter:
+
+    blur(18px);
+
+
+    border:
+
+    1px solid rgba(244,199,107,.25);
+
+
+    box-shadow:
+
+    0 15px 50px rgba(0,0,0,.35);
+
+
+    transition:.5s;
+
+
+}
+
+
+
+
+.navbar:hover {
+
+
+    border-color:
+
+    var(--amber);
+
+
+    box-shadow:
+
+    var(--gold-glow);
+
+
+}
+
+
+
+
+
+
+
+/* Logo */
+
+
+.logo {
+
+
+    color:white;
+
+
+    font-size:38px;
+
+
+    letter-spacing:5px;
+
+
+    line-height:.8;
+
+
+    text-transform:uppercase;
+
+
+}
+
+
+
+.logo span {
+
+
+    display:block;
+
+
+    margin-top:12px;
+
+
+    font-family:
+
+    "Times New Roman",
+    serif;
+
+
+    font-size:11px;
+
+
+    letter-spacing:8px;
+
+
+    color:
+
+    var(--amber);
+
+
+}
+
+
+
+
+
+/* Navigation links */
+
+
+.nav-menu {
+
+
+    display:flex;
+
+
+    gap:45px;
+
+
+    align-items:center;
+
+
+}
+
+
+
+
+.nav-menu a {
+
+
+    color:
+
+    var(--cream);
+
+
+    text-transform:uppercase;
+
+
+    font-size:13px;
+
+
+    letter-spacing:3px;
+
+
+    position:relative;
+
+
+    transition:.4s;
+
+
+}
+
+
+
+
+
+.nav-menu a:hover {
+
+
+    color:
+
+    var(--sun);
+
+
+}
+
+
+
+
+
+.nav-menu a::after {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    bottom:-12px;
+
+
+    left:0;
+
+
+    width:0;
 
 
     height:2px;
@@ -2211,38 +958,602 @@ header {
 
     background:
 
-    linear-gradient(
-
-    90deg,
-
-    transparent,
-
-    var(--gold),
-
-    transparent
-
-    );
+    var(--gold);
 
 
-    margin:
-
-    50px auto;
+    transition:.4s;
 
 
 }
 
+
+
+
+
+.nav-menu a:hover::after {
+
+
+    width:100%;
+
+
+}
+
+
+
+
+
+
+/* Call Button */
+
+
+.nav-call {
+
+
+    padding:
+
+    14px 35px;
+
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    var(--gold),
+
+    var(--amber)
+
+    );
+
+
+    color:
+
+    #1a1209;
+
+
+    border-radius:40px;
+
+
+    font-size:12px;
+
+
+    letter-spacing:3px;
+
+
+    text-transform:uppercase;
+
+
+    transition:.5s;
+
+
+}
+
+
+
+.nav-call:hover {
+
+
+    transform:
+
+    translateY(-5px);
+
+
+    box-shadow:
+
+    var(--gold-glow);
+
+
+}
+
+
+
+
+
+
+
+
 /* =====================================================
-   PART 4
-   SERVICES + PACKAGES + TESTIMONIALS
+   HERO SECTION
 ===================================================== */
 
 
-/* ==========================
-   SERVICES SECTION
-========================== */
+
+.hero {
 
 
-.services {
+    min-height:100vh;
+
+
+    position:relative;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    overflow:hidden;
+
+
+    background:
+
+    #0f0c09;
+
+
+}
+
+
+
+
+
+
+/* Animated background */
+
+
+.hero::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    background:
+
+
+    radial-gradient(
+
+    circle at 50% 40%,
+
+    rgba(244,199,107,.25),
+
+    transparent 35%
+
+    );
+
+
+    animation:
+
+    heroGlow 8s infinite alternate;
+
+
+}
+
+
+
+
+
+@keyframes heroGlow {
+
+
+    from {
+
+
+        transform:
+
+        scale(1);
+
+
+        opacity:.5;
+
+
+    }
+
+
+    to {
+
+
+        transform:
+
+        scale(1.3);
+
+
+        opacity:1;
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+/* Moving grid */
+
+
+.hero::after {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    background-image:
+
+
+    linear-gradient(
+
+    rgba(244,199,107,.08) 1px,
+
+    transparent 1px
+
+    ),
+
+
+    linear-gradient(
+
+    90deg,
+
+    rgba(244,199,107,.08) 1px,
+
+    transparent 1px
+
+    );
+
+
+    background-size:
+
+    80px 80px;
+
+
+    opacity:.25;
+
+
+    animation:
+
+    gridMove 20s linear infinite;
+
+
+}
+
+
+
+
+@keyframes gridMove {
+
+
+    from {
+
+
+        transform:
+
+        translateY(0);
+
+
+    }
+
+
+    to {
+
+
+        transform:
+
+        translateY(80px);
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+/* Hero content */
+
+
+.hero-content {
+
+
+    position:relative;
+
+
+    z-index:5;
+
+
+    max-width:1100px;
+
+
+    text-align:center;
+
+
+    padding:120px 20px 50px;
+
+
+    animation:
+
+    heroAppear 2s ease;
+
+
+}
+
+
+
+
+@keyframes heroAppear {
+
+
+    from {
+
+
+        opacity:0;
+
+
+        transform:
+
+        translateY(80px);
+
+
+    }
+
+
+    to {
+
+
+        opacity:1;
+
+
+        transform:
+
+        translateY(0);
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+.hero-location {
+
+
+    color:
+
+    var(--amber);
+
+
+    letter-spacing:8px;
+
+
+    font-size:13px;
+
+
+    text-transform:uppercase;
+
+
+    margin-bottom:40px;
+
+
+}
+
+
+
+
+
+
+
+.hero h1 {
+
+
+    color:
+
+    white;
+
+
+    font-size:
+
+    clamp(45px,8vw,110px);
+
+
+    line-height:.95;
+
+
+    text-transform:uppercase;
+
+
+    letter-spacing:5px;
+
+
+}
+
+
+
+
+.hero h1 span {
+
+
+    display:block;
+
+
+    color:
+
+    var(--amber);
+
+
+    text-shadow:
+
+    var(--gold-glow);
+
+
+}
+
+
+
+
+
+
+
+.hero-description {
+
+
+    max-width:750px;
+
+
+    margin:
+
+    40px auto;
+
+
+    color:
+
+    #e6dccd;
+
+
+    font-size:20px;
+
+
+    line-height:2;
+
+
+}
+
+
+
+
+
+/* Buttons */
+
+
+.hero-buttons {
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    gap:25px;
+
+
+    margin-top:50px;
+
+
+}
+
+
+
+
+
+.primary-button,
+.secondary-button {
+
+
+    padding:
+
+    20px 55px;
+
+
+    border-radius:50px;
+
+
+    text-transform:uppercase;
+
+
+    letter-spacing:4px;
+
+
+    font-size:12px;
+
+
+    transition:.5s;
+
+
+}
+
+
+
+
+
+.primary-button {
+
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    var(--gold),
+
+    var(--amber)
+
+    );
+
+
+    color:#1a1209;
+
+
+    box-shadow:
+
+    var(--gold-glow);
+
+
+}
+
+
+
+
+
+.secondary-button {
+
+
+    border:
+
+    1px solid var(--cream);
+
+
+    color:white;
+
+
+}
+
+
+
+
+
+.primary-button:hover,
+.secondary-button:hover {
+
+
+    transform:
+
+    translateY(-8px);
+
+
+}
+
+
+
+
+
+.secondary-button:hover {
 
 
     background:
@@ -2250,13 +1561,405 @@ header {
     var(--cream);
 
 
-    padding:
+    color:
 
-    150px 8%;
+    var(--black);
 
 
 }
 
+
+
+
+
+
+
+/* Hero information cards */
+
+
+.hero-stats {
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    gap:25px;
+
+
+    margin-top:80px;
+
+
+}
+
+
+
+
+
+.hero-stat {
+
+
+    width:220px;
+
+
+    padding:35px;
+
+
+    border-radius:25px;
+
+
+    background:
+
+
+    rgba(255,255,255,.08);
+
+
+    backdrop-filter:
+
+    blur(15px);
+
+
+    border:
+
+    1px solid rgba(244,199,107,.25);
+
+
+}
+
+
+
+
+
+.hero-stat h3 {
+
+
+    color:
+
+    var(--amber);
+
+
+    font-size:45px;
+
+
+}
+
+
+
+
+
+.hero-stat p {
+
+
+    color:
+
+    var(--cream);
+
+
+    font-size:13px;
+
+
+    letter-spacing:2px;
+
+
+    text-transform:uppercase;
+
+
+}
+
+
+
+
+
+
+
+/* Mobile Hero */
+
+
+@media(max-width:800px){
+
+
+
+.nav-menu {
+
+
+    display:none;
+
+
+}
+
+
+
+.navbar {
+
+
+    padding:15px 20px;
+
+
+}
+
+
+
+.logo {
+
+
+    font-size:25px;
+
+
+}
+
+
+
+.nav-call {
+
+
+    padding:12px 20px;
+
+
+}
+
+
+
+.hero-description {
+
+
+    font-size:16px;
+
+
+}
+
+
+
+.hero-buttons {
+
+
+    flex-direction:column;
+
+
+}
+
+
+
+.hero-stats {
+
+
+    flex-direction:column;
+
+
+    align-items:center;
+
+
+}
+
+
+
+.hero-stat {
+
+
+    width:90%;
+
+
+}
+
+
+
+}
+
+/* =====================================================
+   FRONT RANGE PHOTOGRAPHIC
+   STYLE.CSS PART 3 / 10
+
+   Light Sections + Services + Cards
+===================================================== */
+
+
+
+/* ==========================
+   LIGHT SECTION FOUNDATION
+========================== */
+
+
+.light-section,
+.services,
+.about,
+.testimonials,
+.contact {
+
+
+    background:
+
+    var(--cream);
+
+
+    color:
+
+    #21160d;
+
+
+    padding:
+
+    140px 8%;
+
+
+}
+
+
+
+.light-section h1,
+.light-section h2,
+.light-section h3,
+.services h1,
+.services h2,
+.services h3,
+.about h1,
+.about h2,
+.about h3 {
+
+
+    color:
+
+    #21160d;
+
+
+}
+
+
+
+
+.light-section p,
+.services p,
+.about p {
+
+
+    color:
+
+    #5b4b3c;
+
+
+}
+
+
+
+
+
+
+
+/* ==========================
+   SECTION TITLES
+========================== */
+
+
+.section-title {
+
+
+    text-align:center;
+
+
+    max-width:900px;
+
+
+    margin:
+
+    0 auto 80px;
+
+
+}
+
+
+
+
+
+.section-title small {
+
+
+    display:block;
+
+
+    color:
+
+    var(--gold);
+
+
+    letter-spacing:
+
+    8px;
+
+
+    text-transform:
+
+    uppercase;
+
+
+    font-size:
+
+    12px;
+
+
+    margin-bottom:
+
+    25px;
+
+
+}
+
+
+
+
+
+.section-title h2 {
+
+
+    font-size:
+
+    clamp(40px,5vw,75px);
+
+
+    line-height:
+
+    1;
+
+
+    color:
+
+    #21160d;
+
+
+}
+
+
+
+
+
+.section-title p {
+
+
+    margin-top:
+
+    30px;
+
+
+    font-size:
+
+    18px;
+
+
+    line-height:
+
+    1.8;
+
+
+}
+
+
+
+
+
+
+
+/* ==========================
+   SERVICES GRID
+========================== */
 
 
 
@@ -2271,7 +1974,9 @@ header {
     repeat(3,1fr);
 
 
-    gap:35px;
+    gap:
+
+    35px;
 
 
 }
@@ -2280,30 +1985,42 @@ header {
 
 
 
-
 .service-card {
 
 
-    background:white;
+    background:
+
+    white;
 
 
     padding:
 
-    55px 40px;
+    50px 40px;
 
 
-    position:relative;
+    border-radius:
+
+    25px;
 
 
-    overflow:hidden;
+    position:
+
+    relative;
+
+
+    overflow:
+
+    hidden;
 
 
     border:
 
-    1px solid rgba(214,155,61,.2);
+    1px solid rgba(214,163,74,.25);
 
 
-    transition:.6s;
+    transition:
+
+    .6s;
 
 
 }
@@ -2327,18 +2044,28 @@ header {
     left:0;
 
 
+    height:5px;
+
+
     width:0;
-
-
-    height:4px;
 
 
     background:
 
-    var(--gold);
+    linear-gradient(
+
+    90deg,
+
+    var(--gold),
+
+    var(--amber)
+
+    );
 
 
-    transition:.5s;
+    transition:
+
+    .6s;
 
 
 }
@@ -2378,22 +2105,17 @@ header {
 
 
 
-
 .service-number {
 
 
-    font-family:
+    font-size:
 
-    "Cormorant Garamond",
-    serif;
-
-
-    font-size:70px;
+    70px;
 
 
     color:
 
-    rgba(214,155,61,.25);
+    rgba(214,163,74,.35);
 
 
 }
@@ -2405,24 +2127,19 @@ header {
 .service-card h3 {
 
 
-    margin-top:25px;
+    margin-top:
+
+    25px;
 
 
-    font-family:
+    font-size:
 
-    "Cormorant Garamond",
-    serif;
-
-
-    font-size:42px;
-
-
-    font-weight:500;
+    38px;
 
 
     color:
 
-    var(--dark);
+    #21160d;
 
 
 }
@@ -2434,15 +2151,19 @@ header {
 .service-card p {
 
 
-    margin-top:25px;
+    margin-top:
 
-
-    line-height:2;
+    25px;
 
 
     color:
 
-    var(--gray);
+    #5b4b3c;
+
+
+    line-height:
+
+    1.9;
 
 
 }
@@ -2451,30 +2172,65 @@ header {
 
 
 
-.service-link {
+.service-card ul {
 
 
-    display:inline-block;
+    margin-top:
+
+    30px;
 
 
-    margin-top:35px;
+    list-style:none;
+
+
+}
+
+
+
+
+
+.service-card li {
+
+
+    padding:
+
+    12px 0;
+
+
+    border-bottom:
+
+    1px solid rgba(0,0,0,.08);
 
 
     color:
 
-    var(--brown);
-
-
-    letter-spacing:3px;
-
-
-    text-transform:uppercase;
-
-
-    font-size:12px;
+    #5b4b3c;
 
 
 }
+
+
+
+
+
+.service-card li::before {
+
+
+    content:"✓";
+
+
+    color:
+
+    var(--gold);
+
+
+    margin-right:
+
+    12px;
+
+
+}
+
 
 
 
@@ -2483,42 +2239,12 @@ header {
 
 
 /* ==========================
-   PACKAGES
+   ABOUT SECTION
 ========================== */
 
 
-.packages {
 
-
-    padding:
-
-    160px 8%;
-
-
-    background:
-
-    #16110d;
-
-
-}
-
-
-
-
-
-.packages .section-title h2 {
-
-
-    color:white;
-
-
-}
-
-
-
-
-
-.package-grid {
+.about-container {
 
 
     display:grid;
@@ -2526,10 +2252,15 @@ header {
 
     grid-template-columns:
 
-    repeat(3,1fr);
+    1fr 1fr;
 
 
-    gap:40px;
+    gap:
+
+    90px;
+
+
+    align-items:center;
 
 
 }
@@ -2538,28 +2269,7 @@ header {
 
 
 
-.package {
-
-
-    background:
-
-    #211812;
-
-
-    color:white;
-
-
-    padding:
-
-    55px 40px;
-
-
-    border:
-
-    1px solid rgba(240,180,92,.2);
-
-
-    transition:.5s;
+.about-image {
 
 
     position:relative;
@@ -2571,22 +2281,88 @@ header {
 
 
 
-.package:hover {
+.about-image img {
 
 
-    transform:
+    border-radius:
 
-    translateY(-20px);
-
-
-    border-color:
-
-    var(--gold);
+    25px;
 
 
     box-shadow:
 
-    var(--gold-glow);
+    var(--shadow);
+
+
+}
+
+
+
+
+
+.about-image::after {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:
+
+    25px;
+
+
+    border:
+
+    2px solid var(--gold);
+
+
+    border-radius:
+
+    25px;
+
+
+    z-index:-1;
+
+
+}
+
+
+
+
+
+.about-content h2 {
+
+
+    font-size:
+
+    clamp(40px,5vw,70px);
+
+
+    color:
+
+    #21160d;
+
+
+}
+
+
+
+
+
+.about-content p {
+
+
+    margin-top:
+
+    30px;
+
+
+    font-size:
+
+    18px;
 
 
 }
@@ -2596,7 +2372,846 @@ header {
 
 
 
-.package.popular {
+
+
+/* ==========================
+   FEATURE CARDS
+========================== */
+
+
+
+.feature-grid {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(4,1fr);
+
+
+    gap:
+
+    25px;
+
+
+}
+
+
+
+
+
+.feature-box {
+
+
+    background:
+
+    white;
+
+
+    padding:
+
+    35px;
+
+
+    border-radius:
+
+    20px;
+
+
+    text-align:center;
+
+
+    transition:
+
+    .5s;
+
+
+}
+
+
+
+
+
+.feature-box:hover {
+
+
+    transform:
+
+    translateY(-10px);
+
+
+    box-shadow:
+
+    var(--shadow);
+
+
+}
+
+
+
+
+
+.feature-box h3 {
+
+
+    color:
+
+    var(--gold);
+
+
+    font-size:
+
+    45px;
+
+
+}
+
+
+
+
+
+.feature-box p {
+
+
+    margin-top:
+
+    15px;
+
+
+    color:
+
+    #5b4b3c;
+
+
+    font-size:
+
+    14px;
+
+
+}
+
+
+
+
+
+
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+
+
+@media(max-width:1000px){
+
+
+
+.services-grid {
+
+
+    grid-template-columns:
+
+    1fr;
+
+
+}
+
+
+
+
+.feature-grid {
+
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+
+}
+
+
+
+
+.about-container {
+
+
+    grid-template-columns:
+
+    1fr;
+
+
+}
+
+
+
+}
+
+
+
+
+
+@media(max-width:600px){
+
+
+
+.light-section,
+.services,
+.about {
+
+
+    padding:
+
+    80px 6%;
+
+
+}
+
+
+
+
+.feature-grid {
+
+
+    grid-template-columns:
+
+    1fr;
+
+
+}
+
+
+
+
+.service-card {
+
+
+    padding:
+
+    35px 25px;
+
+
+}
+
+
+
+
+.service-card h3 {
+
+
+    font-size:
+
+    30px;
+
+
+}
+
+
+
+}
+
+/* =====================================================
+   FRONT RANGE PHOTOGRAPHIC
+   STYLE.CSS PART 4 / 10
+
+   Technology + Pricing Sections
+===================================================== */
+
+
+
+/* ==========================
+   TECHNOLOGY SECTION
+========================== */
+
+
+.technology {
+
+
+    background:
+
+    #0f0c09;
+
+
+    padding:
+
+    150px 8%;
+
+
+    color:
+
+    var(--cream);
+
+
+}
+
+
+
+
+.technology-container {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    1fr 1fr;
+
+
+    gap:
+
+    90px;
+
+
+    align-items:center;
+
+
+}
+
+
+
+
+
+
+.technology h2 {
+
+
+    color:white;
+
+
+    font-size:
+
+    clamp(45px,5vw,75px);
+
+
+    line-height:
+
+    1;
+
+
+}
+
+
+
+
+
+.technology p {
+
+
+    color:
+
+    #ddd1c2;
+
+
+    margin-top:
+
+    30px;
+
+
+    font-size:
+
+    18px;
+
+
+}
+
+
+
+
+
+.technology-list {
+
+
+    margin-top:
+
+    40px;
+
+
+}
+
+
+
+
+
+.technology-list div {
+
+
+    padding:
+
+    18px 0;
+
+
+    border-bottom:
+
+    1px solid rgba(255,255,255,.15);
+
+
+    color:
+
+    white;
+
+
+    font-size:
+
+    17px;
+
+
+}
+
+
+
+
+
+.technology-list span {
+
+
+    color:
+
+    var(--amber);
+
+
+    margin-right:
+
+    15px;
+
+
+}
+
+
+
+
+
+
+/* Drone circle animation */
+
+
+
+.drone-display {
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    position:relative;
+
+
+    height:
+
+    500px;
+
+
+}
+
+
+
+
+
+.drone-circle {
+
+
+    width:
+
+    330px;
+
+
+    height:
+
+    330px;
+
+
+    border-radius:
+
+    50%;
+
+
+    border:
+
+    2px solid var(--gold);
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    animation:
+
+    dronePulse 5s infinite;
+
+
+}
+
+
+
+
+
+.drone-circle::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:
+
+    450px;
+
+
+    height:
+
+    450px;
+
+
+    border-radius:
+
+    50%;
+
+
+    border:
+
+    1px solid rgba(244,199,107,.3);
+
+
+    animation:
+
+    radarSpin 8s linear infinite;
+
+
+}
+
+
+
+
+
+.drone-center {
+
+
+    color:
+
+    var(--amber);
+
+
+    letter-spacing:
+
+    5px;
+
+
+    font-size:
+
+    25px;
+
+
+}
+
+
+
+
+
+@keyframes dronePulse {
+
+
+    50% {
+
+
+        box-shadow:
+
+        var(--gold-glow);
+
+
+    }
+
+
+}
+
+
+
+
+
+@keyframes radarSpin {
+
+
+    from {
+
+
+        transform:
+
+        rotate(0deg);
+
+
+    }
+
+
+    to {
+
+
+        transform:
+
+        rotate(360deg);
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+/* ==========================
+   PRICING SECTION
+========================== */
+
+
+
+.pricing {
+
+
+    background:
+
+    var(--cream);
+
+
+    padding:
+
+    150px 8%;
+
+
+}
+
+
+
+
+
+.pricing-grid {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+
+    gap:
+
+    35px;
+
+
+}
+
+
+
+
+
+
+.price-card {
+
+
+    background:
+
+    white;
+
+
+    padding:
+
+    50px 40px;
+
+
+    border-radius:
+
+    25px;
+
+
+    position:
+
+    relative;
+
+
+    border:
+
+    1px solid rgba(214,163,74,.25);
+
+
+    transition:
+
+    .5s;
+
+
+}
+
+
+
+
+
+.price-card:hover {
+
+
+    transform:
+
+    translateY(-15px);
+
+
+    box-shadow:
+
+    var(--shadow);
+
+
+}
+
+
+
+
+
+.price-card h3 {
+
+
+    font-size:
+
+    45px;
+
+
+    color:
+
+    #21160d;
+
+
+}
+
+
+
+
+
+.price {
+
+
+    margin:
+
+    30px 0;
+
+
+    font-size:
+
+    65px;
+
+
+    color:
+
+    var(--gold);
+
+
+}
+
+
+
+
+
+.price-card p {
+
+
+    color:
+
+    #5b4b3c;
+
+
+}
+
+
+
+
+
+.price-card ul {
+
+
+    margin-top:
+
+    35px;
+
+
+    list-style:none;
+
+
+}
+
+
+
+
+
+.price-card li {
+
+
+    padding:
+
+    15px 0;
+
+
+    border-bottom:
+
+    1px solid rgba(0,0,0,.08);
+
+
+    color:
+
+    #5b4b3c;
+
+
+}
+
+
+
+
+
+.price-card li::before {
+
+
+    content:"✓";
+
+
+    color:
+
+    var(--gold);
+
+
+    margin-right:
+
+    10px;
+
+
+}
+
+
+
+
+
+
+
+
+/* Featured package */
+
+
+
+.price-card.featured {
+
+
+    transform:
+
+    scale(1.05);
 
 
     border:
@@ -2610,106 +3225,66 @@ header {
 
 
 
-.package.popular::before {
+.price-card.featured:hover {
 
 
-    content:"MOST POPULAR";
+    transform:
+
+    scale(1.05)
+
+    translateY(-15px);
+
+
+}
+
+
+
+
+
+.popular-tag {
 
 
     position:absolute;
 
 
-    top:20px;
+    top:
+
+    20px;
 
 
-    right:20px;
+    right:
+
+    20px;
 
 
-    font-size:10px;
-
-
-    letter-spacing:3px;
-
-
-    color:
-
-    var(--amber);
-
-
-}
-
-
-
-
-
-
-.package h3 {
-
-
-    font-family:
-
-    "Cormorant Garamond",
-    serif;
-
-
-    font-size:45px;
-
-
-    font-weight:500;
-
-
-}
-
-
-
-
-
-.package-price {
-
-
-    margin:
-
-    30px 0;
-
-
-    font-size:45px;
-
-
-    color:
+    background:
 
     var(--gold);
 
 
-}
+    color:
+
+    #17100a;
 
 
+    padding:
+
+    10px 20px;
 
 
+    border-radius:
 
-.package ul {
-
-
-    list-style:none;
+    30px;
 
 
-}
+    font-size:
+
+    11px;
 
 
+    letter-spacing:
 
-
-
-.package li {
-
-
-    padding:15px 0;
-
-
-    border-bottom:
-
-    1px solid rgba(255,255,255,.1);
-
-
-    color:#ccc;
+    3px;
 
 
 }
@@ -2724,7 +3299,9 @@ header {
     display:block;
 
 
-    margin-top:40px;
+    margin-top:
+
+    40px;
 
 
     padding:
@@ -2742,16 +3319,22 @@ header {
 
     color:
 
-    var(--gold);
+    #21160d;
 
 
-    letter-spacing:3px;
+    letter-spacing:
+
+    3px;
 
 
-    text-transform:uppercase;
+    text-transform:
+
+    uppercase;
 
 
-    transition:.5s;
+    transition:
+
+    .4s;
 
 
 }
@@ -2770,7 +3353,7 @@ header {
 
     color:
 
-    var(--dark);
+    white;
 
 
 }
@@ -2782,21 +3365,21 @@ header {
 
 
 /* ==========================
-   TESTIMONIALS
+   MOBILE
 ========================== */
 
 
-.testimonials {
+
+@media(max-width:1000px){
 
 
-    padding:
 
-    150px 8%;
+.technology-container {
 
 
-    background:
+    grid-template-columns:
 
-    var(--cream);
+    1fr;
 
 
 }
@@ -2804,7 +3387,77 @@ header {
 
 
 
-.testimonial-grid {
+.pricing-grid {
+
+
+    grid-template-columns:
+
+    1fr;
+
+
+}
+
+
+
+
+.price-card.featured {
+
+
+    transform:
+
+    none;
+
+
+}
+
+
+
+}
+
+/* =====================================================
+   FRONT RANGE PHOTOGRAPHIC
+   STYLE.CSS PART 5 / 10
+
+   Process + Insurance + FAQ + Contact
+===================================================== */
+
+
+
+/* ==========================
+   PROCESS SECTION
+========================== */
+
+
+.process {
+
+
+    background:
+
+    #0f0c09;
+
+
+    padding:
+
+    150px 8%;
+
+
+}
+
+
+
+.process .section-title h2 {
+
+
+    color:white;
+
+
+}
+
+
+
+
+
+.process-grid {
 
 
     display:grid;
@@ -2815,7 +3468,9 @@ header {
     repeat(3,1fr);
 
 
-    gap:35px;
+    gap:
+
+    35px;
 
 
 }
@@ -2824,23 +3479,60 @@ header {
 
 
 
-.testimonial {
+
+.process-card {
 
 
-    background:white;
+    background:
+
+    rgba(255,255,255,.05);
+
+
+    border:
+
+    1px solid rgba(244,199,107,.25);
 
 
     padding:
 
-    45px;
+    50px 35px;
+
+
+    border-radius:
+
+    25px;
+
+
+    text-align:center;
+
+
+    transition:
+
+    .5s;
+
+
+}
+
+
+
+
+
+.process-card:hover {
+
+
+    transform:
+
+    translateY(-15px);
+
+
+    border-color:
+
+    var(--amber);
 
 
     box-shadow:
 
-    0 20px 50px rgba(0,0,0,.08);
-
-
-    position:relative;
+    var(--gold-glow);
 
 
 }
@@ -2849,36 +3541,17 @@ header {
 
 
 
-.testimonial::before {
+.process-number {
 
 
-    content:"“";
+    font-size:
 
-
-    position:absolute;
-
-
-    top:10px;
-
-
-    left:25px;
-
-
-    font-family:
-
-    "Cormorant Garamond",
-    serif;
-
-
-    font-size:100px;
+    70px;
 
 
     color:
 
-    var(--gold);
-
-
-    opacity:.35;
+    rgba(244,199,107,.3);
 
 
 }
@@ -2887,161 +3560,509 @@ header {
 
 
 
-.testimonial p {
+.process-card h3 {
 
 
-    margin-top:40px;
+    color:white;
 
 
-    line-height:2;
+    font-size:
+
+    38px;
+
+
+    margin-top:
+
+    25px;
+
+
+}
+
+
+
+
+
+.process-card p {
 
 
     color:
 
-    var(--gray);
+    #d8cec1;
 
 
-    font-style:italic;
+    margin-top:
 
-
-}
-
-
-
-
-
-.testimonial h4 {
-
-
-    margin-top:30px;
-
-
-    letter-spacing:2px;
-
-
-    text-transform:uppercase;
-
-
-    font-size:12px;
+    20px;
 
 
 }
+
+
+
 
 
 
 
 
 /* ==========================
-   BOOKING CTA
+   INSURANCE SECTION
 ========================== */
 
 
-.booking-cta {
+
+.insurance {
 
 
-    min-height:600px;
+    background:
+
+    var(--cream);
 
 
-    display:flex;
+    padding:
+
+    140px 8%;
+
+
+}
+
+
+
+
+
+.insurance-container {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    1fr 1fr;
+
+
+    gap:
+
+    80px;
 
 
     align-items:center;
 
 
-    justify-content:center;
+}
 
 
-    text-align:center;
 
 
-    position:relative;
+
+.insurance h2 {
+
+
+    color:
+
+    #21160d;
+
+
+    font-size:
+
+    clamp(40px,5vw,70px);
+
+
+}
+
+
+
+
+
+.insurance p {
+
+
+    color:
+
+    #5b4b3c;
+
+
+    margin-top:
+
+    25px;
+
+
+}
+
+
+
+
+
+.insurance-card {
+
+
+    background:
+
+    white;
+
+
+    padding:
+
+    50px;
+
+
+    border-radius:
+
+    25px;
+
+
+    box-shadow:
+
+    var(--shadow);
+
+
+    border-left:
+
+    5px solid var(--gold);
+
+
+}
+
+
+
+
+
+.insurance-card h3 {
+
+
+    color:
+
+    #21160d;
+
+
+    font-size:
+
+    40px;
+
+
+}
+
+
+
+
+
+.insurance-feature {
+
+
+    padding:
+
+    18px 0;
+
+
+    color:
+
+    #5b4b3c;
+
+
+    border-bottom:
+
+    1px solid rgba(0,0,0,.1);
+
+
+}
+
+
+
+
+
+.insurance-feature::before {
+
+
+    content:"✓";
+
+
+    color:
+
+    var(--gold);
+
+
+    margin-right:
+
+    12px;
+
+
+}
+
+
+
+
+
+
+
+/* ==========================
+   FAQ SECTION
+========================== */
+
+
+
+.faq {
+
+
+    background:
+
+    #0f0c09;
+
+
+    padding:
+
+    140px 8%;
+
+
+}
+
+
+
+
+
+.faq h2 {
 
 
     color:white;
 
 
+}
+
+
+
+
+
+.faq-grid {
+
+
+    max-width:
+
+    900px;
+
+
+    margin:auto;
+
+
+}
+
+
+
+
+
+.faq-card {
+
+
     background:
 
-
-    linear-gradient(
-
-    rgba(0,0,0,.65),
-
-    rgba(0,0,0,.75)
-
-    ),
-
-    url("imaging/booking.jpg");
+    rgba(255,255,255,.05);
 
 
-    background-size:cover;
+    border:
 
-
-    background-position:center;
-
-
-}
-
-
-
-
-
-.booking-cta h2 {
-
-
-    font-family:
-
-    "Cormorant Garamond",
-    serif;
-
-
-    font-size:85px;
-
-
-    font-weight:500;
-
-
-}
-
-
-
-
-
-.booking-cta p {
-
-
-    margin:
-
-    30px auto;
-
-
-    max-width:700px;
-
-
-    line-height:2;
-
-
-    font-size:18px;
-
-
-}
-
-
-
-
-
-.cta-button {
-
-
-    display:inline-block;
-
-
-    margin-top:30px;
+    1px solid rgba(255,255,255,.12);
 
 
     padding:
 
-    20px 60px;
+    30px;
+
+
+    margin-bottom:
+
+    20px;
+
+
+    border-radius:
+
+    20px;
+
+
+    transition:
+
+    .4s;
+
+
+}
+
+
+
+
+
+.faq-card:hover {
+
+
+    border-color:
+
+    var(--gold);
+
+
+}
+
+
+
+
+
+.faq-card h3 {
+
+
+    color:
+
+    var(--amber);
+
+
+    font-size:
+
+    28px;
+
+
+}
+
+
+
+
+
+.faq-card p {
+
+
+    color:
+
+    #ddd1c2;
+
+
+    margin-top:
+
+    15px;
+
+
+}
+
+
+
+
+
+
+
+/* ==========================
+   CONTACT SECTION
+========================== */
+
+
+
+.contact {
+
+
+    background:
+
+    var(--cream);
+
+
+    padding:
+
+    150px 8%;
+
+
+}
+
+
+
+
+
+.contact-container {
+
+
+    max-width:
+
+    1000px;
+
+
+    margin:auto;
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+
+.contact h2 {
+
+
+    color:
+
+    #21160d;
+
+
+    font-size:
+
+    clamp(45px,5vw,80px);
+
+
+}
+
+
+
+
+
+.contact p {
+
+
+    color:
+
+    #5b4b3c;
+
+
+    margin-top:
+
+    25px;
+
+
+    font-size:
+
+    18px;
+
+
+}
+
+
+
+
+
+.contact-buttons {
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    gap:
+
+    25px;
+
+
+    margin-top:
+
+    45px;
+
+
+}
+
+
+
+
+.contact-button {
+
+
+    padding:
+
+    20px 55px;
+
+
+    border-radius:
+
+    50px;
 
 
     background:
@@ -3051,16 +4072,22 @@ header {
 
     color:
 
-    var(--dark);
+    #21160d;
 
 
-    letter-spacing:4px;
+    letter-spacing:
+
+    3px;
 
 
-    text-transform:uppercase;
+    text-transform:
+
+    uppercase;
 
 
-    transition:.5s;
+    transition:
+
+    .5s;
 
 
 }
@@ -3069,7 +4096,7 @@ header {
 
 
 
-.cta-button:hover {
+.contact-button:hover {
 
 
     transform:
@@ -3084,100 +4111,26 @@ header {
 
 }
 
-/* =====================================================
-   PART 5
-   CONTACT + BOOKING + FOOTER + RESPONSIVE
-===================================================== */
 
 
-/* ==========================
-   CONTACT SECTION
-========================== */
 
 
-.contact {
-
-
-    padding:
-
-    140px 8%;
+.email-button {
 
 
     background:
 
-    var(--cream);
+    transparent;
 
 
-}
+    border:
 
-
-
-.contact-container {
-
-
-    display:grid;
-
-
-    grid-template-columns:
-
-    1fr 1fr;
-
-
-    gap:80px;
-
-
-    align-items:center;
-
-
-}
-
-
-
-
-.contact-title {
-
-
-    font-family:
-
-    "Cormorant Garamond",
-    serif;
-
-
-    font-size:75px;
-
-
-    font-weight:500;
-
-
-}
-
-
-
-
-
-.contact-text {
+    1px solid #21160d;
 
 
     color:
 
-    var(--gray);
-
-
-    line-height:2;
-
-
-    font-size:18px;
-
-
-}
-
-
-
-
-.contact-info {
-
-
-    margin-top:40px;
+    #21160d;
 
 
 }
@@ -3186,142 +4139,17 @@ header {
 
 
 
-.contact-item {
-
-
-    margin-bottom:25px;
-
-
-}
-
-
-
-
-.contact-item h4 {
-
-
-    color:
-
-    var(--gold);
-
-
-    letter-spacing:4px;
-
-
-    text-transform:uppercase;
-
-
-    font-size:12px;
-
-
-}
-
-
-
-
-
-.contact-item p {
-
-
-    margin-top:8px;
-
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-   BOOKING PAGE
-========================== */
-
-
-.booking-page {
+.email-button:hover {
 
 
     background:
 
-    var(--cream);
-
-
-    min-height:100vh;
-
-
-}
-
-
-
-
-
-.booking-header {
-
-
-    height:70vh;
-
-
-    display:flex;
-
-
-    align-items:center;
-
-
-    justify-content:center;
-
-
-    text-align:center;
+    #21160d;
 
 
     color:white;
 
 
-    position:relative;
-
-
-    background:
-
-
-    linear-gradient(
-
-    rgba(0,0,0,.55),
-
-    rgba(0,0,0,.7)
-
-    ),
-
-    url("imaging/booking.jpg");
-
-
-    background-size:cover;
-
-
-    background-position:center;
-
-
-}
-
-
-
-
-
-.booking-header h1 {
-
-
-    font-family:
-
-    "Cormorant Garamond",
-    serif;
-
-
-    font-size:100px;
-
-
-    font-weight:500;
-
-
 }
 
 
@@ -3330,54 +4158,23 @@ header {
 
 
 
-.booking-form {
 
-
-    max-width:900px;
-
-
-    margin:
-
-    -100px auto 100px;
-
-
-    background:white;
-
-
-    padding:
-
-    70px;
-
-
-    position:relative;
-
-
-    z-index:2;
-
-
-    box-shadow:
-
-    var(--shadow);
-
-
-}
+/* ==========================
+   MOBILE
+========================== */
 
 
 
+@media(max-width:900px){
 
 
-.form-row {
 
-
-    display:grid;
+.process-grid {
 
 
     grid-template-columns:
 
-    1fr 1fr;
-
-
-    gap:25px;
+    1fr;
 
 
 }
@@ -3385,35 +4182,12 @@ header {
 
 
 
-
-.form-group {
-
-
-    margin-bottom:25px;
+.insurance-container {
 
 
-}
+    grid-template-columns:
 
-
-
-
-
-.form-group label {
-
-
-    display:block;
-
-
-    margin-bottom:10px;
-
-
-    font-size:12px;
-
-
-    letter-spacing:3px;
-
-
-    text-transform:uppercase;
+    1fr;
 
 
 }
@@ -3421,35 +4195,12 @@ header {
 
 
 
-
-.form-group input,
-
-
-.form-group textarea,
+.contact-buttons {
 
 
-.form-group select {
+    flex-direction:
 
-
-    width:100%;
-
-
-    padding:18px;
-
-
-    border:
-
-
-    1px solid #ddd;
-
-
-    background:#fafafa;
-
-
-    font-family:
-
-    "Montserrat",
-    sans-serif;
+    column;
 
 
 }
@@ -3457,88 +4208,14 @@ header {
 
 
 
-
-.form-group textarea {
-
-
-    height:180px;
-
-
-    resize:none;
-
-
 }
 
+/* =====================================================
+   FRONT RANGE PHOTOGRAPHIC
+   STYLE.CSS PART 6 / 10
 
-
-
-
-.submit-button {
-
-
-    width:100%;
-
-
-    padding:22px;
-
-
-    border:none;
-
-
-    cursor:pointer;
-
-
-    background:
-
-
-    linear-gradient(
-
-    135deg,
-
-    var(--gold),
-
-    var(--amber)
-
-    );
-
-
-    font-size:13px;
-
-
-    letter-spacing:5px;
-
-
-    text-transform:uppercase;
-
-
-    transition:.5s;
-
-
-}
-
-
-
-
-
-.submit-button:hover {
-
-
-    transform:
-
-    translateY(-5px);
-
-
-    box-shadow:
-
-    var(--gold-glow);
-
-
-}
-
-
-
-
-
+   Footer + Branding + Scroll Effects
+===================================================== */
 
 
 
@@ -3552,21 +4229,73 @@ footer {
 
     background:
 
-    #100c09;
-
-
-    color:white;
+    #080604;
 
 
     padding:
 
-    100px 8%;
+    100px 8% 40px;
 
 
     text-align:center;
 
 
+    color:white;
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
+
 }
+
+
+
+
+
+footer::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:500px;
+
+
+    height:500px;
+
+
+    top:-250px;
+
+
+    left:50%;
+
+
+    transform:
+
+    translateX(-50%);
+
+
+    background:
+
+    radial-gradient(
+
+    circle,
+
+    rgba(244,199,107,.18),
+
+    transparent 70%
+
+    );
+
+
+}
+
 
 
 
@@ -3574,23 +4303,37 @@ footer {
 .footer-logo {
 
 
-    font-family:
-
-    "Cormorant Garamond",
-    serif;
+    position:relative;
 
 
-    font-size:70px;
+    font-size:
+
+    clamp(45px,6vw,75px);
+
+
+    letter-spacing:
+
+    5px;
+
+
+    color:white;
 
 
 }
 
 
 
-.footer-tagline {
 
 
-    margin-top:20px;
+.footer-logo span {
+
+
+    display:block;
+
+
+    margin-top:
+
+    20px;
 
 
     color:
@@ -3598,13 +4341,19 @@ footer {
     var(--amber);
 
 
-    letter-spacing:5px;
+    font-size:
+
+    13px;
 
 
-    text-transform:uppercase;
+    letter-spacing:
+
+    8px;
 
 
-    font-size:12px;
+    text-transform:
+
+    uppercase;
 
 
 }
@@ -3612,12 +4361,42 @@ footer {
 
 
 
-.footer-links {
+
+.footer-description {
+
+
+    max-width:
+
+    700px;
 
 
     margin:
 
-    45px 0;
+    35px auto;
+
+
+    color:
+
+    #cfc4b6;
+
+
+    line-height:
+
+    1.8;
+
+
+}
+
+
+
+
+
+
+
+/* Footer links */
+
+
+.footer-links {
 
 
     display:flex;
@@ -3626,7 +4405,17 @@ footer {
     justify-content:center;
 
 
-    gap:40px;
+    gap:
+
+    40px;
+
+
+    margin:
+
+    50px 0;
+
+
+    flex-wrap:wrap;
 
 
 }
@@ -3634,13 +4423,33 @@ footer {
 
 
 
+
 .footer-links a {
 
 
-    color:#ccc;
+    color:
+
+    #ddd1c2;
 
 
-    transition:.4s;
+    letter-spacing:
+
+    3px;
+
+
+    text-transform:
+
+    uppercase;
+
+
+    font-size:
+
+    12px;
+
+
+    transition:
+
+    .4s;
 
 
 }
@@ -3654,7 +4463,42 @@ footer {
 
     color:
 
-    var(--gold);
+    var(--amber);
+
+
+}
+
+
+
+
+
+
+
+.footer-contact {
+
+
+    margin-top:
+
+    40px;
+
+
+}
+
+
+
+
+
+.footer-contact p {
+
+
+    color:
+
+    var(--cream);
+
+
+    margin:
+
+    12px;
 
 
 }
@@ -3666,15 +4510,29 @@ footer {
 .footer-bottom {
 
 
-    padding-top:40px;
+    margin-top:
+
+    50px;
+
+
+    padding-top:
+
+    30px;
 
 
     border-top:
 
-    1px solid rgba(255,255,255,.1);
+    1px solid rgba(255,255,255,.15);
 
 
-    color:#777;
+    color:
+
+    #777;
+
+
+    font-size:
+
+    13px;
 
 
 }
@@ -3687,16 +4545,63 @@ footer {
 
 
 /* ==========================
-   EXTRA ANIMATIONS
+   LOCATION BADGE
 ========================== */
 
 
-.fade-in {
+
+.location-badge {
 
 
-    animation:
+    display:inline-flex;
 
-    fadeIn 1.5s ease;
+
+    align-items:center;
+
+
+    gap:
+
+    15px;
+
+
+    padding:
+
+    15px 30px;
+
+
+    border-radius:
+
+    50px;
+
+
+    background:
+
+    rgba(244,199,107,.1);
+
+
+    border:
+
+    1px solid rgba(244,199,107,.3);
+
+
+    color:
+
+    var(--amber);
+
+
+    letter-spacing:
+
+    3px;
+
+
+    text-transform:
+
+    uppercase;
+
+
+    font-size:
+
+    12px;
 
 
 }
@@ -3704,35 +4609,186 @@ footer {
 
 
 
-@keyframes fadeIn {
+
+.location-dot {
 
 
-    from {
+    width:
+
+    10px;
 
 
-        opacity:0;
+    height:
+
+    10px;
+
+
+    border-radius:
+
+    50%;
+
+
+    background:
+
+    var(--amber);
+
+
+    box-shadow:
+
+    var(--gold-glow);
+
+
+    animation:
+
+    locationPulse 2s infinite;
+
+
+}
+
+
+
+
+
+@keyframes locationPulse {
+
+
+    50% {
 
 
         transform:
 
-        translateY(40px);
+        scale(1.5);
+
+
+        opacity:.5;
 
 
     }
 
 
-    to {
+}
 
 
-        opacity:1;
 
 
-        transform:
-
-        translateY(0);
 
 
-    }
+
+
+/* ==========================
+   SCROLL REVEAL ANIMATIONS
+========================== */
+
+
+
+.fade-up {
+
+
+    opacity:0;
+
+
+    transform:
+
+    translateY(60px);
+
+
+    transition:
+
+    1s ease;
+
+
+}
+
+
+
+
+.fade-up.visible {
+
+
+    opacity:1;
+
+
+    transform:
+
+    translateY(0);
+
+
+}
+
+
+
+
+
+.fade-left {
+
+
+    opacity:0;
+
+
+    transform:
+
+    translateX(-60px);
+
+
+    transition:
+
+    1s ease;
+
+
+}
+
+
+
+
+
+.fade-left.visible {
+
+
+    opacity:1;
+
+
+    transform:
+
+    translateX(0);
+
+
+}
+
+
+
+
+
+.fade-right {
+
+
+    opacity:0;
+
+
+    transform:
+
+    translateX(60px);
+
+
+    transition:
+
+    1s ease;
+
+
+}
+
+
+
+
+
+.fade-right.visible {
+
+
+    opacity:1;
+
+
+    transform:
+
+    translateX(0);
 
 
 }
@@ -3742,12 +4798,69 @@ footer {
 
 
 
-.glow {
+
+
+/* ==========================
+   GOLD DIVIDERS
+========================== */
+
+
+
+.gold-divider {
+
+
+    width:
+
+    180px;
+
+
+    height:
+
+    2px;
+
+
+    margin:
+
+    50px auto;
+
+
+    background:
+
+
+    linear-gradient(
+
+    90deg,
+
+    transparent,
+
+    var(--gold),
+
+    transparent
+
+    );
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+   BUTTON GLOW EFFECT
+========================== */
+
+
+
+.glow-button {
 
 
     animation:
 
-    glowPulse 3s infinite;
+    buttonGlow 3s infinite;
 
 
 }
@@ -3756,7 +4869,7 @@ footer {
 
 
 
-@keyframes glowPulse {
+@keyframes buttonGlow {
 
 
     50% {
@@ -3780,41 +4893,84 @@ footer {
 
 
 /* ==========================
-   MOBILE DESIGN
+   MOBILE FOOTER
 ========================== */
 
 
-@media(max-width:1000px){
+
+@media(max-width:700px){
 
 
 
-.nav-links {
-
-
-    display:none;
-
-
-}
-
-
-
-
-.navbar {
+footer {
 
 
     padding:
 
-    18px 25px;
+    80px 6% 30px;
 
 
 }
+
+
+
+
+.footer-links {
+
+
+    flex-direction:
+
+    column;
+
+
+    gap:
+
+    25px;
+
+
+}
+
+
+
+
+.footer-logo {
+
+
+    font-size:
+
+    42px;
+
+
+}
+
+
+
+}
+
+/* =====================================================
+   FRONT RANGE PHOTOGRAPHIC
+   STYLE.CSS PART 7 / 10
+
+   Mobile Optimization + Responsive Controls
+===================================================== */
+
+
+
+/* ==========================
+   TABLETS
+========================== */
+
+
+@media(max-width:1100px){
 
 
 
 .hero h1 {
 
 
-    font-size:65px;
+    font-size:
+
+    70px;
 
 
 }
@@ -3824,20 +4980,1521 @@ footer {
 .hero-description {
 
 
-    font-size:16px;
+    font-size:
+
+    17px;
 
 
 }
+
+
+
+.navbar {
+
+
+    padding:
+
+    15px 25px;
+
+
+}
+
+
+
+.services-grid,
+.pricing-grid {
+
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+
+}
+
+
+
+.hero-stats {
+
+
+    flex-wrap:
+
+    wrap;
+
+
+}
+
+
+
+}
+
+
+
+
+
+/* ==========================
+   PHONES
+========================== */
+
+
+@media(max-width:700px){
+
+
+
+/* Header */
+
+
+header {
+
+
+    padding:
+
+    15px 5%;
+
+
+}
+
+
+
+.navbar {
+
+
+    border-radius:
+
+    30px;
+
+
+}
+
+
+
+.logo {
+
+
+    font-size:
+
+    22px;
+
+
+}
+
+
+
+.logo span {
+
+
+    font-size:
+
+    8px;
+
+
+    letter-spacing:
+
+    4px;
+
+
+}
+
+
+
+.nav-call {
+
+
+    padding:
+
+    10px 18px;
+
+
+    font-size:
+
+    10px;
+
+
+}
+
+
+
+
+
+
+
+/* Hero */
+
+
+.hero {
+
+
+    min-height:
+
+    100vh;
+
+
+}
+
+
+
+.hero-content {
+
+
+    padding:
+
+    120px 20px 40px;
+
+
+}
+
+
+
+.hero-location {
+
+
+    font-size:
+
+    10px;
+
+
+    letter-spacing:
+
+    4px;
+
+
+}
+
+
+
+
+.hero h1 {
+
+
+    font-size:
+
+    42px;
+
+
+    letter-spacing:
+
+    2px;
+
+
+}
+
+
+
+
+
+.hero-description {
+
+
+    font-size:
+
+    15px;
+
+
+    line-height:
+
+    1.7;
+
+
+}
+
+
 
 
 
 .hero-buttons {
 
 
-    flex-direction:column;
+    gap:
+
+    15px;
 
 
 }
+
+
+
+
+
+.primary-button,
+.secondary-button {
+
+
+    width:
+
+    100%;
+
+
+    padding:
+
+    17px;
+
+
+}
+
+
+
+
+
+/* Cards */
+
+
+.hero-stats {
+
+
+    flex-direction:
+
+    column;
+
+
+    gap:
+
+    15px;
+
+
+}
+
+
+
+
+
+.hero-stat {
+
+
+    width:
+
+    100%;
+
+
+    padding:
+
+    25px;
+
+
+}
+
+
+
+
+
+.hero-stat h3 {
+
+
+    font-size:
+
+    35px;
+
+
+}
+
+
+
+
+
+
+
+/* Sections */
+
+
+.services,
+.about,
+.contact,
+.pricing,
+.process,
+.insurance,
+.technology {
+
+
+    padding:
+
+    80px 6%;
+
+
+}
+
+
+
+
+
+
+.section-title {
+
+
+    margin-bottom:
+
+    45px;
+
+
+}
+
+
+
+
+
+.section-title h2 {
+
+
+    font-size:
+
+    40px;
+
+
+}
+
+
+
+
+
+.section-title p {
+
+
+    font-size:
+
+    15px;
+
+
+}
+
+
+
+
+
+/* Service cards */
+
+
+.service-card {
+
+
+    padding:
+
+    35px 25px;
+
+
+}
+
+
+
+.service-number {
+
+
+    font-size:
+
+    55px;
+
+
+}
+
+
+
+
+
+.service-card h3 {
+
+
+    font-size:
+
+    30px;
+
+
+}
+
+
+
+
+
+
+
+/* Technology */
+
+
+.technology-container {
+
+
+    gap:
+
+    40px;
+
+
+}
+
+
+
+.drone-display {
+
+
+    height:
+
+    300px;
+
+
+}
+
+
+
+
+
+.drone-circle {
+
+
+    width:
+
+    220px;
+
+
+    height:
+
+    220px;
+
+
+}
+
+
+
+
+
+.drone-circle::before {
+
+
+    width:
+
+    300px;
+
+
+    height:
+
+    300px;
+
+
+}
+
+
+
+
+
+
+
+/* Pricing */
+
+
+.price-card {
+
+
+    padding:
+
+    35px 25px;
+
+
+}
+
+
+
+.price-card h3 {
+
+
+    font-size:
+
+    35px;
+
+
+}
+
+
+
+
+.price {
+
+
+    font-size:
+
+    50px;
+
+
+}
+
+
+
+
+
+
+
+
+/* FAQ */
+
+
+.faq-card {
+
+
+    padding:
+
+    25px;
+
+
+}
+
+
+
+.faq-card h3 {
+
+
+    font-size:
+
+    22px;
+
+
+}
+
+
+
+
+
+
+
+/* Contact */
+
+
+.contact h2 {
+
+
+    font-size:
+
+    42px;
+
+
+}
+
+
+
+.contact p {
+
+
+    font-size:
+
+    16px;
+
+
+}
+
+
+
+
+
+
+
+/* Footer */
+
+
+.footer-logo {
+
+
+    font-size:
+
+    40px;
+
+
+}
+
+
+
+.footer-description {
+
+
+    font-size:
+
+    15px;
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+/* ==========================
+   SMALL PHONES
+========================== */
+
+
+@media(max-width:380px){
+
+
+
+.hero h1 {
+
+
+    font-size:
+
+    36px;
+
+
+}
+
+
+
+.hero-description {
+
+
+    font-size:
+
+    14px;
+
+
+}
+
+
+
+.logo {
+
+
+    font-size:
+
+    19px;
+
+
+}
+
+
+
+.section-title h2 {
+
+
+    font-size:
+
+    34px;
+
+
+}
+
+
+
+.primary-button,
+.secondary-button {
+
+
+    font-size:
+
+    11px;
+
+
+}
+
+
+
+
+
+
+}
+
+
+
+
+
+/* ==========================
+   LANDSCAPE PHONES
+========================== */
+
+
+@media(max-height:500px) and (orientation:landscape){
+
+
+
+.hero {
+
+
+    min-height:
+
+    700px;
+
+
+}
+
+
+
+.hero h1 {
+
+
+    font-size:
+
+    45px;
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+   ACCESSIBILITY
+========================== */
+
+
+@media(prefers-reduced-motion:reduce){
+
+
+
+* {
+
+
+    animation-duration:
+
+    .01ms !important;
+
+
+    transition-duration:
+
+    .01ms !important;
+
+
+}
+
+
+
+}
+
+/* =====================================================
+   FRONT RANGE PHOTOGRAPHIC
+   STYLE.CSS PART 8 / 10
+
+   Gallery + Image Effects + Premium Animations
+===================================================== */
+
+
+
+/* ==========================
+   PHOTO GALLERY
+========================== */
+
+
+.gallery {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+
+    gap:
+
+    30px;
+
+
+}
+
+
+
+
+
+.photo-card {
+
+
+    position:relative;
+
+
+    height:
+
+    500px;
+
+
+    overflow:hidden;
+
+
+    border-radius:
+
+    25px;
+
+
+    background:
+
+    #000;
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+
+
+.photo-card img {
+
+
+    width:
+
+    100%;
+
+
+    height:
+
+    100%;
+
+
+    object-fit:cover;
+
+
+    transition:
+
+    1.2s ease;
+
+
+}
+
+
+
+
+
+.photo-card:hover img {
+
+
+    transform:
+
+    scale(1.15);
+
+
+}
+
+
+
+
+
+.photo-card::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    background:
+
+
+    linear-gradient(
+
+    transparent,
+
+    rgba(0,0,0,.8)
+
+    );
+
+
+    z-index:1;
+
+
+}
+
+
+
+
+
+.photo-card::after {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:20px;
+
+
+    border:
+
+    1px solid transparent;
+
+
+    border-radius:
+
+    20px;
+
+
+    transition:
+
+    .5s;
+
+
+    z-index:2;
+
+
+}
+
+
+
+
+
+.photo-card:hover::after {
+
+
+    border-color:
+
+    var(--amber);
+
+
+    box-shadow:
+
+    inset 0 0 30px rgba(244,199,107,.25);
+
+
+}
+
+
+
+
+
+
+
+.photo-info {
+
+
+    position:absolute;
+
+
+    bottom:
+
+    35px;
+
+
+    left:
+
+    35px;
+
+
+    z-index:3;
+
+
+}
+
+
+
+
+
+.photo-info h3 {
+
+
+    color:white;
+
+
+    font-size:
+
+    38px;
+
+
+}
+
+
+
+
+
+.photo-info p {
+
+
+    margin-top:
+
+    10px;
+
+
+    color:
+
+    var(--amber);
+
+
+    letter-spacing:
+
+    4px;
+
+
+    font-size:
+
+    12px;
+
+
+}
+
+
+
+
+
+
+
+/* Featured image */
+
+
+
+.photo-card.featured {
+
+
+    grid-column:
+
+    span 2;
+
+
+    height:
+
+    650px;
+
+
+}
+
+
+
+
+
+
+
+/* ==========================
+   IMAGE LIGHT EFFECT
+========================== */
+
+
+
+.image-glow {
+
+
+    position:relative;
+
+
+}
+
+
+
+
+
+.image-glow::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:
+
+    -20px;
+
+
+    background:
+
+    radial-gradient(
+
+    circle,
+
+    rgba(244,199,107,.25),
+
+    transparent 70%
+
+    );
+
+
+    z-index:-1;
+
+
+    opacity:0;
+
+
+    transition:
+
+    .6s;
+
+
+}
+
+
+
+
+
+.image-glow:hover::before {
+
+
+    opacity:1;
+
+
+}
+
+
+
+
+
+
+
+/* ==========================
+   FLOATING ANIMATION
+========================== */
+
+
+
+.float {
+
+
+    animation:
+
+    floating 6s ease-in-out infinite;
+
+
+}
+
+
+
+
+
+@keyframes floating {
+
+
+
+0%,100% {
+
+
+    transform:
+
+    translateY(0);
+
+
+}
+
+
+
+50% {
+
+
+    transform:
+
+    translateY(-20px);
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+/* ==========================
+   SHINE EFFECT
+========================== */
+
+
+
+.shine {
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+
+
+.shine::after {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    top:0;
+
+
+    left:-120%;
+
+
+    width:
+
+    80%;
+
+
+    height:
+
+    100%;
+
+
+    background:
+
+    linear-gradient(
+
+    120deg,
+
+    transparent,
+
+    rgba(255,255,255,.35),
+
+    transparent
+
+    );
+
+
+    transform:
+
+    skewX(-25deg);
+
+
+    transition:
+
+    .8s;
+
+
+}
+
+
+
+
+
+.shine:hover::after {
+
+
+    left:
+
+    150%;
+
+
+}
+
+
+
+
+
+
+
+/* ==========================
+   DRONE FEATURE BADGES
+========================== */
+
+
+
+.drone-badge {
+
+
+    display:inline-flex;
+
+
+    align-items:center;
+
+
+    gap:
+
+    12px;
+
+
+    padding:
+
+    12px 25px;
+
+
+    border-radius:
+
+    50px;
+
+
+    background:
+
+    rgba(244,199,107,.12);
+
+
+    border:
+
+    1px solid rgba(244,199,107,.35);
+
+
+    color:
+
+    var(--amber);
+
+
+    font-size:
+
+    12px;
+
+
+    letter-spacing:
+
+    3px;
+
+
+    text-transform:
+
+    uppercase;
+
+
+}
+
+
+
+
+
+.drone-badge::before {
+
+
+    content:"";
+
+
+    width:
+
+    8px;
+
+
+    height:
+
+    8px;
+
+
+    border-radius:
+
+    50%;
+
+
+    background:
+
+    var(--amber);
+
+
+    box-shadow:
+
+    var(--gold-glow);
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+   NUMBER COUNTERS
+========================== */
+
+
+
+.stat-number {
+
+
+    color:
+
+    var(--gold);
+
+
+    font-size:
+
+    65px;
+
+
+    font-weight:
+
+    700;
+
+
+}
+
+
+
+
+
+.stat-label {
+
+
+    color:
+
+    #5b4b3c;
+
+
+    letter-spacing:
+
+    3px;
+
+
+    text-transform:
+
+    uppercase;
+
+
+    font-size:
+
+    12px;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+   RESPONSIVE GALLERY
+========================== */
+
+
+
+@media(max-width:1000px){
+
+
+
+.gallery {
+
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+
+}
+
+
+
+.photo-card.featured {
+
+
+    grid-column:
+
+    span 2;
+
+
+}
+
+
+
+}
+
+
+
+
+
+@media(max-width:600px){
 
 
 
@@ -3853,7 +6510,6 @@ footer {
 
 
 
-
 .photo-card.featured {
 
 
@@ -3862,107 +6518,21 @@ footer {
     span 1;
 
 
-}
+    height:
 
-
-
-
-
-.about-container,
-
-
-.contact-container {
-
-
-    grid-template-columns:
-
-    1fr;
+    500px;
 
 
 }
 
 
 
+.photo-card {
 
 
-.about-text h2,
+    height:
 
-
-.contact-title {
-
-
-    font-size:55px;
-
-
-}
-
-
-
-
-.services-grid,
-
-
-.package-grid,
-
-
-.testimonial-grid {
-
-
-    grid-template-columns:
-
-    1fr;
-
-
-}
-
-
-
-
-.booking-header h1 {
-
-
-    font-size:60px;
-
-
-}
-
-
-
-
-.booking-form {
-
-
-    margin:
-
-    -50px 20px 70px;
-
-
-    padding:
-
-    35px;
-
-
-}
-
-
-
-
-.form-row {
-
-
-    grid-template-columns:
-
-    1fr;
-
-
-}
-
-
-
-.footer-logo {
-
-
-    font-size:50px;
+    400px;
 
 
 }
@@ -3973,1236 +6543,368 @@ footer {
 
 /* =====================================================
    FRONT RANGE PHOTOGRAPHIC
-   RESPONSIVE MOBILE OPTIMIZATION
+   STYLE.CSS PART 9 / 10
+
+   Typography + Contrast System
 ===================================================== */
 
 
-/* Prevent horizontal scrolling */
 
-html,
-body {
-
-    max-width:100%;
-    overflow-x:hidden;
-
-}
-
-
-
-
-/* Large tablets and small laptops */
-
-@media (max-width:1200px){
-
-
-.hero-container {
-
-    padding:0 6%;
-
-}
-
-
-.hero-text h1 {
-
-    font-size:75px;
-
-}
-
-
-.hero-description {
-
-    max-width:600px;
-
-}
-
-
-.info-box {
-
-    padding:25px;
-
-}
-
-
-}
-
-
-
-
-
-
-
-/* Tablets */
-
-@media (max-width:900px){
-
-
-
-.navbar {
-
-    padding:25px 5%;
-
-}
-
-
-
-.nav-menu {
-
-    position:fixed;
-
-    top:0;
-
-    right:-100%;
-
-    width:80%;
-
-    height:100vh;
-
-    background:#171512;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:40px;
-
-    transition:.5s;
-
-    z-index:999;
-
-
-}
-
-
-
-.nav-menu.active {
-
-    right:0;
-
-}
-
-
-
-
-
-.nav-menu a {
-
-    font-size:22px;
-
-}
-
-
-
-
-
-.mobile-menu {
-
-    display:flex;
-
-}
-
-
-
-.nav-call {
-
-    display:none;
-
-}
-
-
-
-
-
-.hero {
-
-    min-height:900px;
-
-}
-
-
-
-
-
-.hero-container {
-
-    flex-direction:column;
-
-    text-align:center;
-
-    justify-content:center;
-
-}
-
-
-
-
-
-.hero-text {
-
-    width:100%;
-
-}
-
-
-
-.location-label {
-
-    font-size:12px;
-
-    letter-spacing:3px;
-
-}
-
-
-
-
-.hero h1,
-.hero-title {
-
-
-    font-size:60px;
-
-    line-height:1;
-
-
-}
-
-
-
-
-
-.hero-description {
-
-    font-size:17px;
-
-    margin:auto;
-
-}
-
-
-
-
-.hero-actions {
-
-
-    flex-direction:column;
-
-    align-items:center;
-
-    gap:20px;
-
-
-}
-
-
-
-
-
-.gold-button,
-.outline-button {
-
-
-    width:90%;
-
-    max-width:350px;
-
-    text-align:center;
-
-}
-
-
-
-
-
-.hero-info-panel {
-
-
-    margin-top:50px;
-
-    width:100%;
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-
-}
-
-
-
-.info-box h3 {
-
-
-    font-size:35px;
-
-
-}
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-/* Phones */
-
-@media (max-width:600px){
-
-
-
-
-
-.loading-screen h1 {
-
-    font-size:35px;
-
-}
-
-
-
-.loading-screen p {
-
-    font-size:12px;
-
-    letter-spacing:5px;
-
-}
-
-
-
-
-
-.logo h2 {
-
-    font-size:22px;
-
-}
-
-
-
-.logo span {
-
-    font-size:8px;
-
-    letter-spacing:4px;
-
-}
-
-
-
-
-
-
-.hero {
-
-    min-height:100vh;
-
-    padding-top:100px;
-
-
-}
-
-
-
-
-
-.hero h1,
-.hero-title {
-
-
-    font-size:42px;
-
-    line-height:1.1;
-
-
-}
-
-
-
-
-
-.hero-title span {
-
-    display:block;
-
-
-}
-
-
-
-
-.hero-description {
-
-
-    font-size:15px;
-
-    line-height:1.8;
-
-    padding:0 15px;
-
-
-}
-
-
-
-
-
-.hero-info-panel {
-
-
-    grid-template-columns:1fr;
-
-    gap:15px;
-
-
-}
-
-
-
-
-
-.info-box {
-
-
-    width:100%;
-
-    padding:20px;
-
-
-}
-
-
-
-
-
-.section-heading h2 {
-
-
-    font-size:42px;
-
-    line-height:1.15;
-
-
-}
-
-
-
-
-.section-heading p {
-
-
-    font-size:11px;
-
-    letter-spacing:4px;
-
-
-}
-
-
-
-
-
-.introduction,
-.services,
-.portfolio,
-.pricing,
-.contact {
-
-
-    padding:80px 6%;
-
-
-}
-
-
-
-
-
-
-
-.gold-button,
-.outline-button {
-
-
-    padding:16px 30px;
-
-    font-size:12px;
-
-    letter-spacing:2px;
-
-
-}
-
-
-
-
-
-}
-
-
-
-
-
-/* Small phones */
-
-@media (max-width:380px){
-
-
-
-.hero h1,
-.hero-title {
-
-
-    font-size:36px;
-
-
-}
-
-
-
-.hero-description {
-
-
-    font-size:14px;
-
-
-}
-
-
-
-.logo h2 {
-
-
-    font-size:19px;
-
-
-}
-
-
-
-.section-heading h2 {
-
-
-    font-size:36px;
-
-
-}
-
-
-
-}
-
-
-
-
-/* Landscape phones */
-
-@media (max-height:500px) and (orientation:landscape){
-
-
-
-.hero {
-
-
-    min-height:700px;
-
-
-}
-
-
-
-.hero h1 {
-
-
-    font-size:45px;
-
-
-}
-
-
-
-}
-
-
-
-
-
-/* High resolution phones */
-
-@media (-webkit-min-device-pixel-ratio:2){
-
-
-
-img {
-
-
-    image-rendering:auto;
-
-
-}
-
-
-
-}
-
-
-
-
-
-/* Touch improvements */
-
-
-@media (hover:none){
-
-
-
-.gold-button:hover,
-.outline-button:hover {
-
-
-    transform:none;
-
-
-}
-
-
-
-a,
-button {
-
-
-    min-height:44px;
-
-
-}
-
-
-
-}
-
-
-
-
-
-
-
-
-/* Accessibility */
-
-@media (prefers-reduced-motion:reduce){
-
+/* ==========================
+   GLOBAL FONT SYSTEM
+========================== */
 
 
 * {
 
 
-    animation-duration:.01ms !important;
+    font-family:
 
-    transition-duration:.01ms !important;
+    "Times New Roman",
+    Times,
+    serif;
+
+
+}
+
+
+
+
+
+body {
+
+
+    color:
+
+    #21160d;
 
 
 }
 
 
 
-}
-
-/* ==========================================
-   FRONT RANGE PHOTOGRAPHIC
-   GOLD TEXT COLORS
-========================================== */
-
-
-/* Logo subtitle */
-
-.logo span {
-
-    color:#d4a24c;
-
-}
-
-
-
-/* Navigation links */
-
-.nav-menu a {
-
-    color:#f5d58a;
-
-}
-
-
-
-.nav-menu a:hover {
-
-    color:#d4a24c;
-
-}
-
-
-
-
-
-/* Call button */
-
-.nav-call {
-
-    color:#171512;
-
-    background:#d4a24c;
-
-}
-
-
-
-.nav-call:hover {
-
-    background:#f0c36b;
-
-}
-
-
-
-
-
-
-/* Location label */
-
-.location-label {
-
-    color:#d4a24c;
-
-}
-
-
-
-
-
-
-/* Small section headings */
-
-.section-heading p,
-.gold-label {
-
-    color:#d4a24c;
-
-}
-
-
-
-
-
-
-/* Hero highlighted text */
-
-.hero h1 span {
-
-    color:#d4a24c;
-
-}
-
-
-
-
-
-
-/* Service numbers */
-
-.service-icon,
-.process-number {
-
-    color:#d4a24c;
-
-}
-
-
-
-
-
-
-/* Gold buttons */
-
-.gold-button {
-
-    background:#d4a24c;
-
-    color:#171512;
-
-}
-
-
-
-.gold-button:hover {
-
-    background:#f0c36b;
-
-}
-
-
-
-
-
-
-
-/* Pricing featured tag */
-
-.popular-tag {
-
-    background:#d4a24c;
-
-    color:#171512;
-
-}
-
-
-
-
-
-
-
-/* Stats numbers */
-
-.stat-number {
-
-    color:#d4a24c;
-
-}
-
-
-
-
-
-
-/* Footer brand */
-
-.footer-logo span {
-
-    color:#d4a24c;
-
-}
-
-/* CONTACT DARK TEXT FIX */
-
-.contact {
-    color:#211812;
-}
-
-.contact h1,
-.contact h2,
-.contact h3,
-.contact p,
-.contact a {
-    color:#211812;
-}
-
-.contact .gold-label {
-    color:#a66b20;
-}
-
-.contact .gold-button {
-    color:#171512;
-}
-
-.contact .outline-button {
-    color:#211812;
-    border-color:#211812;
-}
 
 
 /* ==========================
-   DARK MODE COLOR OVERRIDE
-   BLACK BACKGROUNDS + CREAM TEXT
+   DARK BACKGROUND TEXT FIX
 ========================== */
 
-body,
-section,
+
+
+.hero,
+.technology,
+.process,
+.faq,
+footer,
+.packages {
+
+
+    color:
+
+    #faf5eb;
+
+
+}
+
+
+
+
+
+.hero h1,
+.hero h2,
+.hero h3,
+.technology h1,
+.technology h2,
+.technology h3,
+.process h1,
+.process h2,
+.process h3,
+.faq h1,
+.faq h2,
+.faq h3,
+footer h1,
+footer h2,
+footer h3 {
+
+
+    color:
+
+    #ffffff;
+
+
+}
+
+
+
+
+
+
+.hero p,
+.technology p,
+.process p,
+.faq p,
+footer p {
+
+
+    color:
+
+    #e8ddcf;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+   LIGHT BACKGROUND TEXT FIX
+========================== */
+
+
+
 .about,
 .services,
 .contact,
-.testimonials,
-.introduction,
 .pricing,
-.packages,
-.comparison,
-.faq,
-.booking-page {
-    background:#0d0a07 !important;
-    color:#fff1d0 !important;
+.insurance,
+.testimonials {
+
+
+    color:
+
+    #21160d;
+
+
 }
 
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-li,
-td,
-th,
-span {
-    color:#fff1d0;
+
+
+.about h1,
+.about h2,
+.about h3,
+.services h1,
+.services h2,
+.services h3,
+.contact h1,
+.contact h2,
+.contact h3,
+.pricing h1,
+.pricing h2,
+.pricing h3,
+.insurance h1,
+.insurance h2,
+.insurance h3,
+.testimonials h1,
+.testimonials h2,
+.testimonials h3 {
+
+
+    color:
+
+    #21160d;
+
+
 }
 
 
-.section-title h2,
-.section-heading h2,
-.about-text h2,
-.contact-title,
-.hero h1 {
-    color:#fff1d0 !important;
+
+
+
+.about p,
+.services p,
+.contact p,
+.pricing p,
+.insurance p,
+.testimonials p {
+
+
+    color:
+
+    #5b4b3c;
+
+
 }
 
 
-.hero-description,
-.contact-text,
-.about-text p,
-.service-card p,
-.testimonial p,
-.package li {
-    color:#f3dfb5 !important;
+
+
+
+
+
+/* ==========================
+   HEADER TEXT
+========================== */
+
+
+
+header .logo {
+
+
+    color:
+
+    white;
+
+
 }
 
 
-.service-card,
-.package,
-.testimonial,
-.booking-form {
-    background:#17110c !important;
-    color:#fff1d0;
+
+
+
+header a {
+
+
+    color:
+
+    #faf5eb;
+
+
 }
+
+
+
+
+
+header a:hover {
+
+
+    color:
+
+    var(--sun);
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+   GOLD TEXT SYSTEM
+========================== */
+
+
+
+.gold-text,
+.section-title small,
+.hero-location,
+.location-label {
+
+
+    color:
+
+    #d69b3d;
+
+
+}
+
+
+
+
+
+.highlight {
+
+
+    color:
+
+    #f0b45c;
+
+
+    text-shadow:
+
+    0 0 20px rgba(240,180,92,.5);
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+   BUTTON TEXT FIX
+========================== */
+
+
+
+.primary-button,
+.gold-button,
+.contact-button {
+
+
+    color:
+
+    #17100a;
+
+
+}
+
+
+
+
+
+.secondary-button {
+
+
+    color:
+
+    white;
+
+
+}
+
+
+
+
+
+.secondary-button:hover {
+
+
+    color:
+
+    #21160d;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+   FORM TEXT
+========================== */
+
 
 
 input,
 textarea,
 select {
-    background:#211812 !important;
-    color:#fff1d0 !important;
-    border-color:#d4a24c !important;
-}
 
 
-table,
-td,
-th {
-    color:#fff1d0 !important;
-}
+    color:
 
+    #21160d;
 
-footer {
-    background:#050403 !important;
-    color:#fff1d0 !important;
-}
-
-
-a {
-    color:#ffe8b0;
-}
-
-
-a:hover {
-    color:#f0c36b;
-}
-
-/* ==========================
-   LIGHT BACKGROUND TEXT FIX
-   SECTIONS 1-3 SERVICE CARDS
-========================== */
-
-.service-card,
-.services .service-card {
-    background:#fff8e8 !important;
-    color:#211812 !important;
-}
-
-
-.service-card h3,
-.service-card p,
-.service-card li {
-    color:#211812 !important;
-}
-
-
-.service-card ul li {
-    color:#4a3825 !important;
-}
-
-
-.service-card .service-number,
-.service-card .service-icon {
-    color:#d4a24c !important;
-}
-
-/* ==========================
-   LIGHT SECTION TEXT FIX
-   KEEP LIGHT BACKGROUNDS
-========================== */
-
-.services,
-.about,
-.introduction,
-.testimonials,
-.contact,
-.pricing {
-    color:#211812;
-}
-
-
-.services h1,
-.services h2,
-.services h3,
-.services p,
-.services li,
-.about h1,
-.about h2,
-.about h3,
-.about p,
-.introduction h1,
-.introduction h2,
-.introduction h3,
-.introduction p,
-.testimonials h1,
-.testimonials h2,
-.testimonials h3,
-.testimonials p,
-.contact h1,
-.contact h2,
-.contact h3,
-.contact p,
-.pricing h1,
-.pricing h2,
-.pricing h3,
-.pricing p {
-    color:#211812 !important;
-}
-
-
-/* Smaller description text */
-
-.services li,
-.services p,
-.about p,
-.introduction p,
-.testimonials p,
-.contact p {
-    color:#4a3825 !important;
-}
-
-/* ==========================
-   CONTACT LIGHT TEXT FIX
-========================== */
-
-.contact h2,
-.contact p {
-    color:#fff1d0 !important;
-}
-
-.contact .gold-label {
-    color:#d4a24c !important;
-}
-
-.contact a {
-    color:#fff1d0 !important;
-}
-
-.contact a:hover {
-    color:#f0c36b !important;
-}
-
-.contact a {
-    color:#fff1d0 !important;
-}
-
-.contact a:hover {
-    color:#f0c36b !important;
-}
-
-/* ==========================================
-   TIMES NEW ROMAN + DARK SECTION TEXT FIX
-========================================== */
-
-/* Entire website uses Times New Roman */
-
-*{
-    font-family:"Times New Roman", Times, serif !important;
-}
-
-
-/* Dark sections */
-
-.hero,
-.portfolio,
-.packages,
-.booking-cta,
-footer,
-#intro-screen,
-.statistics,
-.technology,
-.inspection-process,
-.insurance,
-.comparison,
-.faq,
-.service-area{
-    color:#fff3dc !important;
-}
-
-
-/* All text inside dark sections */
-
-.hero h1,
-.hero h2,
-.hero h3,
-.hero p,
-.hero li,
-.hero span,
-
-.portfolio h1,
-.portfolio h2,
-.portfolio h3,
-.portfolio p,
-.portfolio li,
-
-.packages h1,
-.packages h2,
-.packages h3,
-.packages p,
-.packages li,
-
-.statistics h1,
-.statistics h2,
-.statistics h3,
-.statistics p,
-.statistics span,
-
-.technology h1,
-.technology h2,
-.technology h3,
-.technology p,
-.technology li,
-
-.inspection-process h1,
-.inspection-process h2,
-.inspection-process h3,
-.inspection-process p,
-
-.insurance h1,
-.insurance h2,
-.insurance h3,
-.insurance p,
-
-.comparison h1,
-.comparison h2,
-.comparison h3,
-.comparison p,
-.comparison td,
-.comparison th,
-
-.faq h1,
-.faq h2,
-.faq h3,
-.faq p,
-
-.service-area h1,
-.service-area h2,
-.service-area h3,
-.service-area p,
-.service-area span,
-
-footer h1,
-footer h2,
-footer h3,
-footer p,
-footer a,
-footer span{
-    color:#fff3dc !important;
-}
-
-
-/* Gold labels remain gold */
-
-.gold-label,
-.section-heading p,
-.location-label,
-.hero h1 span,
-.stat-number,
-.process-number,
-.service-icon,
-.popular-tag{
-    color:#d4a24c !important;
-}
-
-/* Make introduction text section light */
-
-.introduction,
-.introduction p,
-.introduction h2 {
-    background:#faf5eb !important;
-    color:#2b2118 !important;
-}
-
-
-/* Keep the heading readable */
-
-.introduction .section-heading p {
-    color:#d4a24c !important;
-}
-
-
-.introduction .section-heading h2 {
-    color:#2b2118 !important;
-
-   /* =====================================================
-   FRONT RANGE PHOTOGRAPHIC
-   AUTOMATIC TITLE INTRO FADE
-   PASTE AT BOTTOM OF STYLE.CSS
-===================================================== */
-
-
-/* Intro screen stays above everything */
-
-#intro-screen,
-.loading-screen {
-
-    position:fixed;
-
-    inset:0;
-
-    width:100%;
-
-    height:100vh;
-
-    z-index:99999;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
 
     background:
 
-    radial-gradient(
-        circle at center,
-        #3a2410,
-        #080604
-    );
+    white;
 
-    animation:
-
-    introDisappear 1.5s ease forwards;
-
-    animation-delay:4s;
 
 }
 
@@ -5210,111 +6912,12 @@ footer span{
 
 
 
+label {
 
 
-/* Title styling */
+    color:
 
-
-#intro-screen h1,
-.loading-screen h1 {
-
-    font-family:
-    "Times New Roman",
-    serif;
-
-    font-size:90px;
-
-    color:#ffffff;
-
-    letter-spacing:8px;
-
-    text-align:center;
-
-    animation:
-
-    titleFade 2s ease;
-
-}
-
-
-
-
-
-#intro-screen p,
-.loading-screen p {
-
-    margin-top:25px;
-
-    color:#ffd98a;
-
-    font-size:18px;
-
-    letter-spacing:10px;
-
-    text-align:center;
-
-    text-transform:uppercase;
-
-}
-
-
-
-
-
-/* Gold line under title */
-
-
-#intro-screen::after,
-.loading-screen::after {
-
-    content:"";
-
-    position:absolute;
-
-    width:180px;
-
-    height:2px;
-
-    background:
-
-    linear-gradient(
-        90deg,
-        transparent,
-        #ffd98a,
-        transparent
-    );
-
-    margin-top:220px;
-
-}
-
-
-
-
-
-
-/* Fade title in */
-
-
-@keyframes titleFade {
-
-
-    from {
-
-        opacity:0;
-
-        transform:translateY(40px);
-
-    }
-
-
-    to {
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
+    #21160d;
 
 
 }
@@ -5325,313 +6928,50 @@ footer span{
 
 
 
-/* Remove intro automatically */
-
-
-@keyframes introDisappear {
-
-
-    0% {
-
-        opacity:1;
-
-        visibility:visible;
-
-    }
-
-
-    80% {
-
-        opacity:1;
-
-    }
-
-
-    100% {
-
-        opacity:0;
-
-        visibility:hidden;
-
-        pointer-events:none;
-
-    }
-
-
-}
-
-
-
-
-
-
-
-/* Website starts hidden then appears */
-
-
-body {
-
-    animation:
-
-    websiteReveal 1.5s ease;
-
-}
-
-
-
-@keyframes websiteReveal {
-
-
-    from {
-
-        opacity:0;
-
-    }
-
-
-    to {
-
-        opacity:1;
-
-    }
-
-
-}
-
-
-
-
-
-
-/* Mobile adjustment */
-
-
-@media(max-width:700px){
-
-
-#intro-screen h1,
-.loading-screen h1 {
-
-
-    font-size:45px;
-
-
-}
-
-
-
-#intro-screen p,
-.loading-screen p {
-
-
-    font-size:12px;
-
-    letter-spacing:5px;
-
-
-}
-
-
-}
-}
-
-/* Make services heading lighter */
-
-.services .section-heading p,
-.services .section-heading h2 {
-    color:#fff3dc !important;
-}
-
-
-/* Smaller header logo and navigation */
-
-.logo {
-    font-size:28px !important;
-    line-height:1 !important;
-}
-
-.logo span {
-    font-size:8px !important;
-    letter-spacing:5px !important;
-    margin-top:8px !important;
-}
-
-
-.nav-links,
-.nav-menu {
-    gap:25px !important;
-}
-
-
-.nav-links a,
-.nav-menu a {
-    font-size:12px !important;
-    letter-spacing:2px !important;
-}
-
-
-.nav-call {
-    padding:12px 25px !important;
-    font-size:12px !important;
-}
-
-
-/* Reduce header height */
-
-header {
-    padding:20px 5% !important;
-}
-
-
-.navbar {
-    padding:15px 25px !important;
-}
 
 /* ==========================
-   MOBILE SERVICES FIX
+   CLEAN SPACING
 ========================== */
 
-@media (max-width:600px){
 
-    .services {
-        display:block !important;
-        visibility:visible !important;
-        opacity:1 !important;
-        height:auto !important;
-        min-height:auto !important;
-        padding:80px 6% !important;
-        overflow:visible !important;
-    }
+h1,h2,h3,h4 {
 
 
-    .services .section-heading {
-        display:block !important;
-        margin-bottom:40px !important;
-    }
+    font-weight:
+
+    500;
 
 
-    .services .section-heading h2,
-    .services .section-heading p,
-    .services .section-heading span {
-        display:block !important;
-        visibility:visible !important;
-    }
+    line-height:
 
+    1.1;
 
-    .services-grid,
-    .service-container {
-        display:grid !important;
-        grid-template-columns:1fr !important;
-        gap:25px !important;
-    }
-
-
-    .service-card {
-        display:block !important;
-        opacity:1 !important;
-        transform:none !important;
-        visibility:visible !important;
-        height:auto !important;
-        padding:35px 25px !important;
-    }
-
-
-    .service-card h3,
-    .service-card p,
-    .service-card li {
-        display:block !important;
-        visibility:visible !important;
-    }
 
 }
 
-/* =====================================================
-   FRONT RANGE PHOTOGRAPHIC
-   PREMIUM STYLE UPGRADE
-   PASTE AT BOTTOM OF STYLE.CSS
-===================================================== */
 
-
-/* GLOBAL IMPROVEMENTS */
-
-body {
-
-    font-family:
-    "Times New Roman",
-    serif;
-
-    background:#16110d;
-
-    color:#faf5eb;
-
-}
 
 
 
 p {
 
-    line-height:1.9;
+
+    line-height:
+
+    1.8;
+
 
 }
+
+
 
 
 
 section {
 
-    position:relative;
 
     overflow:hidden;
 
-}
-
-
-
-/* NAVIGATION PREMIUM LOOK */
-
-
-.navbar {
-
-    background:
-    rgba(20,15,10,.75);
-
-    border:
-    1px solid rgba(240,180,92,.25);
-
-    backdrop-filter:
-    blur(20px);
-
-}
-
-
-
-.logo,
-.footer-logo {
-
-    font-family:
-    "Times New Roman",
-    serif;
-
-    letter-spacing:4px;
-
-}
-
-
-
-.nav-menu a {
-
-    color:#faf5eb;
-
-    font-size:14px;
-
-    letter-spacing:2px;
-
-}
-
-
-
-.nav-menu a:hover {
-
-    color:#ffd98a;
 
 }
 
@@ -5639,201 +6979,110 @@ section {
 
 
 
-/* HERO UPGRADE */
-
-
-.hero {
-
-    min-height:100vh;
-
-}
 
 
 
-.hero-overlay {
-
-    background:
-
-    linear-gradient(
-        rgba(0,0,0,.45),
-        rgba(0,0,0,.85)
-    );
-
-}
+/* ==========================
+   SMOOTH TEXT ANIMATION
+========================== */
 
 
 
-.hero h1 {
-
-    font-size:90px;
-
-    color:#ffffff;
-
-    text-shadow:
-    0 10px 40px rgba(0,0,0,.7);
-
-}
+.text-reveal {
 
 
+    animation:
 
-.hero h1 span {
+    textReveal 1.2s ease forwards;
 
-    color:#ffd98a;
-
-}
-
-
-
-.hero-description {
-
-    color:#f5f0e8;
-
-    max-width:800px;
 
 }
 
 
 
 
-
-/* BUTTON IMPROVEMENT */
-
-
-.gold-button,
-.primary-button,
-.package-button {
-
-    background:
-
-    linear-gradient(
-        135deg,
-        #d4a24c,
-        #ffd98a
-    );
-
-    color:#171512;
-
-    border-radius:50px;
-
-    font-weight:bold;
-
-}
+@keyframes textReveal {
 
 
-
-.gold-button:hover,
-.primary-button:hover {
-
-    box-shadow:
-
-    0 0 45px
-    rgba(240,180,92,.65);
-
-}
+from {
 
 
+    opacity:0;
 
-/* DARK SECTION TEXT FIX */
-
-
-.portfolio,
-.packages,
-.booking-cta,
-footer {
-
-    color:#faf5eb;
-
-}
-
-
-
-.portfolio h2,
-.packages h2,
-.booking-cta h2 {
-
-    color:#ffffff;
-
-}
-
-
-
-/* LIGHT SECTION TEXT FIX */
-
-
-.about,
-.services,
-.testimonials,
-.contact {
-
-    background:#faf5eb;
-
-}
-
-
-
-.about h2,
-.services h2,
-.contact h2,
-.section-title h2 {
-
-    color:#211812;
-
-}
-
-
-
-.about p,
-.services p,
-.contact p,
-.testimonial p {
-
-    color:#4b4035;
-
-}
-
-
-
-
-
-/* SERVICE CARDS */
-
-
-.service-card {
-
-    border-radius:20px;
-
-    background:white;
-
-    box-shadow:
-
-    0 20px 60px
-    rgba(0,0,0,.12);
-
-}
-
-
-
-.service-card:hover {
 
     transform:
 
-    translateY(-15px);
+    translateY(40px);
+
 
 }
 
 
 
-.service-card h3 {
+to {
 
-    color:#211812;
+
+    opacity:1;
+
+
+    transform:
+
+    translateY(0);
+
 
 }
 
 
 
-.service-card li {
+}
 
-    color:#5c5146;
+/* =====================================================
+   FRONT RANGE PHOTOGRAPHIC
+   STYLE.CSS PART 10 / 10
+
+   Final Cinematic Polish
+===================================================== */
+
+
+
+/* ==========================
+   PAGE FADE IN
+========================== */
+
+
+body {
+
+
+    animation:
+
+    pageEnter 1.5s ease;
+
+
+}
+
+
+
+
+@keyframes pageEnter {
+
+
+    from {
+
+
+        opacity:0;
+
+
+    }
+
+
+    to {
+
+
+        opacity:1;
+
+
+    }
+
 
 }
 
@@ -5842,55 +7091,163 @@ footer {
 
 
 
-/* PACKAGE CARDS */
+
+/* ==========================
+   INTRO SCREEN FADE
+========================== */
 
 
-.package {
+#intro-screen {
 
-    border-radius:25px;
+
+    animation:
+
+    introExit 2s ease forwards;
+
+
+}
+
+
+
+
+
+@keyframes introExit {
+
+
+    0% {
+
+
+        opacity:1;
+
+
+        visibility:visible;
+
+
+    }
+
+
+
+    85% {
+
+
+        opacity:1;
+
+
+    }
+
+
+
+    100% {
+
+
+        opacity:0;
+
+
+        visibility:hidden;
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+/* ==========================
+   PREMIUM BUTTON STYLE
+========================== */
+
+
+
+button,
+.primary-button,
+.gold-button,
+.contact-button,
+.package-button {
+
+
+    border-radius:
+
+    50px;
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+
+
+.primary-button,
+.gold-button,
+.contact-button {
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+
+
+.primary-button::after,
+.gold-button::after,
+.contact-button::after {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    top:0;
+
+
+    left:-120%;
+
+
+    width:
+
+    80%;
+
+
+    height:
+
+    100%;
+
 
     background:
 
     linear-gradient(
-        145deg,
-        #211812,
-        #120e0a
+
+    120deg,
+
+    transparent,
+
+    rgba(255,255,255,.6),
+
+    transparent
+
     );
 
-}
 
+    transition:
 
+    .8s;
 
-.package h3 {
-
-    color:white;
-
-}
-
-
-
-.package-price {
-
-    color:#ffd98a;
-
-}
-
-
-
-.package li {
-
-    color:#e8dfd4;
-
-}
-
-
-
-.package.popular {
-
-    box-shadow:
-
-    0 0 45px
-    rgba(212,162,76,.35);
 
 }
 
@@ -5898,84 +7255,15 @@ footer {
 
 
 
-/* SECTION TITLES */
+.primary-button:hover::after,
+.gold-button:hover::after,
+.contact-button:hover::after {
 
 
-.section-title small,
-.gold-label,
-.section-heading p {
+    left:
 
-    color:#c98b32;
+    150%;
 
-    letter-spacing:5px;
-
-}
-
-
-
-.section-title h2,
-.section-heading h2 {
-
-    font-family:
-    "Times New Roman",
-    serif;
-
-    font-weight:500;
-
-}
-
-
-
-
-
-
-/* CONTACT AREA */
-
-
-.contact-container {
-
-    background:white;
-
-    padding:60px;
-
-    border-radius:25px;
-
-}
-
-
-
-.contact-item h4 {
-
-    color:#c98b32;
-
-}
-
-
-
-.contact-item p {
-
-    color:#211812;
-
-}
-
-
-
-
-
-/* FOOTER */
-
-
-footer {
-
-    background:#090705;
-
-}
-
-
-
-.footer-tagline {
-
-    color:#ffd98a;
 
 }
 
@@ -5985,86 +7273,289 @@ footer {
 
 
 
-/* MOBILE IMPROVEMENTS */
-
-
-@media(max-width:700px){
-
-
-.hero h1 {
-
-    font-size:45px;
-
-}
-
-
-
-.section-title h2,
-.section-heading h2 {
-
-    font-size:40px;
-
-}
-
-
-
-.contact-container {
-
-    padding:30px;
-
-}
+/* ==========================
+   NAVIGATION IMPROVEMENT
+========================== */
 
 
 
 .navbar {
 
-    border-radius:20px;
+
+    transition:
+
+    .5s ease;
+
 
 }
 
 
 
+
+
+.navbar:hover {
+
+
+    transform:
+
+    translateY(-3px);
+
+
 }
 
 
 
 
 
-/* EXTRA LUXURY EFFECT */
+
+
+/* ==========================
+   SECTION TRANSITIONS
+========================== */
+
+
+
+section {
+
+
+    position:relative;
+
+
+}
+
+
+
+
+
+section::after {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    bottom:0;
+
+
+    left:50%;
+
+
+    width:
+
+    150px;
+
+
+    height:
+
+    2px;
+
+
+    transform:
+
+    translateX(-50%);
+
+
+    background:
+
+
+    linear-gradient(
+
+    90deg,
+
+    transparent,
+
+    var(--gold),
+
+    transparent
+
+    );
+
+
+}
+
+
+
+
+
+
+
+/* ==========================
+   CARD PREMIUM EFFECT
+========================== */
+
 
 
 .service-card,
-.package,
-.testimonial {
+.price-card,
+.process-card,
+.testimonial,
+.insurance-card {
 
-    transition:
-    transform .5s ease,
-    box-shadow .5s ease;
+
+    backdrop-filter:
+
+    blur(10px);
+
 
 }
+
+
 
 
 
 .service-card:hover,
-.package:hover,
+.price-card:hover,
+.process-card:hover,
 .testimonial:hover {
+
 
     box-shadow:
 
-    0 30px 70px
-    rgba(0,0,0,.25);
+    0 25px 70px rgba(0,0,0,.25);
+
 
 }
 
 
 
-/* GOLD DETAILS */
+
+
+
+
+/* ==========================
+   SCROLLBAR DESIGN
+========================== */
+
+
+
+::-webkit-scrollbar {
+
+
+    width:
+
+    12px;
+
+
+}
+
+
+
+
+
+::-webkit-scrollbar-track {
+
+
+    background:
+
+    #16110d;
+
+
+}
+
+
+
+
+
+::-webkit-scrollbar-thumb {
+
+
+    background:
+
+    linear-gradient(
+
+    var(--gold),
+
+    var(--amber)
+
+    );
+
+
+    border-radius:
+
+    20px;
+
+
+}
+
+
+
+
+
+/* ==========================
+   SELECTION COLOR
+========================== */
 
 
 ::selection {
 
-    background:#d4a24c;
 
-    color:#171512;
+    background:
+
+    var(--gold);
+
+
+    color:
+
+    #17100a;
+
+
+}
+
+
+
+
+
+
+
+/* ==========================
+   FINAL MOBILE POLISH
+========================== */
+
+
+
+@media(max-width:600px){
+
+
+
+h1 {
+
+
+    letter-spacing:
+
+    1px;
+
+
+}
+
+
+
+
+p {
+
+
+    line-height:
+
+    1.7;
+
+
+}
+
+
+
+
+button,
+a {
+
+
+    -webkit-tap-highlight-color:
+
+    transparent;
+
+
+}
+
+
 
 }
