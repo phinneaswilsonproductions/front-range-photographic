@@ -5161,6 +5161,278 @@ footer span{
 
 .introduction .section-heading h2 {
     color:#2b2118 !important;
+
+   /* =====================================================
+   FRONT RANGE PHOTOGRAPHIC
+   AUTOMATIC TITLE INTRO FADE
+   PASTE AT BOTTOM OF STYLE.CSS
+===================================================== */
+
+
+/* Intro screen stays above everything */
+
+#intro-screen,
+.loading-screen {
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+
+    height:100vh;
+
+    z-index:99999;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+
+    radial-gradient(
+        circle at center,
+        #3a2410,
+        #080604
+    );
+
+    animation:
+
+    introDisappear 1.5s ease forwards;
+
+    animation-delay:4s;
+
+}
+
+
+
+
+
+
+
+/* Title styling */
+
+
+#intro-screen h1,
+.loading-screen h1 {
+
+    font-family:
+    "Times New Roman",
+    serif;
+
+    font-size:90px;
+
+    color:#ffffff;
+
+    letter-spacing:8px;
+
+    text-align:center;
+
+    animation:
+
+    titleFade 2s ease;
+
+}
+
+
+
+
+
+#intro-screen p,
+.loading-screen p {
+
+    margin-top:25px;
+
+    color:#ffd98a;
+
+    font-size:18px;
+
+    letter-spacing:10px;
+
+    text-align:center;
+
+    text-transform:uppercase;
+
+}
+
+
+
+
+
+/* Gold line under title */
+
+
+#intro-screen::after,
+.loading-screen::after {
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:2px;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        transparent,
+        #ffd98a,
+        transparent
+    );
+
+    margin-top:220px;
+
+}
+
+
+
+
+
+
+/* Fade title in */
+
+
+@keyframes titleFade {
+
+
+    from {
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+
+}
+
+
+
+
+
+
+
+/* Remove intro automatically */
+
+
+@keyframes introDisappear {
+
+
+    0% {
+
+        opacity:1;
+
+        visibility:visible;
+
+    }
+
+
+    80% {
+
+        opacity:1;
+
+    }
+
+
+    100% {
+
+        opacity:0;
+
+        visibility:hidden;
+
+        pointer-events:none;
+
+    }
+
+
+}
+
+
+
+
+
+
+
+/* Website starts hidden then appears */
+
+
+body {
+
+    animation:
+
+    websiteReveal 1.5s ease;
+
+}
+
+
+
+@keyframes websiteReveal {
+
+
+    from {
+
+        opacity:0;
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+    }
+
+
+}
+
+
+
+
+
+
+/* Mobile adjustment */
+
+
+@media(max-width:700px){
+
+
+#intro-screen h1,
+.loading-screen h1 {
+
+
+    font-size:45px;
+
+
+}
+
+
+
+#intro-screen p,
+.loading-screen p {
+
+
+    font-size:12px;
+
+    letter-spacing:5px;
+
+
+}
+
+
+}
 }
 
 /* Make services heading lighter */
