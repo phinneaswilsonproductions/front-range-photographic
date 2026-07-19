@@ -7559,3 +7559,166 @@ a {
 
 
 }
+
+/* =====================================
+   MOBILE PRICING FIX
+   Prevent cards from being cut off
+===================================== */
+
+@media (max-width: 700px) {
+
+
+.pricing,
+.pricing-grid,
+.price-card {
+
+    width:100%;
+    max-width:100%;
+    box-sizing:border-box;
+
+}
+
+
+
+.pricing-grid {
+
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+    padding:0 10px;
+
+}
+
+
+
+.price-card {
+
+    padding:35px 25px;
+    border-radius:25px;
+    overflow:hidden;
+
+}
+
+
+
+.price-card h3 {
+
+    font-size:32px;
+    margin-bottom:15px;
+
+}
+
+
+
+.price {
+
+    font-size:55px;
+    margin:15px 0;
+
+}
+
+
+
+.price-card p {
+
+    font-size:16px;
+    line-height:1.6;
+
+}
+
+
+
+.price-card ul {
+
+    padding-left:0;
+    margin-top:25px;
+    list-style:none;
+
+}
+
+
+
+.price-card li {
+
+    font-size:15px;
+    line-height:1.8;
+    padding:8px 0;
+
+}
+
+
+
+.package-button {
+
+    display:block;
+    width:100%;
+    text-align:center;
+    padding:16px 10px;
+    margin-top:25px;
+    box-sizing:border-box;
+
+}
+
+
+
+.popular-tag {
+
+    position:relative;
+    display:inline-block;
+    margin-bottom:15px;
+
+}
+
+
+
+/* Fix long text overflow */
+
+.price-card,
+.price-card * {
+
+    overflow-wrap:break-word;
+    word-wrap:break-word;
+
+}
+
+
+
+/* Extra small phones */
+
+@media (max-width:390px) {
+
+
+.price-card {
+
+    padding:30px 18px;
+
+}
+
+
+
+.price-card h3 {
+
+    font-size:28px;
+
+}
+
+
+
+.price {
+
+    font-size:48px;
+
+}
+
+
+
+.price-card li {
+
+    font-size:14px;
+
+}
+
+
+
+}
+}
