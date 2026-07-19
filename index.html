@@ -2071,3 +2071,90 @@ phinneas.wlson@gmail.com
 </body>
 
 </html>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Remove visible span tags if they are showing as text
+    document.body.innerHTML = document.body.innerHTML
+        .replace(/&lt;span&gt;/gi, "")
+        .replace(/&lt;\/span&gt;/gi, "")
+        .replace(/<span>/gi, "")
+        .replace(/<\/span>/gi, "");
+
+    // Mobile optimization
+    document.body.style.overflowX = "hidden";
+
+    // Add mobile viewport
+    let viewport = document.querySelector('meta[name="viewport"]');
+
+    if (!viewport) {
+        viewport = document.createElement("meta");
+        viewport.name = "viewport";
+        document.head.appendChild(viewport);
+    }
+
+    viewport.content = "width=device-width, initial-scale=1.0";
+
+    // Optimize images for phones
+    document.querySelectorAll("img").forEach(function(img) {
+        img.style.maxWidth = "100%";
+        img.style.height = "auto";
+    });
+
+    // Make links and buttons easier to tap
+    document.querySelectorAll("a, button").forEach(function(item) {
+        item.style.minHeight = "44px";
+        item.style.touchAction = "manipulation";
+    });
+
+});
+</script>
+
+<style>
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    h1 {
+        font-size: 2.2rem !important;
+        line-height: 1.15 !important;
+    }
+
+    h2 {
+        font-size: 1.7rem !important;
+    }
+
+    p {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+    }
+
+    section {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    img {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    a, button {
+        width: 100%;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+}
+
+/* Highlight drone technology text */
+strong {
+    color: #d4a017;
+}
+
+</style>
