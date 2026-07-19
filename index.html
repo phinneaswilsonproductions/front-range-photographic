@@ -2205,3 +2205,339 @@ window.addEventListener("load", function () {
 
 }
 </style>
+
+<!-- =====================================================
+     FRONT RANGE PHOTOGRAPHIC
+     PREMIUM TITLE INTRO
+===================================================== -->
+
+<div id="frp-title-screen">
+
+    <div class="frp-glow"></div>
+
+    <div class="frp-title-content">
+
+        <p class="frp-location">
+            FORT COLLINS • NORTHERN COLORADO
+        </p>
+
+        <h1>
+            Front Range Photographic
+        </h1>
+
+        <div class="frp-line"></div>
+
+        <h2>
+            DRONE ROOFING
+        </h2>
+
+        <p class="frp-subtitle">
+            Aerial Roof Photography & Property Documentation
+        </p>
+
+        <button id="frp-enter">
+            ENTER SITE
+        </button>
+
+    </div>
+
+</div>
+
+
+<style>
+
+/* =====================================
+   TITLE SCREEN
+===================================== */
+
+
+#frp-title-screen {
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at center,
+        #4b3218,
+        #080604
+    );
+
+    z-index:999999;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    color:white;
+
+    animation:frpFade 1s ease;
+
+}
+
+
+.frp-glow {
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(240,180,92,.35),
+        transparent 70%
+    );
+
+    animation:
+    frpPulse 5s infinite;
+
+}
+
+
+
+.frp-title-content {
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+
+.frp-location {
+
+    font-size:12px;
+
+    letter-spacing:8px;
+
+    color:#f0b45c;
+
+    margin-bottom:35px;
+
+}
+
+
+
+.frp-title-content h1 {
+
+    font-family:
+    "Times New Roman",
+    serif;
+
+    font-size:75px;
+
+    font-weight:400;
+
+    letter-spacing:3px;
+
+    margin:0;
+
+}
+
+
+
+.frp-line {
+
+    width:160px;
+
+    height:2px;
+
+    background:#d4a24c;
+
+    margin:35px auto;
+
+}
+
+
+
+.frp-title-content h2 {
+
+    font-family:
+    "Times New Roman",
+    serif;
+
+    font-size:40px;
+
+    letter-spacing:12px;
+
+    color:#f0b45c;
+
+}
+
+
+
+.frp-subtitle {
+
+    margin-top:25px;
+
+    font-size:16px;
+
+    letter-spacing:3px;
+
+    color:#eee;
+
+}
+
+
+
+#frp-enter {
+
+    margin-top:50px;
+
+    padding:18px 55px;
+
+    border:none;
+
+    cursor:pointer;
+
+    background:#d4a24c;
+
+    color:#171512;
+
+    font-size:13px;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    transition:.4s;
+
+}
+
+
+
+#frp-enter:hover {
+
+    background:#ffd98a;
+
+    transform:
+    translateY(-5px);
+
+    box-shadow:
+    0 0 35px rgba(240,180,92,.6);
+
+}
+
+
+
+@keyframes frpPulse {
+
+    50% {
+
+        transform:scale(1.25);
+
+        opacity:.5;
+
+    }
+
+}
+
+
+
+@keyframes frpFade {
+
+    from {
+
+        opacity:0;
+
+    }
+
+    to {
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+
+.frp-title-content h1 {
+
+    font-size:42px;
+
+}
+
+
+
+.frp-title-content h2 {
+
+    font-size:26px;
+
+    letter-spacing:7px;
+
+}
+
+
+
+.frp-location {
+
+    font-size:10px;
+
+    letter-spacing:4px;
+
+}
+
+
+
+.frp-subtitle {
+
+    font-size:13px;
+
+}
+
+
+
+}
+
+
+
+</style>
+
+
+<script>
+
+document
+.getElementById("frp-enter")
+.addEventListener(
+"click",
+function(){
+
+    const screen =
+    document.getElementById(
+        "frp-title-screen"
+    );
+
+
+    screen.style.opacity="0";
+
+    screen.style.transition=
+    "opacity 1s ease";
+
+
+    setTimeout(()=>{
+
+        screen.remove();
+
+    },1000);
+
+
+});
+
+</script>
