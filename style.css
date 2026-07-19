@@ -5272,3 +5272,527 @@ header {
     }
 
 }
+
+/* =====================================================
+   FRONT RANGE PHOTOGRAPHIC
+   PREMIUM STYLE UPGRADE
+   PASTE AT BOTTOM OF STYLE.CSS
+===================================================== */
+
+
+/* GLOBAL IMPROVEMENTS */
+
+body {
+
+    font-family:
+    "Times New Roman",
+    serif;
+
+    background:#16110d;
+
+    color:#faf5eb;
+
+}
+
+
+
+p {
+
+    line-height:1.9;
+
+}
+
+
+
+section {
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+
+/* NAVIGATION PREMIUM LOOK */
+
+
+.navbar {
+
+    background:
+    rgba(20,15,10,.75);
+
+    border:
+    1px solid rgba(240,180,92,.25);
+
+    backdrop-filter:
+    blur(20px);
+
+}
+
+
+
+.logo,
+.footer-logo {
+
+    font-family:
+    "Times New Roman",
+    serif;
+
+    letter-spacing:4px;
+
+}
+
+
+
+.nav-menu a {
+
+    color:#faf5eb;
+
+    font-size:14px;
+
+    letter-spacing:2px;
+
+}
+
+
+
+.nav-menu a:hover {
+
+    color:#ffd98a;
+
+}
+
+
+
+
+
+/* HERO UPGRADE */
+
+
+.hero {
+
+    min-height:100vh;
+
+}
+
+
+
+.hero-overlay {
+
+    background:
+
+    linear-gradient(
+        rgba(0,0,0,.45),
+        rgba(0,0,0,.85)
+    );
+
+}
+
+
+
+.hero h1 {
+
+    font-size:90px;
+
+    color:#ffffff;
+
+    text-shadow:
+    0 10px 40px rgba(0,0,0,.7);
+
+}
+
+
+
+.hero h1 span {
+
+    color:#ffd98a;
+
+}
+
+
+
+.hero-description {
+
+    color:#f5f0e8;
+
+    max-width:800px;
+
+}
+
+
+
+
+
+/* BUTTON IMPROVEMENT */
+
+
+.gold-button,
+.primary-button,
+.package-button {
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #d4a24c,
+        #ffd98a
+    );
+
+    color:#171512;
+
+    border-radius:50px;
+
+    font-weight:bold;
+
+}
+
+
+
+.gold-button:hover,
+.primary-button:hover {
+
+    box-shadow:
+
+    0 0 45px
+    rgba(240,180,92,.65);
+
+}
+
+
+
+/* DARK SECTION TEXT FIX */
+
+
+.portfolio,
+.packages,
+.booking-cta,
+footer {
+
+    color:#faf5eb;
+
+}
+
+
+
+.portfolio h2,
+.packages h2,
+.booking-cta h2 {
+
+    color:#ffffff;
+
+}
+
+
+
+/* LIGHT SECTION TEXT FIX */
+
+
+.about,
+.services,
+.testimonials,
+.contact {
+
+    background:#faf5eb;
+
+}
+
+
+
+.about h2,
+.services h2,
+.contact h2,
+.section-title h2 {
+
+    color:#211812;
+
+}
+
+
+
+.about p,
+.services p,
+.contact p,
+.testimonial p {
+
+    color:#4b4035;
+
+}
+
+
+
+
+
+/* SERVICE CARDS */
+
+
+.service-card {
+
+    border-radius:20px;
+
+    background:white;
+
+    box-shadow:
+
+    0 20px 60px
+    rgba(0,0,0,.12);
+
+}
+
+
+
+.service-card:hover {
+
+    transform:
+
+    translateY(-15px);
+
+}
+
+
+
+.service-card h3 {
+
+    color:#211812;
+
+}
+
+
+
+.service-card li {
+
+    color:#5c5146;
+
+}
+
+
+
+
+
+
+/* PACKAGE CARDS */
+
+
+.package {
+
+    border-radius:25px;
+
+    background:
+
+    linear-gradient(
+        145deg,
+        #211812,
+        #120e0a
+    );
+
+}
+
+
+
+.package h3 {
+
+    color:white;
+
+}
+
+
+
+.package-price {
+
+    color:#ffd98a;
+
+}
+
+
+
+.package li {
+
+    color:#e8dfd4;
+
+}
+
+
+
+.package.popular {
+
+    box-shadow:
+
+    0 0 45px
+    rgba(212,162,76,.35);
+
+}
+
+
+
+
+
+/* SECTION TITLES */
+
+
+.section-title small,
+.gold-label,
+.section-heading p {
+
+    color:#c98b32;
+
+    letter-spacing:5px;
+
+}
+
+
+
+.section-title h2,
+.section-heading h2 {
+
+    font-family:
+    "Times New Roman",
+    serif;
+
+    font-weight:500;
+
+}
+
+
+
+
+
+
+/* CONTACT AREA */
+
+
+.contact-container {
+
+    background:white;
+
+    padding:60px;
+
+    border-radius:25px;
+
+}
+
+
+
+.contact-item h4 {
+
+    color:#c98b32;
+
+}
+
+
+
+.contact-item p {
+
+    color:#211812;
+
+}
+
+
+
+
+
+/* FOOTER */
+
+
+footer {
+
+    background:#090705;
+
+}
+
+
+
+.footer-tagline {
+
+    color:#ffd98a;
+
+}
+
+
+
+
+
+
+
+/* MOBILE IMPROVEMENTS */
+
+
+@media(max-width:700px){
+
+
+.hero h1 {
+
+    font-size:45px;
+
+}
+
+
+
+.section-title h2,
+.section-heading h2 {
+
+    font-size:40px;
+
+}
+
+
+
+.contact-container {
+
+    padding:30px;
+
+}
+
+
+
+.navbar {
+
+    border-radius:20px;
+
+}
+
+
+
+}
+
+
+
+
+
+/* EXTRA LUXURY EFFECT */
+
+
+.service-card,
+.package,
+.testimonial {
+
+    transition:
+    transform .5s ease,
+    box-shadow .5s ease;
+
+}
+
+
+
+.service-card:hover,
+.package:hover,
+.testimonial:hover {
+
+    box-shadow:
+
+    0 30px 70px
+    rgba(0,0,0,.25);
+
+}
+
+
+
+/* GOLD DETAILS */
+
+
+::selection {
+
+    background:#d4a24c;
+
+    color:#171512;
+
+}
