@@ -3405,3 +3405,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+
+// ENTER SITE BUTTON FUNCTION
+
+const enterButton = document.querySelector(".enter-site");
+const introScreen = document.querySelector("#intro-screen");
+
+if (enterButton && introScreen) {
+
+    enterButton.addEventListener("click", function(){
+
+        introScreen.style.opacity = "0";
+
+        introScreen.style.transition = "1s ease";
+
+        setTimeout(function(){
+
+            introScreen.style.display = "none";
+
+        },1000);
+
+    });
+
+}
