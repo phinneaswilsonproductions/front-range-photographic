@@ -2158,3 +2158,50 @@ strong {
 }
 
 </style>
+
+<script>
+window.addEventListener("load", function () {
+
+    // Remove visible span tags only if they appear as text
+    document.body.innerHTML = document.body.innerHTML
+        .replace(/&lt;span&gt;/gi, "")
+        .replace(/&lt;\/span&gt;/gi, "");
+
+});
+</script>
+
+<style>
+/* Mobile phone optimization */
+@media (max-width: 768px) {
+
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    h1 {
+        font-size: clamp(2rem, 8vw, 3rem) !important;
+        line-height: 1.15 !important;
+    }
+
+    h2 {
+        font-size: clamp(1.5rem, 6vw, 2rem) !important;
+    }
+
+    p {
+        font-size: 16px !important;
+        line-height: 1.6 !important;
+    }
+
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    a, button {
+        min-height: 44px;
+        touch-action: manipulation;
+    }
+
+}
+</style>
